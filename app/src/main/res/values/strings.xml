@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">BrasilFlixapp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="nome">Nome</string>
+    <string name="cpf">CPF</string>
+    <string name="e_mail">E-mail</string>
+    <string name="telefone">Telefone</string>
+    <string name="senha">Senha</string>
+    <string name="helper_required">Obrigatório</string>
+    <string name="modoescuro">Modo Escuro</string>
+    <string name="loginsuccessfully">Login Efetuado</string>
+    <string name="alreadyloggedin">Usuário já logado</string>
+    <string name="cadastrar2">Cadastro Realizado com sucesso</string>
+    <string name="home">Home</string>
+    <string name="favoritos">Buscar</string>
+    <string name="perfil">Favoritos</string>
+    <string name="addFV">Adicionar Favorito</string>
+    <string name="filmes">Filmes</string>
+    <string name="buttonTips">Ir para Home</string>
+    <string name="filmestoprated">Filmes Top-Rated</string>
+    <string name="filmsTopRated">Top-Rated</string>
+    <string name="page_home">Filmes e Séries</string>
+    <string name="favorite">Favoritos</string>
+    <string name="search">Busca</string>
+    <string name="more">Mais</string>
+</resources>

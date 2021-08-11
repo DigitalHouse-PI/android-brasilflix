@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/TipsFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.lucasesteves.brasilflixapp.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/TipsFragment"
+        android:name="com.lucasesteves.brasilflixapp.fragments.tips.TipsFragment"
+        android:label="fragment_tips"
+        tools:layout="@layout/fragment_tips" >
+        <action
+            android:id="@+id/action_tipsFragment_to_HomeFragment"
+            app:destination="@id/HomeFragment" />
+    </fragment>
+</navigation>
