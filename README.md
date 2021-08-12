@@ -1,6 +1,13 @@
 # BrasilFlixapp - Ano 2021 [🔝](#welcome-badges-4-readmemd-profile)
 
-Clique aqui para acessar minha página principal com os outros projetos [here](https://github.com/lukesteves92)
-
-Dev: 👨 Lucas Esteves A. Coelho
+Projeto BrasilFlix
+Curso: Desenvolvimento Android
+Escola: Digital House
 Linguagem: 📱 Kotlin
+
+Devs: 
+👨 Lucas Esteves A. Coelho
+👨 Tania Mara Alves Ferreira
+👨 Bruno Rocha
+👨 Renan Cleber
+
