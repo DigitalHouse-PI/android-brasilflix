@@ -16,7 +16,8 @@ class TipsFragment : Fragment() {
     private var binding: FragmentTipsBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)]
+        // Teste
 
     }
 
