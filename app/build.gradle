@@ -10,7 +10,8 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    buildToolsVersion
+
 
     defaultConfig {
         applicationId "com.lucasesteves.brasilflixapp"
@@ -34,7 +35,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
 
     buildFeatures {
@@ -61,7 +62,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //Lottie
-    implementation 'com.airbnb.android:lottie:3.7.1'
+    implementation 'com.airbnb.android:lottie:4.0.0'
 
     //Viewpager
 //    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
@@ -69,7 +70,7 @@ dependencies {
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
     //Firebase
     implementation 'com.google.firebase:firebase-analytics:19.0.0'
@@ -86,7 +87,7 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt "com.github.bumptech.glide:compiler:4.12.0"
-    kapt "android.arch.lifecycle:compiler:1.0.0"
+    kapt 'android.arch.lifecycle:compiler:1.1.1'
 
     //Indicator for ViewPager
     implementation 'com.tbuonomo:dotsindicator:4.2'
