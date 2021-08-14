@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.lucasesteves.brasilflixapp.R
-import com.lucasesteves.brasilflixapp.adapter.TipsVPAdapter
+import com.lucasesteves.brasilflixapp.adapter.tips.tipsVPAdapter
 import com.lucasesteves.brasilflixapp.databinding.FragmentTipsBinding
 
 class TipsFragment : Fragment() {
@@ -40,7 +40,7 @@ class TipsFragment : Fragment() {
             TipsImageFragment.newInstance(0),
             TipsImageFragment.newInstance(1)
         )
-        val tipsViewPager = TipsVPAdapter(
+        val tipsViewPager = tipsVPAdapter(
             fragments,
             childFragmentManager
         )

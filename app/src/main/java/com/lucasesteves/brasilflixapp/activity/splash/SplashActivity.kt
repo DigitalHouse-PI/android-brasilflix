@@ -1,4 +1,4 @@
-package com.lucasesteves.brasilflixapp.activity
+package com.lucasesteves.brasilflixapp.activity.splash
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
 import com.lucasesteves.brasilflixapp.R
+import com.lucasesteves.brasilflixapp.activity.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

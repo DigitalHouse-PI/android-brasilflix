@@ -1,4 +1,4 @@
-package com.lucasesteves.brasilflixapp.util
+package com.lucasesteves.brasilflixapp.util.cpf
 
 class CPFUtil{
     companion object {

@@ -1,10 +1,10 @@
-package com.lucasesteves.brasilflixapp.adapter
+package com.lucasesteves.brasilflixapp.adapter.tips
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class TipsVPAdapter (
+class tipsVPAdapter (
     private val fragments: List<Fragment>,
     manager: FragmentManager
         ): FragmentPagerAdapter(manager){

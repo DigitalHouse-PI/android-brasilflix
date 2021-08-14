@@ -1,4 +1,4 @@
-package com.lucasesteves.brasilflixapp.activity
+package com.lucasesteves.brasilflixapp.activity.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

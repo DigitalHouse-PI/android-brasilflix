@@ -1,4 +1,4 @@
-package com.lucasesteves.brasilflixapp.fragments
+package com.lucasesteves.brasilflixapp.fragments.login
 
 import android.os.Bundle
 import android.util.Log

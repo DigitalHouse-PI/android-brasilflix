@@ -1,4 +1,4 @@
-package com.lucasesteves.brasilflixapp.fragments.homeVP
+package com.lucasesteves.brasilflixapp.fragments.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,18 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
-import com.bumptech.glide.Glide
 import com.lucasesteves.brasilflixapp.R
 import com.lucasesteves.brasilflixapp.databinding.FragmentHomeImageBinding
-import com.lucasesteves.brasilflixapp.fragments.tips.PARAM_NUMBER
-import com.lucasesteves.brasilflixapp.fragments.tips.TipsImageFragment
-import com.lucasesteves.brasilflixapp.model.Filmes
+import com.lucasesteves.brasilflixapp.model.films.films
 
 const val PARAM_NUMBER2 = "param_number"
 
 class HomeImageFragment : Fragment() {
     private var binding: FragmentHomeImageBinding? = null
-    private val Filmes: Filmes? = null
+    private val films: films? = null
     private var number: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,9 +38,13 @@ class HomeImageFragment : Fragment() {
 
         when(number){
             0 -> view.findViewById<ImageView>(R.id.imgImageTabHome).setImageDrawable(
-                context?.let { ContextCompat.getDrawable(it, R.drawable.tipsimageone) })
+                context?.let { ContextCompat.getDrawable(it, R.drawable.casadepapel) })
             1 -> view.findViewById<ImageView>(R.id.imgImageTabHome).setImageDrawable(
-                context?.let { ContextCompat.getDrawable(it, R.drawable.tipsimagetwo) })
+                context?.let { ContextCompat.getDrawable(it, R.drawable.strangerthings) })
+            2 -> view.findViewById<ImageView>(R.id.imgImageTabHome).setImageDrawable(
+                context?.let { ContextCompat.getDrawable(it, R.drawable.velozes) })
+            3 -> view.findViewById<ImageView>(R.id.imgImageTabHome).setImageDrawable(
+                context?.let { ContextCompat.getDrawable(it, R.drawable.viuvanegra) })
 
         }
     }

@@ -1,15 +1,17 @@
-package com.lucasesteves.brasilflixapp.fragments
+package com.lucasesteves.brasilflixapp.fragments.initial
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.lucasesteves.brasilflixapp.adapter.InicialVPAdapter
+import com.lucasesteves.brasilflixapp.adapter.initial.initialVPAdapter
 import com.lucasesteves.brasilflixapp.databinding.FragmentInicialBinding
+import com.lucasesteves.brasilflixapp.fragments.login.LoginFragment
+import com.lucasesteves.brasilflixapp.fragments.register.RegisterFragment
 
 
-class inicialFragment : Fragment() {
+class initialFragment : Fragment() {
 
     private var binding: FragmentInicialBinding? = null
 
@@ -32,11 +34,11 @@ class inicialFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val fragmentsList = listOf(LoginFragment(), CadastrarFragment())
+        val fragmentsList = listOf(LoginFragment(), RegisterFragment())
         val fragmentsTitleList = listOf("Login", "Cadastro")
 
         activity?.let {
-            val viewPagerAdapter = InicialVPAdapter(
+            val viewPagerAdapter = initialVPAdapter(
                 fragmentManager = childFragmentManager,
                 fragmentsList = fragmentsList,
                 fragmentsTitleList = fragmentsTitleList

@@ -1,8 +1,8 @@
-package com.lucasesteves.brasilflixapp.model
+package com.lucasesteves.brasilflixapp.model.films
 
 import com.google.gson.annotations.SerializedName
 
-data class Filmes(
+data class films(
     @SerializedName("poster_path")
     var poster_path : String,
     @SerializedName("release_date")

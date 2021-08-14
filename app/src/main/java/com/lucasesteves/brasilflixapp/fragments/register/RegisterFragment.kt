@@ -1,13 +1,11 @@
-package com.lucasesteves.brasilflixapp.fragments
+package com.lucasesteves.brasilflixapp.fragments.register
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.AuthResult
@@ -16,13 +14,12 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.lucasesteves.brasilflixapp.R
-import com.lucasesteves.brasilflixapp.activity.HomeActivity
 import com.lucasesteves.brasilflixapp.databinding.FragmentCadastrarBinding
-import com.lucasesteves.brasilflixapp.util.CPFUtil
-import com.lucasesteves.brasilflixapp.util.Mask
+import com.lucasesteves.brasilflixapp.util.cpf.CPFUtil
+import com.lucasesteves.brasilflixapp.util.mask.Mask
 
 
-class CadastrarFragment : Fragment() {
+class RegisterFragment : Fragment() {
     private var binding: FragmentCadastrarBinding? = null
     private lateinit var auth: FirebaseAuth
 

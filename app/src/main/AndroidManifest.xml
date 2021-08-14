@@ -32,10 +32,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name=".activity.home.HomeActivity">
 
         </activity>
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.splash.SplashActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.main.MainActivity"></activity>
     </application>
 
 </manifest>

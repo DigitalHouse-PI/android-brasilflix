@@ -1,4 +1,4 @@
-package com.lucasesteves.brasilflixapp.util
+package com.lucasesteves.brasilflixapp.util.api
 
 import com.lucasesteves.brasilflixapp.BuildConfig
 import okhttp3.OkHttpClient
@@ -6,10 +6,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import com.lucasesteves.brasilflixapp.util.Constants.Api.QUERY_PARAM_LANGUAGE_LABEL
-import com.lucasesteves.brasilflixapp.util.Constants.Api.QUERY_PARAM_REGION_LABEL
-import com.lucasesteves.brasilflixapp.util.Constants.Api.QUERY_PARAM_REGION_VALUE
-import com.lucasesteves.brasilflixapp.util.Constants.Api.queryParamLanguageValue
+import com.lucasesteves.brasilflixapp.util.constants.Constants.Api.QUERY_PARAM_LANGUAGE_LABEL
+import com.lucasesteves.brasilflixapp.util.constants.Constants.Api.QUERY_PARAM_REGION_LABEL
+import com.lucasesteves.brasilflixapp.util.constants.Constants.Api.QUERY_PARAM_REGION_VALUE
+import com.lucasesteves.brasilflixapp.util.constants.Constants.Api.queryParamLanguageValue
 
 class RetrofitInstance {
     companion object {

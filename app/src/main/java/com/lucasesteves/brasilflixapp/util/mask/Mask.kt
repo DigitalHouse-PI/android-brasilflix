@@ -1,4 +1,4 @@
-package com.lucasesteves.brasilflixapp.util
+package com.lucasesteves.brasilflixapp.util.mask
 import android.text.Editable
 import android.text.TextWatcher
 import com.google.android.material.textfield.TextInputEditText
