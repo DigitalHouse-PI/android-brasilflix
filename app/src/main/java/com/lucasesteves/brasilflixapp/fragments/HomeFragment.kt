@@ -1,14 +1,13 @@
 package com.lucasesteves.brasilflixapp.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.lucasesteves.brasilflixapp.adapter.filmesAdapter
+import com.lucasesteves.brasilflixapp.adapter.FilmesAdapter
 import com.lucasesteves.brasilflixapp.databinding.FragmentHomeBinding
 import com.lucasesteves.brasilflixapp.endpoint.Endpoint
 import com.lucasesteves.brasilflixapp.model.Filmes
@@ -56,7 +55,7 @@ class HomeFragment : Fragment() {
     }
     private fun showData(filmesList: List<Filmes>) {
         filmesList.forEach {
-            val filmeAdapter = filmesAdapter(filmesList)
+            val filmeAdapter = FilmesAdapter(filmesList)
             binding?.let {
                 with(it) {
                     filmesRecyclerView.layoutManager = LinearLayoutManager(context)

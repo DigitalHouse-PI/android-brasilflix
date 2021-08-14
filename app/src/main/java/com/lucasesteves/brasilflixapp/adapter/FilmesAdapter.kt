@@ -1,23 +1,17 @@
 package com.lucasesteves.brasilflixapp.adapter
 
-import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.GlideBuilder
 import com.lucasesteves.brasilflixapp.R
 import com.lucasesteves.brasilflixapp.databinding.FilmesBinding
 import com.lucasesteves.brasilflixapp.model.Filmes
-import kotlinx.coroutines.withContext
 
 
-
-class filmesAdapter (
+class FilmesAdapter (
     private val filmesList: List<Filmes>,
-) : RecyclerView.Adapter<filmesAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<FilmesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FilmesBinding
