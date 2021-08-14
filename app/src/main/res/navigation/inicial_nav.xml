@@ -9,7 +9,7 @@
         android:id="@+id/inicialFragment"
         android:name="com.lucasesteves.brasilflixapp.fragments.initial.initialFragment"
         android:label="fragment_inicial"
-        tools:layout="@layout/fragment_inicial" >
+        tools:layout="@layout/fragment_initial" >
         <action
             android:id="@+id/action_inicialFragment_to_home_nav"
             app:destination="@id/home_nav" />
