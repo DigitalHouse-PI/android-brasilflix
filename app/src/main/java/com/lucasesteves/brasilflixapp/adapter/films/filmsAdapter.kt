@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.lucasesteves.brasilflixapp.R
-import com.lucasesteves.brasilflixapp.databinding.FilmesBinding
+import com.lucasesteves.brasilflixapp.databinding.FilmsBinding
 import com.lucasesteves.brasilflixapp.model.films.films
 
 
@@ -14,7 +14,7 @@ class filmsAdapter (
 ) : RecyclerView.Adapter<filmsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = FilmesBinding
+        val binding = FilmsBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
@@ -24,7 +24,7 @@ class filmsAdapter (
     override fun getItemCount() = filmsList.size
 
     class ViewHolder(
-        val binding: FilmesBinding
+        val binding: FilmsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(

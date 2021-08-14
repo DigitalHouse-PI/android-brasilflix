@@ -19,11 +19,11 @@ import com.lucasesteves.brasilflixapp.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
     private var binding: FragmentLoginBinding? = null
-    private lateinit var auth: FirebaseAuth
+//    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = Firebase.auth
+//        auth = Firebase.auth
     }
 
     override fun onCreateView(
@@ -49,13 +49,12 @@ class LoginFragment : Fragment() {
 //                putString(KEY_PASSWORD, password)
 //            }
 //            signIn(email, password)
-            Toast.makeText(context, "Login Efetuado", Toast.LENGTH_LONG).show()
             Snackbar.make(
                 this.requireView(),
                 getString(R.string.loginsuccessfully),
                 Snackbar.LENGTH_SHORT
             ).show()
-            findNavController().navigate(R.id.action_inicialFragment_to_home_nav)
+            findNavController().navigate(R.id.action_initialFragment_to_home_nav)
 //            startActivity(Intent(activity, homeActivity::class.java), bundle)
 
         }
@@ -68,29 +67,29 @@ class LoginFragment : Fragment() {
         binding = null
     }
 
-    private fun signIn(mail: String, pass: String){
-        val email = mail
-        val password = pass
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this.requireActivity()) { task ->
-                if (task.isSuccessful) {
-                    Log.d(TAG, "signInWithEmail:success")
-                    val user = auth.currentUser
-                    updateUI(user)
+//    private fun signIn(mail: String, pass: String){
+//        val email = mail
+//        val password = pass
+//        auth.signInWithEmailAndPassword(email, password)
+//            .addOnCompleteListener(this.requireActivity()) { task ->
+//                if (task.isSuccessful) {
+//                    Log.d(TAG, "signInWithEmail:success")
+//                    val user = auth.currentUser
+//                    updateUI(user)
+//
+////                    startActivity(Intent(activity, MainActivity::class.java))
+//                } else {
+//                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+//                    Toast.makeText(context, "Erro ao efetuar o login, verificar login/senha", Toast.LENGTH_LONG).show()
+//                    updateUI(null)
+//                }
+//            }
+//
+//    }
 
-//                    startActivity(Intent(activity, MainActivity::class.java))
-                } else {
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(context, "Erro ao efetuar o login, verificar login/senha", Toast.LENGTH_LONG).show()
-                    updateUI(null)
-                }
-            }
-
-    }
-
-    private fun updateUI(user: FirebaseUser?) {
-
-    }
+//    private fun updateUI(user: FirebaseUser?) {
+//
+//    }
 
     override fun onStart() {
         super.onStart()
@@ -114,9 +113,9 @@ class LoginFragment : Fragment() {
 //        }
     }
 
-    private fun reload() {
-
-    }
+//    private fun reload() {
+//
+//    }
 
     companion object {
         private const val TAG = "EmailPassword"
@@ -125,8 +124,8 @@ class LoginFragment : Fragment() {
         const val KEY_USER = "user"
         const val KEY_PASSWORD = "password"
     }
-    private fun signOut() {
-        Firebase.auth.signOut()
-
-    }
+//    private fun signOut() {
+//        Firebase.auth.signOut()
+//
+//    }
 }

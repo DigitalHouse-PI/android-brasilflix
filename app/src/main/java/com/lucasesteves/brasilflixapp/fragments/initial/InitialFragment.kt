@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lucasesteves.brasilflixapp.adapter.initial.initialVPAdapter
-import com.lucasesteves.brasilflixapp.databinding.FragmentInicialBinding
+import com.lucasesteves.brasilflixapp.databinding.FragmentInitialBinding
 import com.lucasesteves.brasilflixapp.fragments.login.LoginFragment
 import com.lucasesteves.brasilflixapp.fragments.register.RegisterFragment
 
 
 class initialFragment : Fragment() {
 
-    private var binding: FragmentInicialBinding? = null
+    private var binding: FragmentInitialBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class initialFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentInicialBinding.inflate(inflater, container, false)
+        binding = FragmentInitialBinding.inflate(inflater, container, false)
         return binding?.root
 
 
