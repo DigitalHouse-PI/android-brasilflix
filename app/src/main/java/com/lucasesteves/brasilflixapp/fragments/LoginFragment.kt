@@ -40,22 +40,22 @@ class LoginFragment : Fragment() {
 
         binding?.floatingActionButton?.setOnClickListener{
 
-            val email = binding?.loginEmail?.text.toString()
-            val password = binding?.loginSenha?.text.toString()
+//            val email = binding?.loginEmail?.text.toString()
+//            val password = binding?.loginSenha?.text.toString()
 
-            val bundle = Bundle()
-            with(bundle){
-                putString(KEY_USER, email)
-                putString(KEY_PASSWORD, password)
-            }
-            signIn(email, password)
+//            val bundle = Bundle()
+//            with(bundle){
+//                putString(KEY_USER, email)
+//                putString(KEY_PASSWORD, password)
+//            }
+//            signIn(email, password)
             Toast.makeText(context, "Login Efetuado", Toast.LENGTH_LONG).show()
             Snackbar.make(
                 this.requireView(),
                 getString(R.string.loginsuccessfully),
                 Snackbar.LENGTH_SHORT
             ).show()
-            findNavController().navigate(R.id.action_inicialFragment_to_home_nav, bundle)
+            findNavController().navigate(R.id.action_inicialFragment_to_home_nav)
 //            startActivity(Intent(activity, homeActivity::class.java), bundle)
 
         }
