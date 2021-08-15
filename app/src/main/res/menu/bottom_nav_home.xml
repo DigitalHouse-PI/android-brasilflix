@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/homeBottom"
+        android:id="@+id/HomeFragment"
         android:icon="@drawable/outline_home_white_36"
         android:title="@string/homeBottom" />
 
     <item
-        android:id="@+id/filmsBottom"
+        android:id="@+id/popularFragment"
         android:icon="@drawable/outline_theaters_white_36"
         android:title="@string/filmsBottom" />
 
