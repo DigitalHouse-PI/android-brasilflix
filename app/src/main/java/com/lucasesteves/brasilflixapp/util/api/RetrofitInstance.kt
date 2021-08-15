@@ -1,6 +1,8 @@
 package com.lucasesteves.brasilflixapp.util.api
 
 import com.lucasesteves.brasilflixapp.BuildConfig
+import com.lucasesteves.brasilflixapp.util.constants.Constants.Api.API_CONST
+import com.lucasesteves.brasilflixapp.util.constants.Constants.Api.API_KEY_TMDB
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -34,7 +36,7 @@ class RetrofitInstance {
                 .addInterceptor(loggingInterceptor)
                 .addInterceptor { chain ->
                     val url = chain.request().url.newBuilder()
-                        .addQueryParameter("api_key", "50486dab40ae7909623d0d610e5e2bd6")
+                        .addQueryParameter(API_CONST, API_KEY_TMDB)
                         .addQueryParameter(QUERY_PARAM_LANGUAGE_LABEL, queryParamLanguageValue())
                         .addQueryParameter(QUERY_PARAM_REGION_LABEL, QUERY_PARAM_REGION_VALUE)
                         .build()
