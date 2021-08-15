@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.lucasesteves.brasilflixapp.fragments.home.HomeFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/TipsFragment"
-        android:name="com.lucasesteves.brasilflixapp.fragments.tips.TipsFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.tips.TipsFragment"
         android:label="fragment_tips"
         tools:layout="@layout/fragment_tips" >
         <action

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/initialFragment"
-        android:name="com.lucasesteves.brasilflixapp.fragments.initial.initialFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.initial.initialFragment"
         android:label="fragment_initial"
         tools:layout="@layout/fragment_initial">
         <action
