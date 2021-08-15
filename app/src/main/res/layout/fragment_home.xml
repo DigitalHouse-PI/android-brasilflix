@@ -91,6 +91,26 @@
                 app:layout_constraintTop_toBottomOf="@id/imageTopRated"
                 tools:itemCount="10"
                 tools:listitem="@layout/films" />
+
+            <ImageView
+                android:id="@+id/imageUpComing"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/filmesRecyclerView"
+                android:src="@drawable/upcoming"
+                android:layout_marginTop="15dp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/upcomingRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/imageUpComing"
+                tools:itemCount="10"
+                tools:listitem="@layout/films" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
