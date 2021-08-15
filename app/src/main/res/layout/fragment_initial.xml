@@ -13,8 +13,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabIndicatorColor="@color/tabIndicator"
-        app:tabTextColor="@color/tabtextColor">
+        app:tabIndicatorColor="@color/dotsTips1"
+        app:tabTextColor="@color/dotsTips2">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
