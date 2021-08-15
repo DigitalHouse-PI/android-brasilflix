@@ -6,6 +6,7 @@
 
     <queries>
         <package android:name="com.google.android.apps.maps" />
+
         <intent>
             <action android:name="android.intent.action.VIEW" />
         </intent>
@@ -14,10 +15,12 @@
         </intent>
         <intent>
             <action android:name="android.intent.action.GET_CONTENT" />
+
             <data android:mimeType="image/*" />
         </intent>
         <intent>
             <action android:name="android.intent.action.PICK" />
+
             <data android:mimeType="image/*" />
         </intent>
         <intent>
@@ -32,19 +35,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
-        <activity android:name="com.grupo7.brasilflixapp.activity.home.HomeActivity">
-
-        </activity>
-        <activity android:name="com.grupo7.brasilflixapp.activity.splash.SplashActivity">
-
+        <activity
+            android:name=".activity.tips.TipsActivity"
+            android:exported="true" />
+        <activity android:name=".activity.home.HomeActivity"></activity>
+        <activity android:name=".activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name="com.grupo7.brasilflixapp.activity.main.MainActivity"></activity>
+        <activity android:name=".activity.main.MainActivity" />
     </application>
 
 </manifest>

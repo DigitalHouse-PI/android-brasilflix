@@ -48,7 +48,7 @@ class LoginFragment : Fragment() {
                 getString(R.string.loginsuccessfully),
                 Snackbar.LENGTH_SHORT
             ).show()
-            findNavController().navigate(R.id.action_initialFragment_to_home_nav)
+            findNavController().navigate(R.id.action_initialFragment_to_tips_nav)
 //            startActivity(Intent(activity, homeActivity::class.java), bundle)
 
         }

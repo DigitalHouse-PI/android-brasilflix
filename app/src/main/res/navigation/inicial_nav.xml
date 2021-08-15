@@ -11,8 +11,8 @@
         android:label="fragment_initial"
         tools:layout="@layout/fragment_initial">
         <action
-            android:id="@+id/action_initialFragment_to_home_nav"
-            app:destination="@id/home_nav" />
+            android:id="@+id/action_initialFragment_to_tips_nav"
+            app:destination="@id/tips_nav" />
     </fragment>
-    <include app:graph="@navigation/home_nav" />
+    <include app:graph="@navigation/tips_nav" />
 </navigation>

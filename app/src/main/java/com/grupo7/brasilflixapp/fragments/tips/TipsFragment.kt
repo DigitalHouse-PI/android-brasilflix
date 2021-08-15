@@ -33,7 +33,7 @@ class TipsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.buttonHome?.setOnClickListener{
-            findNavController().navigate(R.id.action_tipsFragment_to_HomeFragment)
+            findNavController().navigate(R.id.action_tipsFragment_to_home_nav)
         }
 
         val fragments = listOf(
