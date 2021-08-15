@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeBottom"
+        android:icon="@drawable/outline_home_white_36"
+        android:title="@string/homeBottom" />
+
+    <item
+        android:id="@+id/filmsBottom"
+        android:icon="@drawable/outline_theaters_white_36"
+        android:title="@string/filmsBottom" />
+
+    <item
+        android:id="@+id/seriesBottom"
+        android:icon="@drawable/outline_movie_creation_white_36"
+        android:title="@string/seriesBottom" />
+
+</menu>

@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.fragments.tips
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.grupo7.brasilflixapp.R
+import com.grupo7.brasilflixapp.activity.home.HomeActivity
 import com.grupo7.brasilflixapp.adapter.tips.tipsVPAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentTipsBinding
 
@@ -33,7 +35,8 @@ class TipsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.buttonHome?.setOnClickListener{
-            findNavController().navigate(R.id.action_tipsFragment_to_home_nav)
+//            findNavController().navigate(R.id.action_tipsFragment_to_home_nav)
+            startActivity(Intent(activity, HomeActivity::class.java))
         }
 
         val fragments = listOf(
