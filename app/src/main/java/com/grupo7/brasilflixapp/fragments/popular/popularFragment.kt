@@ -7,13 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.adapter.films.filmsAdapter
 import com.grupo7.brasilflixapp.adapter.popular.popularAdapter
-import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
 import com.grupo7.brasilflixapp.databinding.FragmentPopularBinding
-import com.grupo7.brasilflixapp.endpoint.Endpoint
-import com.grupo7.brasilflixapp.endpoint.EndpointPopular
+import com.grupo7.brasilflixapp.endpoint.popular.EndpointPopular
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.util.api.RetrofitInstance

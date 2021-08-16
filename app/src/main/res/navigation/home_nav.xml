@@ -15,4 +15,9 @@
         android:name="com.grupo7.brasilflixapp.fragments.popular.popularFragment"
         android:label="fragment_popular"
         tools:layout="@layout/fragment_popular" />
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.series.seriesFragment"
+        android:label="fragment_series"
+        tools:layout="@layout/fragment_series" />
 </navigation>

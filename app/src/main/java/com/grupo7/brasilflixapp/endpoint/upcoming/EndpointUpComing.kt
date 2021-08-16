@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.endpoint
+package com.grupo7.brasilflixapp.endpoint.upcoming
 
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import retrofit2.Call

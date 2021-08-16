@@ -13,8 +13,8 @@ import com.grupo7.brasilflixapp.adapter.films.filmsAdapter
 import com.grupo7.brasilflixapp.adapter.home.homeVPAdapter
 import com.grupo7.brasilflixapp.adapter.upcoming.upcomingAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
-import com.grupo7.brasilflixapp.endpoint.Endpoint
-import com.grupo7.brasilflixapp.endpoint.EndpointUpComing
+import com.grupo7.brasilflixapp.endpoint.main.Endpoint
+import com.grupo7.brasilflixapp.endpoint.upcoming.EndpointUpComing
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.util.api.RetrofitInstance
