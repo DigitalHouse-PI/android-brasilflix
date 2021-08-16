@@ -27,6 +27,6 @@
     <string name="profileMenu">Perfil</string>
     <string name="configMenu">Configurações</string>
     <string name="homeBottom">Home</string>
-    <string name="filmsBottom">Filmes</string>
+    <string name="filmsBottom">Populares</string>
     <string name="seriesBottom">"Series "</string>
 </resources>
