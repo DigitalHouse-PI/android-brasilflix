@@ -38,7 +38,7 @@
         <activity
             android:name=".activity.tips.TipsActivity"
             android:exported="true" />
-        <activity android:name=".activity.home.HomeActivity"></activity>
+        <activity android:name=".activity.home.HomeActivity" />
         <activity android:name=".activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,11 +1,18 @@
 package com.grupo7.brasilflixapp.fragments.register
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.gms.tasks.Task
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentRegisterBinding
 import com.grupo7.brasilflixapp.util.cpf.CPFUtil
@@ -14,13 +21,13 @@ import com.grupo7.brasilflixapp.util.mask.Mask
 
 class RegisterFragment : Fragment() {
     private var binding: FragmentRegisterBinding? = null
-//    private lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        auth = Firebase.auth
+        auth = Firebase.auth
     }
 
     override fun onCreateView(
@@ -64,7 +71,7 @@ class RegisterFragment : Fragment() {
 
         binding?.buttonCadastrar?.setOnClickListener {
             if (CPFUtil.myValidateCPF(binding?.campoCpf?.text.toString())) {
-//                registerUser()
+                registerUser()
                 Snackbar.make(
                     this.requireView(),
                     getString(R.string.cadastrar2),
@@ -83,34 +90,34 @@ class RegisterFragment : Fragment() {
         binding = null
     }
 
-//    private fun updateUI(user: FirebaseUser?) {
-//
-//    }
+    private fun updateUI(user: FirebaseUser?) {
+
+    }
 
     companion object {
         const val TAG = "EmailPassword"
 
     }
 
-//    private fun registerUser(): Task<AuthResult> {
-//
-//        val email = binding?.campoEmail?.text.toString()
-//        val password = binding?.campoSenha?.text.toString()
-//
-//        return auth.createUserWithEmailAndPassword(email, password)
-//            .addOnCompleteListener(this.requireActivity()) { task ->
-//                if (task.isSuccessful) {
-//                    // Sign in success, update UI with the signed-in user's information
-//                    Log.d(TAG, "createUserWithEmail:success")
-//                    val user = auth.currentUser
-//                    updateUI(user)
-//                } else {
-//                    // If sign in fails, display a message to the user.
-//                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-//                    updateUI(null)
-//                }
-//            }
-//    }
+    private fun registerUser(): Task<AuthResult> {
+
+        val email = binding?.campoEmail?.text.toString()
+        val password = binding?.campoSenha?.text.toString()
+
+        return auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this.requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "createUserWithEmail:success")
+                    val user = auth.currentUser
+                    updateUI(user)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                    updateUI(null)
+                }
+            }
+    }
 
 
 

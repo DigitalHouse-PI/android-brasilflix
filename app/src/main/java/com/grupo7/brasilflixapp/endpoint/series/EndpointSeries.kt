@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface EndpointSeries {
 
-    @GET("tv/popular")
+    @GET("tv/on_the_air")
     fun getSeries(@Query("page") page: Int ) : Call<SeriesResults>
 
 }
