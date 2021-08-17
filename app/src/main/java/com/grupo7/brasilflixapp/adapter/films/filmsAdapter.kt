@@ -37,6 +37,7 @@ class filmsAdapter (
                         .into(fotoFilme)
                     filmeName.text = films.title
                     dataLancamento.text = "Data de lançamento: ${films.release_date}"
+                    voteModelText.text = films.vote_average.toString()
                 }
         }
     }
