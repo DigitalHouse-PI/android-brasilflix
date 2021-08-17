@@ -61,7 +61,7 @@
             android:src="@drawable/ic_baseline_share_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="1" />
+            app:tint="#090808" />
 
         <ImageButton
             android:id="@+id/btFavoriteMovie"
@@ -72,7 +72,8 @@
             android:src="@drawable/ic_favorite_border_24px"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btWatchShare"
-            app:layout_constraintTop_toTopOf="@+id/btWatchShare" />
+            app:layout_constraintTop_toTopOf="@+id/btWatchShare"
+            app:tint="#090809" />
 
         <TextView
             android:id="@+id/vote_model_text"
@@ -96,6 +97,18 @@
             app:layout_constraintTop_toBottomOf="@+id/dataLancamento"
 
              />
+
+        <ImageButton
+            android:id="@+id/trailerModel"
+            style="@style/ButtonIcon"
+            android:layout_width="@dimen/button_icon_size"
+            android:layout_height="@dimen/button_icon_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_movie_filter_24"
+            app:layout_constraintEnd_toStartOf="@+id/starModel"
+            app:layout_constraintTop_toBottomOf="@+id/dataLancamento"
+
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -92,6 +92,9 @@ dependencies {
     //Indicator for ViewPager
     implementation 'com.tbuonomo:dotsindicator:4.2'
 
+    //ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.15.0'
+
 
 
     
