@@ -9,8 +9,13 @@
         android:id="@+id/HomeFragment"
         android:name="com.grupo7.brasilflixapp.fragments.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_HomeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
+<<<<<<< HEAD
         android:id="@+id/popularFragment"
         android:name="com.grupo7.brasilflixapp.fragments.popular.popularFragment"
         android:label="fragment_popular"
@@ -20,4 +25,10 @@
         android:name="com.grupo7.brasilflixapp.fragments.series.seriesFragment"
         android:label="fragment_series"
         tools:layout="@layout/fragment_series" />
+=======
+        android:id="@+id/detailFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.Detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+>>>>>>> feature/Renan
 </navigation>
