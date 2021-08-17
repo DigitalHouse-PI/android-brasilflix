@@ -29,4 +29,7 @@
     <string name="homeBottom">Home</string>
     <string name="filmsBottom">Filmes</string>
     <string name="seriesBottom">"Series "</string>
+    <string name="detalhe">Detalhe</string>
+    <string name="Summary">Resumo</string>
+
 </resources>
