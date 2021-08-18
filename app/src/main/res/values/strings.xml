@@ -31,5 +31,10 @@
     <string name="seriesBottom">"Series "</string>
     <string name="detalhe">Detalhe</string>
     <string name="Summary">Resumo</string>
+    <string name="changeEmail">Alterar Email</string>
+    <string name="doNotStay">Não fique triste, vamos\n e ajudar na alteração do seu email!</string>
+    <string name="newEmail">Novo Email</string>
+    <string name="returnV">voltar</string>
+    <string name="confirm">Confirmar</string>
 
 </resources>
