@@ -37,6 +37,7 @@
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_detail.xml" value="0.2" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_home.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_preferences.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_tips.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/custom_styles.xml" value="0.25416666666666665" />
@@ -48,6 +49,7 @@
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_initial.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_popular.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_preferences.xml" value="0.264" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_tips.xml" value="0.16394927536231885" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_tips_image.xml" value="0.25416666666666665" />

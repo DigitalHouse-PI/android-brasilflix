@@ -36,5 +36,12 @@
     <string name="newEmail">Novo Email</string>
     <string name="returnV">voltar</string>
     <string name="confirm">Confirmar</string>
-
+    <string name="NaBRFlix">Na <b>BRFlix</b>, você escolhe quais\ntipos de filmes séries aparecer\nnem sua Home.</string>
+    <string name="comedy">Comédia</string>
+    <string name="action">Ação</string>
+    <string name="horror">Terror</string>
+    <string name="romantic">Comédia Romântica</string>
+    <string name="thriller">Suspense</string>
+    <string name="adventure">Aventura</string>
+    <string name="next">Próximo</string>
 </resources>

@@ -36,7 +36,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
         <activity
-            android:name="com.grupo7.brasilflixapp.activity.Detail.DetailActivity"
+            android:name=".activity.Preferences.PreferencesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.Detail.DetailActivity"
             android:exported="true" />
         <activity
             android:name=".activity.tips.TipsActivity"
