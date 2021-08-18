@@ -36,6 +36,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
         <activity
+            android:name=".activity.MyPreference.MyPreferenceActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.Preferences.PreferencesActivity"
             android:exported="true" />
         <activity

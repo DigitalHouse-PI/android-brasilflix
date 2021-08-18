@@ -44,4 +44,5 @@
     <string name="thriller">Suspense</string>
     <string name="adventure">Aventura</string>
     <string name="next">Próximo</string>
+    <string name="list">Sua lista de favoritos está vazia</string>
 </resources>
