@@ -29,4 +29,8 @@
     <string name="homeBottom">Home</string>
     <string name="filmsBottom">Populares</string>
     <string name="seriesBottom">"Series "</string>
+    <string name="page_profile">Perfil</string>
+    <string name="account">Conta</string>
+    <string name="account_description">Alterar senha, foto, email...</string>
+    <string name="icone_seta_direita">Ícone, seta para direita</string>
 </resources>

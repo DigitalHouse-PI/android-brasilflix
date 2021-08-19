@@ -36,9 +36,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
         <activity
+            android:name=".activity.profile.ProfileActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activity.tips.TipsActivity"
             android:exported="true" />
-        <activity android:name=".activity.home.HomeActivity"></activity>
+        <activity android:name=".activity.home.HomeActivity" />
         <activity android:name=".activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
