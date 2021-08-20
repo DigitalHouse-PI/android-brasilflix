@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.endpoint.popular
+package com.grupo7.brasilflixapp.api.popular
 
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import retrofit2.Call

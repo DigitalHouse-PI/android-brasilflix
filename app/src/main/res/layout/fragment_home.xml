@@ -20,8 +20,8 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPagerHome"
                 style="@style/WatchCardDefault"
-                android:layout_width="1600dp"
-                android:layout_height="771dp"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
                 android:layout_marginTop="70dp"
                 app:layout_constraintBottom_toTopOf="@+id/imageTopRated"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.util.api
+package com.grupo7.brasilflixapp.api.util
 
 sealed class ResponseApi {
     class Success(var data: Any?) : ResponseApi()

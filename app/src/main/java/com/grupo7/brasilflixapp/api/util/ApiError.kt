@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.util.api
+package com.grupo7.brasilflixapp.api.util
 
 object ApiError {
     var statusCode: Int? = null

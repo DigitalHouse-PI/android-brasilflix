@@ -1,6 +1,5 @@
-package com.grupo7.brasilflixapp.endpoint.series
+package com.grupo7.brasilflixapp.api.series
 
-import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.model.series.SeriesResults
 import retrofit2.Call
 import retrofit2.http.GET

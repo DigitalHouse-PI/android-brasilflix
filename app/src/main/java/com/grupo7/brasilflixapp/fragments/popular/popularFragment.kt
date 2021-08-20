@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupo7.brasilflixapp.adapter.popular.popularAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentPopularBinding
-import com.grupo7.brasilflixapp.endpoint.popular.EndpointPopular
+import com.grupo7.brasilflixapp.api.popular.EndpointPopular
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
-import com.grupo7.brasilflixapp.util.api.RetrofitInstance
+import com.grupo7.brasilflixapp.api.util.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

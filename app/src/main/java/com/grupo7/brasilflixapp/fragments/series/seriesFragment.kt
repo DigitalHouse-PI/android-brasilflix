@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupo7.brasilflixapp.adapter.series.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
-import com.grupo7.brasilflixapp.endpoint.series.EndpointSeries
+import com.grupo7.brasilflixapp.api.series.EndpointSeries
 import com.grupo7.brasilflixapp.model.series.Series
 import com.grupo7.brasilflixapp.model.series.SeriesResults
-import com.grupo7.brasilflixapp.util.api.RetrofitInstance
+import com.grupo7.brasilflixapp.api.util.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
