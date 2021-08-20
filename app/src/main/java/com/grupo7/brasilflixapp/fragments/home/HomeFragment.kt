@@ -14,7 +14,6 @@ import com.grupo7.brasilflixapp.adapter.home.homeVPAdapter
 import com.grupo7.brasilflixapp.adapter.upcoming.upcomingAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
 import com.grupo7.brasilflixapp.api.main.Endpoint
-import com.grupo7.brasilflixapp.api.upcoming.EndpointUpComing
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.api.util.RetrofitInstance
@@ -46,7 +45,7 @@ class HomeFragment : Fragment() {
             }
         })
         //------------------ API - Upcoming -------------------------//
-        val endpointUp = retrofitClient.create(EndpointUpComing::class.java)
+        val endpointUp = retrofitClient.create(Endpoint::class.java)
         val callbackUp = endpointUp.getUpComing(1)
         callbackUp.enqueue(object : Callback<filmsResults> {
             override fun onFailure(call: Call<filmsResults>, t: Throwable) {
