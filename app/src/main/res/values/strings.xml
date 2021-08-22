@@ -31,6 +31,13 @@
     <string name="seriesBottom">"Series "</string>
     <string name="page_profile">Perfil</string>
     <string name="account">Conta</string>
-    <string name="account_description">Alterar senha, foto, email...</string>
+    <string name="account_description">Alterar senha, foto, email…</string>
     <string name="icone_seta_direita">Ícone, seta para direita</string>
+    <string name="detalhe">Detalhe</string>
+    <string name="Summary">Resumo</string>
+    <string name="logo_brasilflix">Logo Brasilflix</string>
+    <string name="confirmation_email_text1">Enviamos uma confirmação para o novo e-mail cadastrado.</string>
+    <string name="confirmation_email_text2">Assim que aceitar, o email será alterado automaticamente.</string>
+    <string name="voltar_para_a_home">home</string>
+
 </resources>

@@ -9,6 +9,8 @@
         <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/activity_profile.xml" value="0.2265625" />
         <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/activity_splash.xml" value="0.16822916666666668" />
         <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/activity_tips.xml" value="0.2265625" />
+        <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/fragment_account.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/fragment_confirmation_email.xml" value="0.23489583333333333" />
         <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/fragment_home.xml" value="0.14010416666666667" />
         <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/fragment_home_image.xml" value="0.16822916666666668" />
         <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/layout/fragment_login.xml" value="0.2265625" />
@@ -32,14 +34,14 @@
         <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/BrasilFlixapp-main/app/src/main/res/menu/top_app_bar.xml" value="0.34739583333333335" />
         <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/android-brasilflix/app/src/main/res/layout/activity_home.xml" value="0.3005050505050505" />
         <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/android-brasilflix/app/src/main/res/layout/films.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/android-brasilflix/app/src/main/res/layout/fragment_home.xml" value="0.30670103092783507" />
+        <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/android-brasilflix/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/android-brasilflix/app/src/main/res/layout/fragment_popular.xml" value="0.3005050505050505" />
         <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/android-brasilflix/app/src/main/res/layout/fragment_series.xml" value="0.2677083333333333" />
         <entry key="..\:/Users/lucas.coelho/AndroidStudioProjects/android-brasilflix/app/src/main/res/menu/bottom_nav_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/activity_main.xml" value="0.3161231884057971" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/activity_tips.xml" value="0.3161231884057971" />
-        <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/films.xml" value="0.259375" />
+        <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/films.xml" value="0.33" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_home.xml" value="0.19067028985507245" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_initial.xml" value="0.19067028985507245" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_login.xml" value="0.2078125" />
@@ -48,6 +50,29 @@
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_tips.xml" value="0.2078125" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/menu/bottom_nav_home.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/menu/top_app_bar.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/drawable/ic_bi_share.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/drawable/ic_favorite_border_24px.xml" value="0.2703125" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/drawable/ic_heart.xml" value="0.264" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/drawable/ic_movies.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_detail.xml" value="0.2" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_home.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/activity_tips.xml" value="0.16394927536231885" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/custom_styles.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/films.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_detail.xml" value="0.264" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_home.xml" value="0.16394927536231885" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_home_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_initial.xml" value="0.16394927536231885" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_popular.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_tips.xml" value="0.16394927536231885" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/layout/fragment_tips_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/menu/bottom_nav_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/menu/top_app_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
       </map>
     </option>
   </component>

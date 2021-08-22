@@ -11,6 +11,7 @@ class Constants {
         const val API_CONST = "api_key"
         const val API_KEY_TMDB = "50486dab40ae7909623d0d610e5e2bd6"
 
+
         fun queryParamLanguageValue(): String {
             return if (Locale.getDefault().isO3Country == "BRA") "pt-BR"
             else "en-US"

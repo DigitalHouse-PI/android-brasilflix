@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupo7.brasilflixapp.adapter.series.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
-import com.grupo7.brasilflixapp.endpoint.series.EndpointSeries
+import com.grupo7.brasilflixapp.api.main.Endpoint
 import com.grupo7.brasilflixapp.model.series.Series
 import com.grupo7.brasilflixapp.model.series.SeriesResults
-import com.grupo7.brasilflixapp.util.api.RetrofitInstance
+import com.grupo7.brasilflixapp.api.util.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +28,7 @@ class seriesFragment : Fragment() {
         //------------------ API - Series -------------------------//
         val retrofitClient = RetrofitInstance
             .getRetrofitInstance("https://api.themoviedb.org/3/")
-        val endpoint = retrofitClient.create(EndpointSeries::class.java)
+        val endpoint = retrofitClient.create(Endpoint::class.java)
         val callback = endpoint.getSeries(1)
         callback.enqueue(object : Callback<SeriesResults> {
             override fun onFailure(call: Call<SeriesResults>, t: Throwable) {

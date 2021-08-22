@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupo7.brasilflixapp.adapter.popular.popularAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentPopularBinding
-import com.grupo7.brasilflixapp.endpoint.popular.EndpointPopular
+import com.grupo7.brasilflixapp.api.main.Endpoint
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
-import com.grupo7.brasilflixapp.util.api.RetrofitInstance
+import com.grupo7.brasilflixapp.api.util.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +28,7 @@ class popularFragment : Fragment() {
         //------------------ API - Popular -------------------------//
         val retrofitClient = RetrofitInstance
             .getRetrofitInstance("https://api.themoviedb.org/3/")
-        val endpoint = retrofitClient.create(EndpointPopular::class.java)
+        val endpoint = retrofitClient.create(Endpoint::class.java)
         val callback = endpoint.getPopular(1)
         callback.enqueue(object : Callback<filmsResults> {
             override fun onFailure(call: Call<filmsResults>, t: Throwable) {

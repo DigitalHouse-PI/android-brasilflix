@@ -1,6 +1,6 @@
-package com.grupo7.brasilflixapp.util.api
+package com.grupo7.brasilflixapp.api.util
 
-import com.grupo7.brasilflixapp.BuildConfig
+import com.google.firebase.BuildConfig
 import com.grupo7.brasilflixapp.util.constants.Constants.Api.API_CONST
 import com.grupo7.brasilflixapp.util.constants.Constants.Api.API_KEY_TMDB
 import okhttp3.OkHttpClient

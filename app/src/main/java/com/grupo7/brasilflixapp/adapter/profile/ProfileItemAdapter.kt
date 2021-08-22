@@ -1,18 +1,17 @@
 package com.grupo7.brasilflixapp.adapter.profile
 
-import android.content.ContentProvider
-import android.content.Context
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.ProfileClickableItemBinding
 import com.grupo7.brasilflixapp.databinding.ProfileNonClickableItemBinding
 import com.grupo7.brasilflixapp.model.profile.ItemProfile
 import com.grupo7.brasilflixapp.util.enumarators.ProfileItemActionEnum
 import com.grupo7.brasilflixapp.util.interfaces.IProfileItemClick
+
 
 class ProfileItemAdapter(
     private val items: List<ItemProfile>,
@@ -31,13 +30,12 @@ class ProfileItemAdapter(
             binding.tvItemTitle.text = item.itemTitle
             binding.tvItemDescription.text = item.itemDescription
 
+
             when (item.action) {
                 ProfileItemActionEnum.GO_TO_EDIT_ACCOUNT -> {
-
                     binding.cvProfileItemContainer.setOnClickListener {
-                        Log.i("Item", "Deu certo carai")
+                        binding.root.findNavController().navigate(R.id.action_profileFragment_to_accountFragment)
                     }
-
                 }
                 else -> return
             }
@@ -84,6 +82,7 @@ class ProfileItemAdapter(
         } else if (holder is NonClickableViewHolder) {
             holder.bind(items[position])
         }
+
     }
 
     override fun getItemCount(): Int = items.size
