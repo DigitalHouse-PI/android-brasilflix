@@ -42,5 +42,6 @@
     <string name="error_default">Erro desconhecido, tente novamente.</string>
     <string name="searchBottom">Buscar</string>
     <string name="searchItens">Buscar Filmes / Séries</string>
+    <string name="back">Voltar</string>
 
 </resources>
