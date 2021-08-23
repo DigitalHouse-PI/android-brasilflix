@@ -7,26 +7,7 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.profile.ProfileFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.profile.profileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/accountFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.account.AccountFragment"
-        android:label="fragment_account"
-        tools:layout="@layout/fragment_account" />
-    <include app:graph="@navigation/home_nav" />
-    <fragment
-        android:id="@+id/confirmationEmailFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.ConfirmationEmailFragment"
-        android:label="fragment_confirmation_email"
-        tools:layout="@layout/fragment_confirmation_email" >
-        <action
-            android:id="@+id/action_confirmationEmailFragment_to_home_nav"
-            app:destination="@id/home_nav" />
-    </fragment>
+        tools:layout="@layout/fragment_profile" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.fragments.account
+package com.grupo7.brasilflixapp.fragments.profile
 
 import android.os.Bundle
 import android.util.Log
@@ -9,32 +9,32 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.adapter.profile.ProfileItemAdapter
-import com.grupo7.brasilflixapp.databinding.FragmentAccountBinding
+import com.grupo7.brasilflixapp.databinding.FragmentProfileBinding
 import com.grupo7.brasilflixapp.model.profile.ItemProfile
 import com.grupo7.brasilflixapp.util.enumarators.ProfileItemActionEnum
 import com.grupo7.brasilflixapp.util.interfaces.IProfileItemClick
 
 
-class AccountFragment : Fragment(), IProfileItemClick {
+class profileFragment : Fragment(), IProfileItemClick {
 
-    private var binding: FragmentAccountBinding? = null
-
+    private var binding: FragmentProfileBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentAccountBinding.inflate(layoutInflater, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val item1 = ItemProfile("Alterar Senha", "", true, ProfileItemActionEnum.GO_TO_EDIT_ACCOUNT)
-        val item2 = ItemProfile("Alterar foto do perfil", "", true, ProfileItemActionEnum.NO_ACTION)
-        val item3 = ItemProfile("Alterar email", "", true, ProfileItemActionEnum.NO_ACTION)
-        val item4 = ItemProfile("Cancelar conta", "", true, ProfileItemActionEnum.NO_ACTION)
+
+        val item1 = ItemProfile("Conta", "Alterar senha, email, foto...", true, ProfileItemActionEnum.GO_TO_EDIT_ACCOUNT)
+        val item2 = ItemProfile("Economia de dados", "", false, ProfileItemActionEnum.NO_ACTION)
+        val item3 = ItemProfile("Modo offline", "", false, ProfileItemActionEnum.NO_ACTION)
+        val item4 = ItemProfile("Notificações", "Habilitar para receber notificações de push", false, ProfileItemActionEnum.NO_ACTION)
 
         val list = listOf<ItemProfile>(item1, item2, item3, item4)
         val itemAdapter = ProfileItemAdapter(list, this) {
@@ -43,8 +43,8 @@ class AccountFragment : Fragment(), IProfileItemClick {
 
         binding?.let {
             with(it) {
-                rvAccountItemList.layoutManager = LinearLayoutManager(context)
-                rvAccountItemList.adapter = itemAdapter
+                rvProfileItemList.layoutManager = LinearLayoutManager(context)
+                rvProfileItemList.adapter = itemAdapter
             }
         }
     }
@@ -54,9 +54,9 @@ class AccountFragment : Fragment(), IProfileItemClick {
         binding = null
     }
 
+
     override fun itemProfileCLick(item: ItemProfile) {
         TODO("Not yet implemented")
     }
-
 
 }

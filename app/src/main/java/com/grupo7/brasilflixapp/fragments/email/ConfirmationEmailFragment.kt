@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.fragments
+package com.grupo7.brasilflixapp.fragments.email
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -26,9 +26,7 @@ class ConfirmationEmailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.btGoToHome?.setOnClickListener{
-            findNavController().navigate(R.id.action_confirmationEmailFragment_to_home_nav)
-        }
+
     }
 
     override fun onDestroyView() {

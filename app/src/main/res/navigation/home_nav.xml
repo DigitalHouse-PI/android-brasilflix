@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_series" />
 <fragment
         android:id="@+id/detailFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.Detail.DetailFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
 

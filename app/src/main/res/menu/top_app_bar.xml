@@ -9,11 +9,11 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/profileFragment"
         android:title="@string/profileMenu"
         android:icon="@drawable/outline_account_circle_black_18"/>
     <item
-        android:id="@+id/configuration"
+        android:id="@+id/accountFragment"
         android:title="@string/configMenu"
         android:icon="@drawable/outline_settings_black_18"/>
 

@@ -1,11 +1,10 @@
-package com.grupo7.brasilflixapp.fragments.Detail
+package com.grupo7.brasilflixapp.fragments.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
 
 
