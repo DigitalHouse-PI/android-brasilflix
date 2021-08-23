@@ -1,9 +1,7 @@
-package com.grupo7.brasilflixapp.activity.MyPreference
+package com.grupo7.brasilflixapp.activity.myPreference
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.databinding.ActivityDetailBinding
 import com.grupo7.brasilflixapp.databinding.ActivityMyPreferenceBinding
 
 class MyPreferenceActivity : AppCompatActivity() {

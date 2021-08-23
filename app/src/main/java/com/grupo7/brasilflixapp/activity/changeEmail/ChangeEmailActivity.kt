@@ -1,8 +1,7 @@
-package com.grupo7.brasilflixapp.activity.ChangeEmail
+package com.grupo7.brasilflixapp.activity.changeEmail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.ActivityChangeEmailBinding
 
 class ChangeEmailActivity : AppCompatActivity() {
