@@ -36,7 +36,7 @@ class seriesAdapter (
         ) = with(binding) {
             series?.let {
                 Glide.with(itemView)
-                    .load("https://image.tmdb.org/t/p/w500/${series.poster_path}")
+                    .load(series.poster_path)
                     .placeholder(R.drawable.films)
                     .into(fotoFilme)
                 filmeName.text = series.original_name

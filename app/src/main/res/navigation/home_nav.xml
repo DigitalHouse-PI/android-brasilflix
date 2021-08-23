@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.home.HomeFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.home.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/popularFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.popular.popularFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.popular.view.popularFragment"
         android:label="fragment_popular"
         tools:layout="@layout/fragment_popular" />
     <fragment
         android:id="@+id/seriesFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.series.seriesFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.series.view.seriesFragment"
         android:label="fragment_series"
         tools:layout="@layout/fragment_series" />
 <fragment

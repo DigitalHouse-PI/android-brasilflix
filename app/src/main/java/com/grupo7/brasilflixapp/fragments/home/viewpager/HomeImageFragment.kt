@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.fragments.home
+package com.grupo7.brasilflixapp.fragments.home.viewpager
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

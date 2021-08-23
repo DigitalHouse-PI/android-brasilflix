@@ -34,7 +34,7 @@ class ProfileItemAdapter(
             when (item.action) {
                 ProfileItemActionEnum.GO_TO_EDIT_ACCOUNT -> {
                     binding.cvProfileItemContainer.setOnClickListener {
-                        binding.root.findNavController().navigate(R.id.action_profileFragment_to_accountFragment)
+//                        binding.root.findNavController().navigate(R.id.action_profileFragment_to_accountFragment)
                     }
                 }
                 else -> return

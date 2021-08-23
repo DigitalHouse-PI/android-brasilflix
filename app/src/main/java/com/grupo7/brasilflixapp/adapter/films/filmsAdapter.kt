@@ -32,11 +32,11 @@ class filmsAdapter (
         ) = with(binding) {
             films?.let {
                     Glide.with(itemView)
-                        .load("https://image.tmdb.org/t/p/w500/${films.poster_path}")
+                        .load(films.poster_path)
                         .placeholder(R.drawable.films)
                         .into(fotoFilme)
                     filmeName.text = films.title
-                    dataLancamento.text = "Data de lançamento: ${films.release_date}"
+                    dataLancamento.text = ("Data de lançamento:${films.release_date}")
                     voteModelText.text = films.vote_average.toString()
                 }
         }

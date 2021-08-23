@@ -1,8 +1,10 @@
 package com.grupo7.brasilflixapp.api.util
 
 import com.google.firebase.BuildConfig
+import com.grupo7.brasilflixapp.api.main.Endpoint
 import com.grupo7.brasilflixapp.util.constants.Constants.Api.API_CONST
 import com.grupo7.brasilflixapp.util.constants.Constants.Api.API_KEY_TMDB
+import com.grupo7.brasilflixapp.util.constants.Constants.Api.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,9 +17,12 @@ import com.grupo7.brasilflixapp.util.constants.Constants.Api.queryParamLanguageV
 
 class RetrofitInstance {
     companion object {
-        fun getRetrofitInstance(path: String): Retrofit {
+
+        val tmdbApi: Endpoint = getRetrofitInstance().create(Endpoint::class.java)
+
+        fun getRetrofitInstance(): Retrofit {
             return Retrofit.Builder()
-                .baseUrl(path)
+                .baseUrl(BASE_URL)
                 .client(getInterceptorClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
