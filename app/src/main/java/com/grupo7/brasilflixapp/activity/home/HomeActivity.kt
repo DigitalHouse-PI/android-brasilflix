@@ -25,11 +25,6 @@ class HomeActivity : AppCompatActivity() {
 
         setupSmoothBottomMenu()
 
-
-
-
-
-
 //    }
 //
 //    private fun setupSmoothBottomMenu(navController: NavController) {
