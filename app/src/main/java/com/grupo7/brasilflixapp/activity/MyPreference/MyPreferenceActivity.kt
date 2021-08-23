@@ -3,10 +3,16 @@ package com.grupo7.brasilflixapp.activity.MyPreference
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.grupo7.brasilflixapp.R
+import com.grupo7.brasilflixapp.databinding.ActivityDetailBinding
+import com.grupo7.brasilflixapp.databinding.ActivityMyPreferenceBinding
 
 class MyPreferenceActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMyPreferenceBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_preference)
+        binding = ActivityMyPreferenceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/teste_renan_nav"
+    app:startDestination="@id/changeEmailFragment">
+
+    <fragment
+        android:id="@+id/detailFragment2"
+        android:name="com.grupo7.brasilflixapp.fragments.Detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment2_to_preferencesFragment"
+            app:destination="@id/preferencesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeEmailFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.ChangeEmail.ChangeEmailFragment"
+        android:label="fragment_change_email"
+        tools:layout="@layout/fragment_change_email" >
+        <action
+            android:id="@+id/action_changeEmailFragment_to_detailFragment"
+            app:destination="@id/detailFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPreferenceFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.MyPreference.MyPreferenceFragment"
+        android:label="fragment_my_preference"
+        tools:layout="@layout/fragment_my_preference" />
+    <fragment
+        android:id="@+id/preferencesFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.Preferences.PreferencesFragment"
+        android:label="fragment_preferences"
+        tools:layout="@layout/fragment_preferences" >
+        <action
+            android:id="@+id/action_preferencesFragment_to_myPreferenceFragment"
+            app:destination="@id/myPreferenceFragment" />
+    </fragment>
+</navigation>

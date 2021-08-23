@@ -1,206 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.Detail.DetailFragment">
 
-   <androidx.appcompat.widget.Toolbar
-       android:id="@+id/wtToolbar"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:background="@color/topMenuHome"
-       android:minHeight="?attr/actionBarSize"
-       android:theme="?attr/actionBarTheme"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.0"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/wtToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/topMenuHome"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-   <ImageView
-       android:id="@+id/ivMenu"
-       android:layout_width="0dp"
-       android:layout_height="wrap_content"
-       android:src="@drawable/ic_menu_white_hamburger"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent"
-       android:layout_marginTop="16dp"
-       android:layout_marginLeft="16dp"/>
+    <ImageView
+        android:id="@+id/ivMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_menu_white_hamburger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/detalhe"
-       android:textSize="24sp"
-       android:textColor="@color/white"
-       app:layout_constraintStart_toEndOf="@id/ivMenu"
-       app:layout_constraintTop_toTopOf="parent"
-       app:layout_constraintEnd_toStartOf="@+id/ivSearch"
-       android:layout_marginLeft="33dp"
-       android:layout_marginTop="14dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/detalhe"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/ivSearch"
+        app:layout_constraintStart_toEndOf="@id/ivMenu"
+        app:layout_constraintTop_toTopOf="parent" />
 
-   <ImageView
-       android:id="@+id/ivSearch"
-       android:layout_width="wrap_content"
-       android:layout_height="30dp"
-       android:src="@drawable/ic_search_white_24dp"
-       android:layout_marginRight="16dp"
-       android:layout_marginTop="14dp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_search_white_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvCard"
-          android:layout_width="match_parent"
-          android:layout_height="176dp"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintTop_toBottomOf="@id/wtToolbar"
-          app:shapeAppearanceOverlay="@style/roundimageview"
-          android:backgroundTint="@color/black">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvCard"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wtToolbar"
+        app:shapeAppearanceOverlay="@style/roundimageview">
 
-      </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.card.MaterialCardView>
 
-   <TextView
-       android:id="@+id/tvTitle"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Minha mãe é uma peça 3"
-       android:layout_margin="16dp"
-       android:textSize="24dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/cvCard"/>
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Minha mãe é uma peça 3"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvCard" />
 
-   <TextView
-       android:id="@+id/tvCaption"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="Ano de lançamento: 2019"
-       android:layout_marginTop="8dp"
-       android:textSize="16dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+    <TextView
+        android:id="@+id/tvCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ano de lançamento: 2019"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-   <View
-       android:id="@+id/v_share"
-       android:layout_width="match_parent"
-       android:layout_height="1dp"
-       android:background="@color/button"
-       android:layout_margin="16dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/tvCaption"/>
+    <ImageView
+        android:id="@+id/ivShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:padding="10dp"
+        android:background="?selectableItemBackground"
+        android:src="@drawable/ic_bi_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCaption" />
 
-   <ImageView
-       android:id="@+id/ivShare"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:src="@drawable/ic_bi_share"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/v_share"
-       android:layout_margin="16dp"/>
+    <ImageView
+        android:id="@+id/ivMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_movie"
+        android:padding="10dp"
+        android:background="?selectableItemBackground"
+        app:layout_constraintEnd_toStartOf="@id/ivShare"
+        app:layout_constraintTop_toBottomOf="@id/tvCaption" />
 
-   <ImageView
-       android:id="@+id/ivMovie"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:src="@drawable/ic_movie"
-       app:layout_constraintTop_toBottomOf="@id/v_share"
-      app:layout_constraintEnd_toStartOf="@id/ivShare"
-       android:layout_margin="16dp"/>
+    <ImageView
+        android:id="@+id/ivHeart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_heart"
+        android:layout_margin="11dp"
+        android:padding="1dp"
+        android:background="?selectableItemBackground"
+        app:layout_constraintEnd_toStartOf="@id/ivMovie"
+        app:layout_constraintTop_toBottomOf="@id/tvCaption"/>
 
-   <ImageView
-       android:id="@+id/ivHeart"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:src="@drawable/ic_heart"
-       app:layout_constraintTop_toBottomOf="@id/v_share"
-       app:layout_constraintEnd_toStartOf="@id/ivMovie"
-       android:layout_margin="5dp"/>
+    <TextView
+        android:id="@+id/tvSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/Summary"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/ivHeart"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-   <View
-       android:id="@+id/v_share2"
-       android:layout_width="match_parent"
-       android:layout_height="1dp"
-       android:background="@color/button"
-       android:layout_margin="16dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/ivHeart"/>
-
-
-   <TextView
-       android:id="@+id/tvSummary"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/Summary"
-       android:textSize="18dp"
-       android:layout_marginLeft="16dp"
-       android:textColor="@color/white"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/v_share2"
-       android:layout_marginTop="16dp"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSummary">
 
 
-   <ScrollView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:fillViewport="true"
-       app:layout_constraintTop_toBottomOf="@id/tvSummary"
-       android:layout_marginTop="16dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16sp">
 
-   <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="vertical"
-          android:layout_marginTop="45dp">
+            <TextView
+                android:id="@+id/tvTextSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/textTest"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="16dp"
-          android:text="Mussum Ipsum, cacilds vidis
-          litro abertis. Mais vale um bebadis conhecidiss, q
-          ue um alcoolatra anonimis. Detraxit consequat et
-           quo num tendi nada. Interessantiss quisso pudia
-           ce receita de bolis, mais bolis eu num gostis.
-           Cevadis im ampola pa arma uma pindureta. Mussum
-           Ipsum, cacilds vidis litro abertis. Mais vale
-           um bebadis conhecidiss, que um alcoolatra anonimis.
-           Detraxit consequat et quo num tendi nada.
-           Interessantiss quisso pudia ce receita de bolis,
-            mais bolis eu num gostis. Cevadis im
-            ampola pa arma uma pindureta. Mussum Ipsum,
-            cacilds vidis litro abertis. Mais vale um
-            bebadis conhecidiss, que um alcoolatra
-            anonimis. Detraxit consequat et quo num tendi
-            nada. Interessantiss quisso pudia ce receita
-            de bolis, mais bolis eu num gostis. Cevadis im a
-            mpola pa arma uma pindureta. Mussum Ipsum,
-            cacilds vidis litro abertis. Mais vale um
-            bebadis conhecidiss, que um alcoolatra anonimis.
-            Detraxit consequat et quo num tendi nada.
-            Interessantiss quisso pudia ce receita de
-            bolis, mais bolis eu num gostis. Cevadis im ampola
-            pa arma uma pindureta. Mussum Ipsum,
-            cacilds vidis litro abertis. Mais vale um
-             bebadis conhecidiss, que um alcoolatra anonimis.
-             Detraxit consequat et quo num tendi nada. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Cevadis im ampola pa arma uma pindureta.  "
-          android:textAlignment="center"
-          android:textColor="@color/white" />
-
-   </LinearLayout>
-
-   </ScrollView>
-
-
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

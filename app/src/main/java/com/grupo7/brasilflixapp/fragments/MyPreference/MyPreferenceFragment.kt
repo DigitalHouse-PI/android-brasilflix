@@ -1,13 +1,15 @@
 package com.grupo7.brasilflixapp.fragments.MyPreference
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.grupo7.brasilflixapp.R
+import androidx.fragment.app.Fragment
+import com.grupo7.brasilflixapp.databinding.FragmentMyPreferenceBinding
 
 class MyPreferenceFragment : Fragment() {
+
+    private var binding: FragmentMyPreferenceBinding? = null
 
 
     override fun onCreateView(
@@ -15,7 +17,13 @@ class MyPreferenceFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_preference, container, false)
+        binding = FragmentMyPreferenceBinding.inflate(inflater,container,false)
+        return binding?.root
     }
 
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 }
