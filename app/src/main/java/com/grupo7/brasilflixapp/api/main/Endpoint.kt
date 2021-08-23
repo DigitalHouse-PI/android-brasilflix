@@ -20,5 +20,10 @@ interface Endpoint {
     @GET("movie/upcoming")
     suspend fun getUpComing(@Query("page") page: Int ) : Response<filmsResults>
 
+    @GET("search/movie")
+    suspend fun searchMovies(@Query("page") page: Int, @Query("query") search: String) : Response<filmsResults>
+
+
+
 
 }
