@@ -3,7 +3,7 @@ package com.grupo7.brasilflixapp.base
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.grupo7.brasilflixapp.api.util.ResponseApi
-import com.grupo7.brasilflixapp.util.commandAPI.Command
+import com.grupo7.brasilflixapp.api.util.Command
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.util.commandAPI
+package com.grupo7.brasilflixapp.api.util
 
 sealed class Command {
     class Loading(val value: Boolean): Command()

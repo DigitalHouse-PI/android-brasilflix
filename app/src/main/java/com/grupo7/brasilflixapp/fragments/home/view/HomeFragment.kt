@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,15 +14,9 @@ import com.grupo7.brasilflixapp.adapter.films.filmsAdapter
 import com.grupo7.brasilflixapp.adapter.home.homeVPAdapter
 import com.grupo7.brasilflixapp.adapter.upcoming.upcomingAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
-import com.grupo7.brasilflixapp.api.main.Endpoint
 import com.grupo7.brasilflixapp.model.films.films
-import com.grupo7.brasilflixapp.model.films.filmsResults
-import com.grupo7.brasilflixapp.api.util.RetrofitInstance
 import com.grupo7.brasilflixapp.fragments.home.viewpager.HomeImageFragment
 import com.grupo7.brasilflixapp.fragments.home.viewmodel.HomeViewModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class HomeFragment : Fragment() {

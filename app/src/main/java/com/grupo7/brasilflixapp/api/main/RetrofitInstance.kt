@@ -1,7 +1,6 @@
-package com.grupo7.brasilflixapp.api.util
+package com.grupo7.brasilflixapp.api.main
 
 import com.google.firebase.BuildConfig
-import com.grupo7.brasilflixapp.api.main.Endpoint
 import com.grupo7.brasilflixapp.util.constants.Constants.Api.API_CONST
 import com.grupo7.brasilflixapp.util.constants.Constants.Api.API_KEY_TMDB
 import com.grupo7.brasilflixapp.util.constants.Constants.Api.BASE_URL

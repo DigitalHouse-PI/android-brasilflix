@@ -1,7 +1,6 @@
-package com.grupo7.brasilflixapp.util.errorAPI
+package com.grupo7.brasilflixapp.api.util
 
-import com.grupo7.brasilflixapp.api.util.ApiError
-import com.grupo7.brasilflixapp.api.util.RetrofitInstance
+import com.grupo7.brasilflixapp.api.main.RetrofitInstance
 import okhttp3.ResponseBody
 import retrofit2.Converter
 import retrofit2.Response
