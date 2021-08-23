@@ -37,6 +37,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
         <activity
+            android:name=".activity.account.AccountActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.search.SearchActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.profile.ProfileActivity"
             android:exported="true" />
         <activity

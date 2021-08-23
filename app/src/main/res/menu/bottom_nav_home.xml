@@ -16,4 +16,9 @@
         android:icon="@drawable/outline_movie_creation_white_36"
         android:title="@string/seriesBottom" />
 
+<!--    <item-->
+<!--        android:id="@+id/searchFragment"-->
+<!--        android:icon="@drawable/search"-->
+<!--        android:title="@string/searchBottom" />-->
+
 </menu>

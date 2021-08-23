@@ -40,5 +40,6 @@
     <string name="confirmation_email_text2">Assim que aceitar, o email será alterado automaticamente.</string>
     <string name="voltar_para_a_home">home</string>
     <string name="error_default">Erro desconhecido, tente novamente.</string>
+    <string name="searchBottom">Buscar</string>
 
 </resources>

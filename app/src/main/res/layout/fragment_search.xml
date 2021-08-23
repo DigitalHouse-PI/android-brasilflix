@@ -3,16 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.profile.profileFragment">
+    tools:context=".fragments.search.view.SearchFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProfileItemList"
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/profile_clickable_item"
-        tools:itemCount="5"
-        />
-
-
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>
