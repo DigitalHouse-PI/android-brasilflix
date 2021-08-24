@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.fragments.MyPreference
+package com.grupo7.brasilflixapp.fragments.mypreference
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -17,7 +17,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:helperText="@string/helper_required"
         tools:ignore="RtlCompat"
-        app:startIconDrawable="@drawable/ic_nome">
+        app:startIconDrawable="@drawable/ic_nome"
+        app:boxStrokeColor="@color/button"
+        android:textColorHint="@color/button"
+        app:hintTextColor="@color/button">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/loginEmail"
@@ -39,6 +42,9 @@
         app:helperText="@string/helper_required"
         tools:ignore="RtlCompat"
         app:startIconDrawable="@drawable/ic_lock"
+        app:boxStrokeColor="@color/button"
+        android:textColorHint="@color/button"
+        app:hintTextColor="@color/button"
         >
 
         <com.google.android.material.textfield.TextInputEditText

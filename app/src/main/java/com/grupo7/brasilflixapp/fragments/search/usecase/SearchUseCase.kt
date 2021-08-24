@@ -13,11 +13,8 @@ class SearchUseCase {
     suspend fun searchMovies(search: String): ResponseApi {
         return when (val responseApi = searchRepository.searchMovies(search)) {
             is ResponseApi.Success -> {
-                val data = responseApi.data as? filmsResults
-                val result = data?.results?.map {
-                    it.poster_path = it.poster_path.getFullImageUrl()
-                    it
-                }
+                val data = responseApi.data as filmsResults
+                val result = data.results
                 ResponseApi.Success(result)
             }
             is ResponseApi.Error -> {
