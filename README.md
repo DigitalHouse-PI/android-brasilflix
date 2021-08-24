@@ -1,4 +1,4 @@
-# BrasilFlixapp - Ano 2021 [🔝](#welcome-badges-4-readmemd-profile)
+# BrasilFlixapp - Ano 2021 [🔝](#welcome-badges-4-readmemd-profile) Current Version 1.2
 
 Projeto BrasilFlix
 
