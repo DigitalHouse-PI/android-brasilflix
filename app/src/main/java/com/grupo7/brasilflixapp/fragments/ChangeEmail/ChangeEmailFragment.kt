@@ -27,7 +27,7 @@ class ChangeEmailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.btConfirm?.setOnClickListener {
-            findNavController().navigate(R.id.action_changeEmailFragment_to_detailFragment)
+//            findNavController().navigate(R.id.action_changeEmailFragment_to_detailFragment)
 
         }
     }

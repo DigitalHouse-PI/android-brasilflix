@@ -27,7 +27,7 @@ class PreferencesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.tvPreferencesNext?.setOnClickListener {
-            findNavController().navigate(R.id.action_preferencesFragment_to_myPreferenceFragment)
+//            findNavController().navigate(R.id.action_preferencesFragment_to_myPreferenceFragment)
         }
     }
 

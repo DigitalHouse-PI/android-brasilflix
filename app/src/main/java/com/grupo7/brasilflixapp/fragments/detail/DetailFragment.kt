@@ -5,13 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD:app/src/main/java/com/grupo7/brasilflixapp/fragments/detail/DetailFragment.kt
-=======
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.R.id.action_preferencesFragment_to_myPreferenceFragment
->>>>>>> feature/Renan:app/src/main/java/com/grupo7/brasilflixapp/fragments/Detail/DetailFragment.kt
+
+
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
 
 
@@ -32,7 +30,7 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.ivHeart?.setOnClickListener {
-            findNavController().navigate(R.id.action_detailFragment2_to_preferencesFragment)
+//            findNavController().navigate(R.id.action_detailFragment2_to_preferencesFragment)
         }
     }
 

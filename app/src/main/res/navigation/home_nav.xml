@@ -20,13 +20,12 @@
         android:name="com.grupo7.brasilflixapp.fragments.series.view.seriesFragment"
         android:label="fragment_series"
         tools:layout="@layout/fragment_series" />
-<<<<<<< HEAD
+
 <fragment
         android:id="@+id/detailFragment"
         android:name="com.grupo7.brasilflixapp.fragments.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
-=======
->>>>>>> feature/Renan
+
 
 </navigation>
