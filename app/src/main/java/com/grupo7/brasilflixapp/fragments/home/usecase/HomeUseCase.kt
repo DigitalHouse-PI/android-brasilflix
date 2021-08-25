@@ -14,7 +14,7 @@ class HomeUseCase {
             is ResponseApi.Success -> {
                 val data = responseApi.data as? filmsResults
                 val result = data?.results?.map {
-                    it.poster_path = it.poster_path.getFullImageUrl()
+                    it.poster_path = "https://image.tmdb.org/t/p/w500${it.poster_path}"
                     it
                 }
                 ResponseApi.Success(result)
