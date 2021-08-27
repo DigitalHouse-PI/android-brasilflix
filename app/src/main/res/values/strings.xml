@@ -9,6 +9,9 @@
     <string name="e_mail">E-mail</string>
     <string name="telefone">Telefone</string>
     <string name="senha">Senha</string>
+    <string name="oldpassword">Senha Atual</string>
+    <string name="newpassword">Nova Senha</string>
+    <string name="confirmPassword">Confirmar Nova Senha</string>
     <string name="helper_required">Obrigatório</string>
     <string name="modoescuro">Modo Escuro</string>
     <string name="loginsuccessfully">Login Efetuado</string>
@@ -38,14 +41,16 @@
     <string name="logo_brasilflix">Logo Brasilflix</string>
     <string name="confirmation_email_text1">Enviamos uma confirmação para o novo e-mail cadastrado.</string>
     <string name="confirmation_email_text2">Assim que aceitar, o email será alterado automaticamente.</string>
+    <string name="change_password_confirmation">Obrigado por se juntar a nós !!</string>
     <string name="voltar_para_a_home">home</string>
     <string name="error_default">Erro desconhecido, tente novamente.</string>
     <string name="searchBottom">Buscar</string>
     <string name="searchItens">Buscar Filmes / Séries</string>
     <string name="back">Voltar</string>
-
     <string name="changeEmail">Alterar Email</string>
+    <string name="changePassword">Alterar Senha</string>
     <string name="doNotStay">Não fique triste, vamos\n e ajudar na alteração do seu email!</string>
+    <string name="doNotStayPassword">Não fique triste, vamos\n e ajudar na alteração da senha!!</string>
     <string name="newEmail">Novo Email</string>
     <string name="returnV">voltar</string>
     <string name="confirm">Confirmar</string>
@@ -85,5 +90,6 @@
         Cevadis im ampola pa arma uma pindureta.</string>
     <string name="searchButton">Pesquisar</string>
     <string name="emptyfields">Por favor, preencha os campos corretamente</string>
+
 
 </resources>
