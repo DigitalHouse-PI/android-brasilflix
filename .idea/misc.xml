@@ -114,6 +114,7 @@
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_detail.xml" value="0.2234375" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_home.xml" value="0.2234375" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_redo_password.xml" value="0.2234375" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_tips.xml" value="0.2234375" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/change_password_confirmation.xml" value="0.2234375" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/confirmation_password.xml" value="0.2234375" />
@@ -124,6 +125,7 @@
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_confirmation_email.xml" value="0.1" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_confirmation_password.xml" value="0.2234375" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_login.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_redo_password.xml" value="0.2234375" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/password_confirmation_fragment.xml" value="0.16" />
       </map>
     </option>
