@@ -37,14 +37,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
-
+        <activity
+            android:name=".activity.detail.DetailActivity"
+            android:exported="true" />
         <activity
             android:name=".activity.changeEmail.ChangeEmailActivity"
-            android:exported="true">
-
-        </activity>
-
-
+            android:exported="true"></activity>
         <activity
             android:name=".activity.account.AccountActivity"
             android:exported="true" />
@@ -61,23 +59,16 @@
             android:name=".activity.preferences.PreferencesActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.detail.DetailActivity"
-            android:exported="true" />
-
-        <activity
             android:name=".activity.tips.TipsActivity"
             android:exported="true" />
         <activity android:name=".activity.home.HomeActivity" />
-
         <activity android:name=".activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity android:name=".activity.main.MainActivity" />
     </application>
 

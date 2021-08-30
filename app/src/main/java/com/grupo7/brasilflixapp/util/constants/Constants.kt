@@ -18,4 +18,9 @@ class Constants {
             else "en-US"
         }
     }
+
+    object Home {
+        const val KEY_BUNDLE_MOVIE_ID = "movieId"
+    }
+
 }

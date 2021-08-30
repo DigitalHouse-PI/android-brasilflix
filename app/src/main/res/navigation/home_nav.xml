@@ -9,21 +9,32 @@
         android:id="@+id/HomeFragment"
         android:name="com.grupo7.brasilflixapp.fragments.home.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_HomeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/popularFragment"
         android:name="com.grupo7.brasilflixapp.fragments.popular.view.popularFragment"
         android:label="fragment_popular"
-        tools:layout="@layout/fragment_popular" />
+        tools:layout="@layout/fragment_popular" >
+        <action
+            android:id="@+id/action_popularFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/seriesFragment"
         android:name="com.grupo7.brasilflixapp.fragments.series.view.seriesFragment"
         android:label="fragment_series"
-        tools:layout="@layout/fragment_series" />
-
-<fragment
+        tools:layout="@layout/fragment_series" >
+        <action
+            android:id="@+id/action_seriesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/detailFragment"
-        android:name="com.grupo7.brasilflixapp.fragments.detail.DetailFragment"
+        android:name="com.grupo7.brasilflixapp.fragments.detail.view.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
 

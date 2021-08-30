@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.fragments.popular.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,11 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.adapter.popular.popularAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentPopularBinding
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.fragments.popular.viewmodel.PopularViewModel
+import com.grupo7.brasilflixapp.util.constants.Constants
 
 
 class popularFragment : Fragment() {
@@ -61,11 +66,21 @@ class popularFragment : Fragment() {
 
     private fun showPopularFilms(filmsList: List<films>) {
         filmsList.forEach {
-            val filmeAdapter = popularAdapter(filmsList)
+            val filmeAdapter = popularAdapter(filmsList){ movie ->
+                val bundle = Bundle()
+                bundle.putInt(Constants.Home.KEY_BUNDLE_MOVIE_ID, movie.id)
+                findNavController().navigate(
+                    R.id.action_popularFragment_to_detailFragment,
+                    bundle
+                )
+            }
             binding?.let {
                 with(it) {
                     popularRecyclerView.layoutManager = LinearLayoutManager(context)
                     popularRecyclerView.adapter = filmeAdapter
+                    popularRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
+                        .Adapter.StateRestorationPolicy
+                        .PREVENT_WHEN_EMPTY
                 }
             }
         }

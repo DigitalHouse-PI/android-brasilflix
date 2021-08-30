@@ -11,6 +11,7 @@ import com.grupo7.brasilflixapp.model.films.films
 
 class filmsAdapter (
     private val filmsList: List<films>,
+    private val onClickListener: (films: films) -> Unit
 ) : RecyclerView.Adapter<filmsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -19,7 +20,7 @@ class filmsAdapter (
         return ViewHolder(binding)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(filmsList[position])
+        holder.bind(filmsList[position], onClickListener)
     }
     override fun getItemCount() = filmsList.size
 
@@ -29,6 +30,7 @@ class filmsAdapter (
 
         fun bind(
             films: films,
+            onClickListener: (films: films) -> Unit,
         ) = with(binding) {
             films?.let {
                     Glide.with(itemView)
@@ -38,6 +40,10 @@ class filmsAdapter (
                     filmeName.text = films.title
                     dataLancamento.text = ("Data de lançamento:${films.release_date}")
                     voteModelText.text = films.vote_average.toString()
+                    filmesContainer.setOnClickListener{
+                        onClickListener(films)
+                    }
+
                 }
         }
     }

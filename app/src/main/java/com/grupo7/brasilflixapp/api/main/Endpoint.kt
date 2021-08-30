@@ -1,10 +1,12 @@
 package com.grupo7.brasilflixapp.api.main
 
+import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.model.series.SeriesResults
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface Endpoint {
@@ -22,6 +24,11 @@ interface Endpoint {
 
     @GET("search/movie")
     suspend fun searchMovies(@Query("page") page: Int, @Query("query") search: String) : Response<filmsResults>
+
+    @GET("movie/{movie_id}")
+    suspend fun getMovieById(
+        @Path("movie_id") movieId: Int
+    ): Response<films>
 
 
 
