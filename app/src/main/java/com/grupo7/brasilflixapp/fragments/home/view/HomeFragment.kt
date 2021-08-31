@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
@@ -121,7 +122,7 @@ class HomeFragment : Fragment() {
             }
             binding?.let {
                 with(it) {
-                    filmesRecyclerView.layoutManager = LinearLayoutManager(context)
+                    filmesRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     filmesRecyclerView.adapter = filmeAdapter
                     filmesRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
                         .Adapter.StateRestorationPolicy
@@ -144,7 +145,7 @@ class HomeFragment : Fragment() {
             }
             binding?.let {
                 with(it) {
-                    upcomingRecyclerView.layoutManager = LinearLayoutManager(context)
+                    upcomingRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     upcomingRecyclerView.adapter = filmeAdapter
                     upcomingRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
                         .Adapter.StateRestorationPolicy
