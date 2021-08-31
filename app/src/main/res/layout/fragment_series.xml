@@ -10,7 +10,7 @@
         android:id="@+id/imageSeries"
         android:layout_width="0dp"
         android:layout_height="36dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/series"
         app:layout_constraintBottom_toTopOf="@id/seriesRecyclerView"
         app:layout_constraintStart_toStartOf="parent"

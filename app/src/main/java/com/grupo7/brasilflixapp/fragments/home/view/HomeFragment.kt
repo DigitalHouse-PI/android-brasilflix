@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
 import com.grupo7.brasilflixapp.R
+import com.grupo7.brasilflixapp.activity.account.AccountActivity
+import com.grupo7.brasilflixapp.activity.profile.ProfileActivity
+import com.grupo7.brasilflixapp.activity.search.SearchActivity
 import com.grupo7.brasilflixapp.adapter.films.filmsAdapter
 import com.grupo7.brasilflixapp.adapter.home.homeVPAdapter
 import com.grupo7.brasilflixapp.adapter.upcoming.upcomingAdapter
@@ -45,8 +48,28 @@ class HomeFragment : Fragment() {
         return binding?.root
     }
 
+    // ------------- Configuração Top Bar -------------//
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding?.topAppBar?.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.SearchFragment -> {
+                    startActivity(Intent(activity, SearchActivity::class.java))
+                    true
+                }
+                R.id.profileFragment -> {
+                    startActivity(Intent(activity, ProfileActivity::class.java))
+                    true
+                }
+                R.id.accountFragment -> {
+                    startActivity(Intent(activity, AccountActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
 
         // ------------- Chamando ViewModel -------------//
 

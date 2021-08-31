@@ -31,25 +31,6 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupSmoothBottomMenu()
-
-        binding?.topAppBar?.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.SearchFragment -> {
-                    startActivity(Intent(this, SearchActivity::class.java))
-                    true
-                }
-                R.id.profileFragment -> {
-                    startActivity(Intent(this, ProfileActivity::class.java))
-                    true
-                }
-                R.id.accountFragment -> {
-                    startActivity(Intent(this, AccountActivity::class.java))
-                    true
-                }
-                else -> false
-            }
-        }
-
     }
 
 
