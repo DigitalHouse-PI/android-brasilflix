@@ -14,6 +14,7 @@ import com.grupo7.brasilflixapp.model.series.Series
 
 class seriesAdapter (
     private val seriesList: List<Series>,
+    private val onClickListener: (series: Series) -> Unit
 ) : RecyclerView.Adapter<seriesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,7 +23,7 @@ class seriesAdapter (
         return ViewHolder(binding)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(seriesList[position])
+        holder.bind(seriesList[position], onClickListener)
     }
     override fun getItemCount() = seriesList.size
 
@@ -30,9 +31,9 @@ class seriesAdapter (
         val binding: FilmsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        @SuppressLint("SetTextI18n")
         fun bind(
             series: Series,
+            onClickListener: (series: Series) -> Unit,
         ) = with(binding) {
             series?.let {
                 Glide.with(itemView)
@@ -42,6 +43,9 @@ class seriesAdapter (
                 filmeName.text = series.original_name
                 dataLancamento.text = "Data de lançamento: ${series.first_air_date}"
                 voteModelText.text = series.vote_average.toString()
+                filmesContainer.setOnClickListener{
+                    onClickListener(series)
+                }
             }
         }
     }

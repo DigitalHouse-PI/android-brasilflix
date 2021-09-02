@@ -2,6 +2,7 @@ package com.grupo7.brasilflixapp.api.main
 
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
+import com.grupo7.brasilflixapp.model.series.Series
 import com.grupo7.brasilflixapp.model.series.SeriesResults
 import retrofit2.Call
 import retrofit2.Response
@@ -30,7 +31,10 @@ interface Endpoint {
         @Path("movie_id") movieId: Int
     ): Response<films>
 
-
+    @GET("tv/{tv_id}")
+    suspend fun getSeriesById(
+        @Path("tv_id") serieId: Int
+    ): Response<Series>
 
 
 }

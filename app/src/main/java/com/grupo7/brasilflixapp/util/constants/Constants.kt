@@ -21,6 +21,7 @@ class Constants {
 
     object Home {
         const val KEY_BUNDLE_MOVIE_ID = "movieId"
+        const val KEY_BUNDLE_SERIE_ID = "serieId"
     }
 
 }

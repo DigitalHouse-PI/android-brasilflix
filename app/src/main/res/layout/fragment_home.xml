@@ -17,7 +17,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".fragments.home.view.HomeFragment">
+            tools:context=".ui.fragments.home.view.HomeFragment">
 
             <!--      App Bar -->
 

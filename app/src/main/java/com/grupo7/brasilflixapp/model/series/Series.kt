@@ -10,6 +10,14 @@ class Series (
     @SerializedName("original_name")
     var original_name : String,
     @SerializedName("vote_average")
-    var vote_average: Double
+    var vote_average: Double,
+    @SerializedName("backdrop_path")
+    var backdrop_path: String? = null,
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("title")
+    var title: String,
+    @SerializedName("overview")
+    val overview: String
 
     )
