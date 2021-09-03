@@ -1,11 +1,10 @@
-package com.grupo7.brasilflixapp.adapter.search
+package com.grupo7.brasilflixapp.ui.fragments.search.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.adapter.films.filmsAdapter
 import com.grupo7.brasilflixapp.databinding.FilmsBinding
 import com.grupo7.brasilflixapp.model.films.films
 

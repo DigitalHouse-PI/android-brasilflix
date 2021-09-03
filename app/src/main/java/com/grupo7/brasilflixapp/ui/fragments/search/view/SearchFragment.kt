@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.grupo7.brasilflixapp.adapter.search.searchAdapter
+import com.grupo7.brasilflixapp.ui.fragments.search.adapter.searchAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSearchBinding
 import com.grupo7.brasilflixapp.ui.fragments.search.viewmodel.SearchViewModel
 import com.grupo7.brasilflixapp.model.films.films

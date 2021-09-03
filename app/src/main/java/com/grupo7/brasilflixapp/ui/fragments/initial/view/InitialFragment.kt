@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.grupo7.brasilflixapp.adapter.initial.initialVPAdapter
+import com.grupo7.brasilflixapp.ui.fragments.initial.view.initialVPAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentInitialBinding
 import com.grupo7.brasilflixapp.ui.fragments.login.LoginFragment
 import com.grupo7.brasilflixapp.ui.fragments.register.RegisterFragment

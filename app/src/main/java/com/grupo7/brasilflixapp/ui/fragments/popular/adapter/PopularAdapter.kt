@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.adapter.popular
+package com.grupo7.brasilflixapp.ui.fragments.popular.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.adapter.upcoming.upcomingAdapter
 import com.grupo7.brasilflixapp.databinding.FilmsBinding
 import com.grupo7.brasilflixapp.model.films.films
 

@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.ui.fragments.tips
+package com.grupo7.brasilflixapp.ui.fragments.tips.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

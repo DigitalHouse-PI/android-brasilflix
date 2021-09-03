@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.adapter.popular.popularAdapter
+import com.grupo7.brasilflixapp.ui.fragments.popular.adapter.popularAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentPopularBinding
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.ui.fragments.popular.viewmodel.PopularViewModel

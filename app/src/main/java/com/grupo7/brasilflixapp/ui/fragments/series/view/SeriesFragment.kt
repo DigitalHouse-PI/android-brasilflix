@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.adapter.series.seriesAdapter
+import com.grupo7.brasilflixapp.ui.fragments.series.adapter.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
 import com.grupo7.brasilflixapp.model.series.Series
 import com.grupo7.brasilflixapp.ui.fragments.series.viewmodel.SeriesViewModel

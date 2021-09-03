@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.model.films
 
+import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
 
 data class films(
@@ -17,4 +18,20 @@ data class films(
     val id: Int,
     @SerializedName("overview")
     val overview: String
-) {}
+) {
+
+    companion object {
+        var DIFF_CALLBACK: DiffUtil.ItemCallback<films> =
+            object : DiffUtil.ItemCallback<films>() {
+                override fun areItemsTheSame(oldItem: films, newItem: films): Boolean {
+                    return oldItem.id == newItem.id
+                }
+
+                override fun areContentsTheSame(oldItem: films, newItem: films): Boolean {
+                    return oldItem.id == newItem.id
+                }
+            }
+    }
+
+
+}

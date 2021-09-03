@@ -1,71 +1,46 @@
 package com.grupo7.brasilflixapp.ui.fragments.home.viewmodel
 
+import android.nfc.tech.MifareUltralight.PAGE_SIZE
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PageKeyedDataSource
+import androidx.paging.PagedList
 import com.grupo7.brasilflixapp.base.BaseViewModel
 import com.grupo7.brasilflixapp.ui.fragments.home.usecase.HomeUseCase
 import com.grupo7.brasilflixapp.model.films.films
+import com.grupo7.brasilflixapp.ui.fragments.home.paging.HomeDataSourceFactory
+import com.grupo7.brasilflixapp.ui.fragments.home.paging.HomePageKeyedDataSource
+import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
 import kotlinx.coroutines.launch
 
 class HomeViewModel : BaseViewModel() {
 
     private val homeUseCase = HomeUseCase()
+    private val homeRepository = HomeRepository()
 
-    private val _onSuccessTopRated: MutableLiveData<List<films>> =
-        MutableLiveData()
-    val onSuccessTopRated: LiveData<List<films>>
-        get() = _onSuccessTopRated
+//    <---------------------------------------------------- Setup Page 2 Home -------------------------------------->
 
-    private val _onErrorTopRated: MutableLiveData<Int> =
-        MutableLiveData()
-    val onErrorTopRated: LiveData<Int>
-        get() = _onErrorTopRated
+    var topRatedPagedList: LiveData<PagedList<films>>? = null
+    private var watchMoviesLiveDataSource: LiveData<PageKeyedDataSource<Int, films>>? = null
 
-    private val _onCustomErrorTopRated: MutableLiveData<Boolean> =
-        MutableLiveData()
-    val onCustomErrorTopRated: LiveData<Boolean>
-        get() = _onCustomErrorTopRated
+    init {
+        val pagedListConfig = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
+            .setPageSize(PAGE_SIZE).build()
 
-    private val _onSuccessUpcoming: MutableLiveData<List<films>> =
-        MutableLiveData()
-    val onSuccessUpcoming: LiveData<List<films>>
-        get() = _onSuccessUpcoming
 
-    private val _onErrorUpcoming: MutableLiveData<Int> =
-        MutableLiveData()
-    val onErrorUpcoming: LiveData<Int>
-        get() = _onErrorUpcoming
+        val homePageKeyedDataSource = HomePageKeyedDataSource(
+            homeUseCase = homeUseCase,
+            homeRepository = homeRepository
+        )
+        val homeDataSourceFactory = HomeDataSourceFactory(homePageKeyedDataSource)
 
-    fun getTopRatedMovies() {
-        viewModelScope.launch {
-            callApi(
-                suspend { homeUseCase.getTopRatedMovies() },
-                onSuccess = {
-                    val result = it as? List<*>
-                    _onSuccessTopRated.postValue(
-                        result?.filterIsInstance<films>()
-                    )
-                },
-                onError = {
-                    _onCustomErrorTopRated.postValue(true)
-                }
-            )
-        }
-    }
+        watchMoviesLiveDataSource = homeDataSourceFactory.getLiveDataSource()
+        topRatedPagedList = LivePagedListBuilder(homeDataSourceFactory, pagedListConfig)
+            .build()
 
-    fun getUpcomingMovies() {
-        viewModelScope.launch {
-            callApi(
-                suspend { homeUseCase.getUpcomingMovies() },
-                onSuccess = {
-                    val result = it as? List<*>
-                    _onSuccessUpcoming.postValue(
-                        result?.filterIsInstance<films>()
-                    )
-                }
-            )
-        }
     }
 
 }

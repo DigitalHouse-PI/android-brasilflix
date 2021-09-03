@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/tipsFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.tips.TipsFragment"
+        android:name="com.grupo7.brasilflixapp.ui.fragments.tips.view.TipsFragment"
         android:label="fragment_tips"
         tools:layout="@layout/fragment_tips" >
         <action

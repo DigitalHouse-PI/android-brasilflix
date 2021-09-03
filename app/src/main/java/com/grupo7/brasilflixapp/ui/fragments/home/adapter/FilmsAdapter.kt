@@ -1,7 +1,8 @@
-package com.grupo7.brasilflixapp.adapter.films
+package com.grupo7.brasilflixapp.ui.fragments.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
@@ -10,9 +11,8 @@ import com.grupo7.brasilflixapp.model.films.films
 
 
 class filmsAdapter (
-    private val filmsList: List<films>,
     private val onClickListener: (films: films) -> Unit
-) : RecyclerView.Adapter<filmsAdapter.ViewHolder>() {
+) : PagedListAdapter<films, filmsAdapter.ViewHolder>(films.DIFF_CALLBACK){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FilmsBinding
@@ -20,9 +20,8 @@ class filmsAdapter (
         return ViewHolder(binding)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(filmsList[position], onClickListener)
+        getItem(position)?.let { holder.bind(it, onClickListener) }
     }
-    override fun getItemCount() = filmsList.size
 
     class ViewHolder(
         val binding: FilmsBinding
@@ -32,7 +31,7 @@ class filmsAdapter (
             films: films,
             onClickListener: (films: films) -> Unit,
         ) = with(binding) {
-            films?.let {
+            films.let {
                     Glide.with(itemView)
                         .load(films.poster_path)
                         .placeholder(R.drawable.films)

@@ -6,18 +6,9 @@ import com.grupo7.brasilflixapp.base.BaseRepository
 
 class HomeRepository : BaseRepository() {
 
-    suspend fun getTopRatedMovies(): ResponseApi {
+    suspend fun getTopRatedMovies(page: Int): ResponseApi {
         return safeApiCall {
-            RetrofitInstance.tmdbApi.getFilmes(2)
+            RetrofitInstance.tmdbApi.getFilmes(page)
         }
     }
-
-    suspend fun getUpcomingMovies(): ResponseApi {
-        return safeApiCall {
-            RetrofitInstance.tmdbApi.getUpComing(1)
-        }
-    }
-
-
-
 }

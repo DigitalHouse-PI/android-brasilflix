@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.ui.fragments.profile
+package com.grupo7.brasilflixapp.ui.fragments.profile.view
 
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.grupo7.brasilflixapp.adapter.profile.ProfileItemAdapter
+import com.grupo7.brasilflixapp.ui.fragments.profile.adapter.ProfileItemAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentProfileBinding
 import com.grupo7.brasilflixapp.model.profile.ItemProfile
 import com.grupo7.brasilflixapp.util.enumarators.ProfileItemActionEnum

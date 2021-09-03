@@ -16,11 +16,9 @@ import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.ui.activity.account.AccountActivity
 import com.grupo7.brasilflixapp.ui.activity.profile.ProfileActivity
 import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity
-import com.grupo7.brasilflixapp.adapter.films.filmsAdapter
-import com.grupo7.brasilflixapp.adapter.home.homeVPAdapter
-import com.grupo7.brasilflixapp.adapter.upcoming.upcomingAdapter
+import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
+import com.grupo7.brasilflixapp.ui.fragments.home.adapter.homeVPAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
-import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.ui.fragments.home.viewpager.HomeImageFragment
 import com.grupo7.brasilflixapp.ui.fragments.home.viewmodel.HomeViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
@@ -34,7 +32,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
     }
 
@@ -74,82 +71,16 @@ class HomeFragment : Fragment() {
         activity?.let {
             viewModel = ViewModelProvider(it)[HomeViewModel::class.java]
 
-
             viewModel.command = MutableLiveData()
 
-            viewModel.getTopRatedMovies()
+            setupObservables()
+            setupRecyclerView()
 
-            viewModel.getUpcomingMovies()
         }
 
         // ------------- Mostrar ViewPager Tela Home -------------//
+
         showViewPagerHome()
-
-
-        // ------------- Setar dados ViewModel no RecycleView -------------//
-
-        viewModel.onSuccessTopRated.observe(viewLifecycleOwner, {
-            it?.let {
-                showTopRated(it)
-            }
-        })
-
-        viewModel.onSuccessUpcoming.observe(viewLifecycleOwner, {
-            it?.let {
-                showUpComing(it)
-            }
-        })
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
-    private fun showTopRated(filmsList: List<films>) {
-        filmsList.forEach {
-            val filmeAdapter = filmsAdapter(filmsList){ movie ->
-                val bundle = Bundle()
-                bundle.putInt(KEY_BUNDLE_MOVIE_ID, movie.id)
-                findNavController().navigate(
-                    R.id.action_HomeFragment_to_detailFragment,
-                    bundle
-                )
-            }
-            binding?.let {
-                with(it) {
-                    filmesRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                    filmesRecyclerView.adapter = filmeAdapter
-                    filmesRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
-                        .Adapter.StateRestorationPolicy
-                        .PREVENT_WHEN_EMPTY
-                }
-            }
-        }
-    }
-
-    private fun showUpComing(filmsList: List<films>) {
-        filmsList.forEach {
-            val filmeAdapter = upcomingAdapter(filmsList){ movie ->
-                val bundle = Bundle()
-                bundle.putInt(KEY_BUNDLE_MOVIE_ID, movie.id)
-                findNavController().navigate(
-                    R.id.action_HomeFragment_to_detailFragment,
-                    bundle
-                )
-
-            }
-            binding?.let {
-                with(it) {
-                    upcomingRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                    upcomingRecyclerView.adapter = filmeAdapter
-                    upcomingRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
-                        .Adapter.StateRestorationPolicy
-                        .PREVENT_WHEN_EMPTY
-                }
-            }
-        }
     }
 
     private fun showViewPagerHome() {
@@ -167,4 +98,40 @@ class HomeFragment : Fragment() {
             binding?.dotsIndicatorHome?.setViewPager(viewPager)
         }
     }
+
+//    <------------------------------------------------------ Setup Page 2 -------------------------------------->
+
+    private val filmsAdapter: filmsAdapter by lazy {
+        filmsAdapter { topRated ->
+            val bundle = Bundle()
+            bundle.putInt(KEY_BUNDLE_MOVIE_ID, topRated.id ?: -1)
+            findNavController().navigate(
+                R.id.action_HomeFragment_to_detailFragment,
+                bundle
+            )
+        }
+    }
+
+    private fun setupObservables() {
+        viewModel.topRatedPagedList?.observe(viewLifecycleOwner, {
+            filmsAdapter.submitList(it)
+        })
+
+    }
+
+    private fun setupRecyclerView() {
+        binding?.filmesRecyclerView?.apply {
+            layoutManager = LinearLayoutManager(this.context)
+            adapter = filmsAdapter
+            adapter?.stateRestorationPolicy = RecyclerView
+                .Adapter.StateRestorationPolicy
+                .PREVENT_WHEN_EMPTY
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
 }

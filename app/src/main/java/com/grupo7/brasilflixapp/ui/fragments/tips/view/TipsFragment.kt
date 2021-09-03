@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.ui.fragments.tips
+package com.grupo7.brasilflixapp.ui.fragments.tips.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.ViewPager
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.ui.activity.home.HomeActivity
-import com.grupo7.brasilflixapp.adapter.tips.tipsVPAdapter
+import com.grupo7.brasilflixapp.ui.fragments.tips.adapter.tipsVPAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentTipsBinding
 
 class TipsFragment : Fragment() {

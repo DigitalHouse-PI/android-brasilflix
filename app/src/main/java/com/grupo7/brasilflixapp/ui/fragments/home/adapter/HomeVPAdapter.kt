@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.adapter.home
+package com.grupo7.brasilflixapp.ui.fragments.home.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

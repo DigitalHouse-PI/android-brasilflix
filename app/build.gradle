@@ -92,6 +92,11 @@ dependencies {
     //ExoPlayer
     implementation 'com.google.android.exoplayer:exoplayer:2.15.0'
 
+    //Jetpack
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha03"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha03"
+    implementation "androidx.paging:paging-runtime:3.0.1"
+
 
 
 

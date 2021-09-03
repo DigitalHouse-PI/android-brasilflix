@@ -1,21 +1,18 @@
-package com.grupo7.brasilflixapp.adapter.series
+package com.grupo7.brasilflixapp.ui.fragments.home.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
-import com.grupo7.brasilflixapp.adapter.upcoming.upcomingAdapter
 import com.grupo7.brasilflixapp.databinding.FilmsBinding
 import com.grupo7.brasilflixapp.model.films.films
-import com.grupo7.brasilflixapp.model.series.Series
 
-
-class seriesAdapter (
-    private val seriesList: List<Series>,
-    private val onClickListener: (series: Series) -> Unit
-) : RecyclerView.Adapter<seriesAdapter.ViewHolder>() {
+class upcomingAdapter (
+    private val onClickListener: (films: films) -> Unit
+) : PagedListAdapter<films, upcomingAdapter.ViewHolder>(films.DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FilmsBinding
@@ -23,28 +20,28 @@ class seriesAdapter (
         return ViewHolder(binding)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(seriesList[position], onClickListener)
+        getItem(position)?.let { holder.bind(it, onClickListener) }
     }
-    override fun getItemCount() = seriesList.size
 
     class ViewHolder(
         val binding: FilmsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(
-            series: Series,
-            onClickListener: (series: Series) -> Unit,
+            films: films,
+            onClickListener: (films: films) -> Unit,
         ) = with(binding) {
-            series?.let {
+            films?.let {
                 Glide.with(itemView)
-                    .load(series.poster_path)
+                    .load(films.poster_path)
                     .placeholder(R.drawable.films)
                     .into(fotoFilme)
-                filmeName.text = series.original_name
-                dataLancamento.text = "Data de lançamento: ${series.first_air_date}"
-                voteModelText.text = series.vote_average.toString()
+                filmeName.text = films.title
+                dataLancamento.text = "Data de lançamento: ${films.release_date}"
+                voteModelText.text = films.vote_average.toString()
                 filmesContainer.setOnClickListener{
-                    onClickListener(series)
+                    onClickListener(films)
                 }
             }
         }

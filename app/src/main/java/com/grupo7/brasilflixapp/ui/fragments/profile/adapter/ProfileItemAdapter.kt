@@ -1,11 +1,9 @@
-package com.grupo7.brasilflixapp.adapter.profile
+package com.grupo7.brasilflixapp.ui.fragments.profile.adapter
 
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.ProfileClickableItemBinding
 import com.grupo7.brasilflixapp.databinding.ProfileNonClickableItemBinding
 import com.grupo7.brasilflixapp.model.profile.ItemProfile
