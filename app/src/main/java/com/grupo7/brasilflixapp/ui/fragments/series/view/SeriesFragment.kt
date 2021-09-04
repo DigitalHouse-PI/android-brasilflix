@@ -66,11 +66,12 @@ class seriesFragment : Fragment() {
         seriesList.forEach {
             val seriesAdapter = seriesAdapter(seriesList){ serie ->
                 val bundle = Bundle()
-                bundle.putInt(Constants.Home.KEY_BUNDLE_SERIE_ID, serie.id)
-                findNavController().navigate(
-                    R.id.action_seriesFragment_to_detailFragment,
-                    bundle
-                )
+                serie.id?.let { it1 -> bundle.putInt(Constants.Home.KEY_BUNDLE_SERIE_ID, it1) }
+                    findNavController().navigate(
+                        R.id.action_seriesFragment_to_detailFragment,
+                        bundle
+                    )
+
             }
             binding?.let {
                 with(it) {

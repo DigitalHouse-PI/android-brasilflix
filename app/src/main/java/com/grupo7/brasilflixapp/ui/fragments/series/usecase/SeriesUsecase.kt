@@ -1,6 +1,7 @@
 package com.grupo7.brasilflixapp.ui.fragments.series.usecase
 
 import com.grupo7.brasilflixapp.api.util.ResponseApi
+import com.grupo7.brasilflixapp.extensions.getDateBR
 import com.grupo7.brasilflixapp.extensions.getFullImageUrl
 import com.grupo7.brasilflixapp.ui.fragments.series.repository.SeriesRepository
 import com.grupo7.brasilflixapp.model.series.SeriesResults
@@ -14,7 +15,8 @@ class SeriesUsecase {
             is ResponseApi.Success -> {
                 val data = responseApi.data as? SeriesResults
                 val result = data?.results?.map {
-                    it.poster_path = it.poster_path.getFullImageUrl()
+                    it.poster_path = it.poster_path?.getFullImageUrl()
+                    it.first_air_date = it.first_air_date?.getDateBR()
                     it
                 }
                 ResponseApi.Success(result)

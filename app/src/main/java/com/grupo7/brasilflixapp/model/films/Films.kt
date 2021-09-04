@@ -7,17 +7,17 @@ data class films(
     @SerializedName("poster_path")
     var poster_path: String? = null,
     @SerializedName("release_date")
-    var release_date: String,
+    var release_date: String? = null,
     @SerializedName("title")
-    var title: String,
+    var title: String? = null,
     @SerializedName("vote_average")
-    var vote_average: Double,
+    var vote_average: Double? = null,
     @SerializedName("backdrop_path")
     var backdrop_path: String? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("overview")
-    val overview: String
+    val overview: String? = null
 ) {
 
     companion object {

@@ -1,6 +1,7 @@
 package com.grupo7.brasilflixapp.ui.fragments.home.usecase
 
 import com.grupo7.brasilflixapp.api.util.ResponseApi
+import com.grupo7.brasilflixapp.extensions.getDateBR
 import com.grupo7.brasilflixapp.extensions.getFullImageUrl
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
@@ -13,6 +14,7 @@ class HomeUseCase {
         return list?.results?.map {
             it.backdrop_path = it.backdrop_path?.getFullImageUrl()
             it.poster_path = it.poster_path?.getFullImageUrl()
+            it.release_date = it.release_date?.getDateBR()
             it
         } ?: listOf()
     }

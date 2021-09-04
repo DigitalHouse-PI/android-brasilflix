@@ -1,6 +1,7 @@
 package com.grupo7.brasilflixapp.ui.fragments.detail.usecase
 
 import com.grupo7.brasilflixapp.api.util.ResponseApi
+import com.grupo7.brasilflixapp.extensions.getDateBR
 import com.grupo7.brasilflixapp.extensions.getFullImageUrl
 import com.grupo7.brasilflixapp.ui.fragments.detail.repository.DetailRepository
 import com.grupo7.brasilflixapp.model.films.films
@@ -15,6 +16,7 @@ class DetailUseCase {
             is ResponseApi.Success -> {
                 val films = responseApi.data as? films
                 films?.backdrop_path = films?.backdrop_path?.getFullImageUrl()
+                films?.release_date = films?.release_date?.getDateBR().toString()
                 return ResponseApi.Success(films)
             }
             is ResponseApi.Error -> {
@@ -28,6 +30,7 @@ class DetailUseCase {
             is ResponseApi.Success -> {
                 val Series = responseApi.data as? Series
                 Series?.backdrop_path = Series?.backdrop_path?.getFullImageUrl()
+                Series?.first_air_date = Series?.first_air_date?.getDateBR().toString()
                 return ResponseApi.Success(Series)
             }
             is ResponseApi.Error -> {

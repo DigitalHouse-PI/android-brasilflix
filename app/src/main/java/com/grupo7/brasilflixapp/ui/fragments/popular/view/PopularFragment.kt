@@ -67,7 +67,7 @@ class popularFragment : Fragment() {
         filmsList.forEach {
             val filmeAdapter = popularAdapter(filmsList){ movie ->
                 val bundle = Bundle()
-                bundle.putInt(Constants.Home.KEY_BUNDLE_MOVIE_ID, movie.id)
+                movie.id?.let { it1 -> bundle.putInt(Constants.Home.KEY_BUNDLE_MOVIE_ID, it1) }
                 findNavController().navigate(
                     R.id.action_popularFragment_to_detailFragment,
                     bundle

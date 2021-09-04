@@ -74,7 +74,7 @@ class DetailFragment : Fragment() {
                         }
                         tvTitle.text = movie.title
                         tvTextSummary.text = movie.overview
-                        dateCardDetail.text = ("Data de lançamento:${movie.release_date}")
+                        dateCardDetail.text = ("Data de lançamento:  ${movie.release_date}")
                     }
                 }
             }
