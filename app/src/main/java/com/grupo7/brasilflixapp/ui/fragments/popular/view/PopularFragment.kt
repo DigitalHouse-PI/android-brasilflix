@@ -83,6 +83,10 @@ class popularFragment : Fragment() {
                 }
             }
         }
+
+
+
+
     }
 
 }

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -36,17 +37,28 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding?.buttonSearch?.setOnClickListener{
-            val searchtext = binding?.searchText?.text.toString()
 
-            // ------------- Chamando ViewModel -------------//
+        // ------------- Chamando ViewModel -------------//
 
             activity?.let {
                 viewModel = ViewModelProvider(it)[SearchViewModel::class.java]
 
                 viewModel.command = MutableLiveData()
 
-                viewModel.searchMovies(searchtext)
+                binding?.searchField?.setOnQueryTextListener(object :
+                    androidx.appcompat.widget.SearchView.OnQueryTextListener {
+                    override fun onQueryTextSubmit(query: String?): Boolean {
+                        query?.let {
+                            viewModel.searchMovies(it)
+                        }
+                        return true
+                    }
+
+                    override fun onQueryTextChange(newText: String?): Boolean {
+                        return false
+                    }
+                })
+
 
             }
           // ------------- Setar dados ViewModel no RecycleView -------------//
@@ -60,9 +72,6 @@ class SearchFragment : Fragment() {
 
         }
 
-
-    }
-
     private fun showTopRated(filmsList: List<films>) {
         filmsList.forEach {
             val searchAdapter = searchAdapter(filmsList)
@@ -74,11 +83,15 @@ class SearchFragment : Fragment() {
             }
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
     }
 
+    }
 
-}
+
+
+
+
+

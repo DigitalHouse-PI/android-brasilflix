@@ -29,9 +29,9 @@ class searchAdapter (
         fun bind(
             films: films,
         ) = with(binding) {
-            films?.let {
+            films.let {
                 Glide.with(itemView)
-                    .load("https://image.tmdb.org/t/p/w500{$films.poster_path}")
+                    .load(films.poster_path)
                     .placeholder(R.drawable.films)
                     .into(fotoFilme)
                 filmeName.text = films.title
