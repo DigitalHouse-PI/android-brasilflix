@@ -77,7 +77,7 @@ class SearchFragment : Fragment() {
             val searchAdapter = searchAdapter(filmsList)
             binding?.let {
                 with(it) {
-                    searchRecyclerView.layoutManager = LinearLayoutManager(context)
+                    searchRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     searchRecyclerView.adapter = searchAdapter
                 }
             }

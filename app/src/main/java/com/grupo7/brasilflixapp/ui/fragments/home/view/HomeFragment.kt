@@ -19,6 +19,7 @@ import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.homeVPAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
+import com.grupo7.brasilflixapp.ui.fragments.home.adapter.upcomingAdapter
 import com.grupo7.brasilflixapp.ui.fragments.home.viewpager.HomeImageFragment
 import com.grupo7.brasilflixapp.ui.fragments.home.viewmodel.HomeViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
@@ -73,33 +74,19 @@ class HomeFragment : Fragment() {
 
             viewModel.command = MutableLiveData()
 
-            setupObservables()
-            setupRecyclerView()
+            setupObservablesToprated()
+            setupRecyclerViewToprated()
+            setupObservablesUpComing()
+            setupRecyclerViewUpComing()
 
         }
 
         // ------------- Mostrar ViewPager Tela Home -------------//
 
-        showViewPagerHome()
+//        showViewPagerHome()
     }
 
-    private fun showViewPagerHome() {
-
-        val fragments = listOf(
-            HomeImageFragment.newInstance(0),
-            HomeImageFragment.newInstance(1),
-            HomeImageFragment.newInstance(2),
-            HomeImageFragment.newInstance(3)
-        )
-        val homeViewPager = homeVPAdapter(fragments, childFragmentManager)
-        val viewPager = view?.findViewById<ViewPager>(R.id.viewPagerHome)
-        viewPager?.adapter = homeViewPager
-        if (viewPager != null) {
-            binding?.dotsIndicatorHome?.setViewPager(viewPager)
-        }
-    }
-
-//    <------------------------------------------------------ Setup Page 2 -------------------------------------->
+//    <------------------------------------------------------ Setup Page 2 - TopRated -------------------------------------->
 
     private val filmsAdapter: filmsAdapter by lazy {
         filmsAdapter { topRated ->
@@ -112,17 +99,47 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setupObservables() {
+    private fun setupObservablesToprated() {
         viewModel.topRatedPagedList?.observe(viewLifecycleOwner, {
             filmsAdapter.submitList(it)
         })
 
     }
 
-    private fun setupRecyclerView() {
+    private fun setupRecyclerViewToprated() {
         binding?.filmesRecyclerView?.apply {
-            layoutManager = LinearLayoutManager(this.context)
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = filmsAdapter
+            adapter?.stateRestorationPolicy = RecyclerView
+                .Adapter.StateRestorationPolicy
+                .PREVENT_WHEN_EMPTY
+        }
+    }
+
+    //    <------------------------------------------------------ Setup Page 2 - UpComing -------------------------------------->
+
+    private val upcomingAdapter: upcomingAdapter by lazy {
+        upcomingAdapter { upcoming ->
+            val bundle = Bundle()
+            bundle.putInt(KEY_BUNDLE_MOVIE_ID, upcoming.id ?: -1)
+            findNavController().navigate(
+                R.id.action_HomeFragment_to_detailFragment,
+                bundle
+            )
+        }
+    }
+
+    private fun setupObservablesUpComing() {
+        viewModel.upComingPagedList?.observe(viewLifecycleOwner, {
+            upcomingAdapter.submitList(it)
+        })
+
+    }
+
+    private fun setupRecyclerViewUpComing() {
+        binding?.upcomingRecyclerView?.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = upcomingAdapter
             adapter?.stateRestorationPolicy = RecyclerView
                 .Adapter.StateRestorationPolicy
                 .PREVENT_WHEN_EMPTY

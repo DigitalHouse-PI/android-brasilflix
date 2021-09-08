@@ -38,7 +38,7 @@ class seriesAdapter (
                     .placeholder(R.drawable.films)
                     .into(fotoFilme)
                 filmeName.text = series.original_name
-                dataLancamento.text = "Data de lançamento: ${series.first_air_date}"
+                dataLancamento.text = series.first_air_date
                 voteModelText.text = series.vote_average.toString()
                 filmesContainer.setOnClickListener{
                     onClickListener(series)

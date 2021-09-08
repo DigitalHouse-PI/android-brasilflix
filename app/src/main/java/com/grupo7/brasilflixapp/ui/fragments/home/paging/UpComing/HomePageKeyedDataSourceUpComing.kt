@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.ui.fragments.home.paging
+package com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing
 
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.api.util.ResponseApi
@@ -6,12 +6,12 @@ import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
 import com.grupo7.brasilflixapp.ui.fragments.home.usecase.HomeUseCase
-import com.grupo7.brasilflixapp.util.constants.Constants.Home.FIRST_PAGE
+import com.grupo7.brasilflixapp.util.constants.Constants
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomePageKeyedDataSource(
+class HomePageKeyedDataSourceUpComing (
     private val homeRepository: HomeRepository,
     private val homeUseCase: HomeUseCase
 ) : PageKeyedDataSource<Int, films>() {
@@ -21,8 +21,8 @@ class HomePageKeyedDataSource(
         callback: LoadInitialCallback<Int, films>
     ) {
         CoroutineScope(Dispatchers.IO).launch {
-            val movies: List<films> = getTopRatedMovies(FIRST_PAGE)
-            callback.onResult(movies, null, FIRST_PAGE + 1)
+            val movies: List<films> = getUpComingMovies(Constants.Home.FIRST_PAGE)
+            callback.onResult(movies, null, Constants.Home.FIRST_PAGE + 1)
         }
     }
 
@@ -36,18 +36,18 @@ class HomePageKeyedDataSource(
 
     private fun loadData(page: Int, nextPage: Int, callback: LoadCallback<Int, films>) {
         CoroutineScope(Dispatchers.IO).launch {
-            val films: List<films> = getTopRatedMovies(page)
+            val films: List<films> = getUpComingMovies(page)
             callback.onResult(films, nextPage)
         }
 
     }
-    suspend fun getTopRatedMovies(page: Int): List<films>{
+    suspend fun getUpComingMovies(page: Int): List<films>{
         return when (
-            val response = homeRepository.getTopRatedMovies(page)
+            val response = homeRepository.getUpComingMovies(page)
         ) {
             is ResponseApi.Success -> {
                 val list = response.data as? filmsResults
-               return homeUseCase.setupTopRatedList(list)
+                return homeUseCase.setupUpComingList(list)
             }
             is ResponseApi.Error -> {
                 listOf()

@@ -16,7 +16,7 @@ class AccountActivity : AppCompatActivity() {
         binding = ActivityAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding?.topAppBar?.setOnMenuItemClickListener { menuItem ->
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.backbutton -> {
                     startActivity(Intent(this, HomeActivity::class.java))

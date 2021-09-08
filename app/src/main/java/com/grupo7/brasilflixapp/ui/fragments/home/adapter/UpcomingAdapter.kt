@@ -27,7 +27,6 @@ class upcomingAdapter (
         val binding: FilmsBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        @SuppressLint("SetTextI18n")
         fun bind(
             films: films,
             onClickListener: (films: films) -> Unit,
@@ -38,7 +37,7 @@ class upcomingAdapter (
                     .placeholder(R.drawable.films)
                     .into(fotoFilme)
                 filmeName.text = films.title
-                dataLancamento.text = "Data de lançamento: ${films.release_date}"
+                dataLancamento.text = films.release_date
                 voteModelText.text = films.vote_average.toString()
                 filmesContainer.setOnClickListener{
                     onClickListener(films)

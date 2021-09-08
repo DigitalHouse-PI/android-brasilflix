@@ -75,7 +75,7 @@ class seriesFragment : Fragment() {
             }
             binding?.let {
                 with(it) {
-                    seriesRecyclerView.layoutManager = LinearLayoutManager(context)
+                    seriesRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     seriesRecyclerView.adapter = seriesAdapter
                     seriesRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
                         .Adapter.StateRestorationPolicy

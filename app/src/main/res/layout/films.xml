@@ -2,115 +2,83 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    android:elevation="5dp"
+    android:padding="5dp"
     android:id="@+id/filmesContainer"
-    style="@style/WatchCardDefault"
-    android:background="?selectableItemBackground">
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="220dp"
+        android:layout_height="350dp">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/fotoFilme"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:clickable="true"
+            android:focusable="true"
             android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_margin="8dp"
-            android:adjustViewBounds="true"
             />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/filmeName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="29dp"
+            android:fontFamily="@font/rubik_bold"
+            android:gravity="center"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/dataLancamento"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fotoFilme"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Homem Aranha" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fotoFilme"
+            tools:text="Título do Filme" />
 
-        <TextView
-            android:id="@+id/dataLancamento"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/filmeName"
-            app:layout_constraintStart_toStartOf="@+id/filmeName"
-            app:layout_constraintTop_toBottomOf="@+id/filmeName"
-            app:layout_constraintVertical_bias="1.0"
-            tools:text="Data lançamento: 1974-12-20" />
-
-        <ImageButton
-            android:id="@+id/btWatchShare"
-            style="@style/ButtonIcon"
-            android:layout_width="@dimen/button_icon_size"
-            android:layout_height="@dimen/button_icon_size"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_baseline_share_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="#090808" />
-
-        <ImageButton
-            android:id="@+id/btFavoriteMovie"
-            style="@style/ButtonIcon"
-            android:layout_width="@dimen/button_icon_size"
-            android:layout_height="@dimen/button_icon_size"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_favorite_border_24px"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btWatchShare"
-            app:layout_constraintTop_toTopOf="@+id/btWatchShare"
-            app:tint="#090809" />
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/vote_model_text"
-            android:layout_width="@dimen/text_icon_size_model"
-            android:layout_height="@dimen/text_icon_size_model"
-            app:layout_constraintEnd_toStartOf="@+id/btFavoriteMovie"
-            app:layout_constraintTop_toBottomOf="@+id/dataLancamento"
-            tools:text="9.8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/rubik_light"
             android:gravity="center"
-            android:fontFamily="@font/rubik_bold"
-            />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filmeName"
+            tools:text="10" />
 
-        <ImageButton
-            android:id="@+id/starModel"
-            style="@style/ButtonIcon"
-            android:layout_width="@dimen/button_icon_size"
-            android:layout_height="@dimen/button_icon_size"
-            android:background="?attr/selectableItemBackgroundBorderless"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dataLancamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubik_light"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filmeName"
+            tools:text="2020" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/ic_baseline_star_rate_24"
+            app:layout_constraintBottom_toBottomOf="@+id/vote_model_text"
             app:layout_constraintEnd_toStartOf="@+id/vote_model_text"
-            app:layout_constraintTop_toBottomOf="@+id/dataLancamento"
-
-             />
-
-        <ImageButton
-            android:id="@+id/trailerModel"
-            style="@style/ButtonIcon"
-            android:layout_width="@dimen/button_icon_size"
-            android:layout_height="@dimen/button_icon_size"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_baseline_movie_filter_24"
-            app:layout_constraintEnd_toStartOf="@+id/starModel"
-            app:layout_constraintTop_toBottomOf="@+id/dataLancamento"
-
-            />
-
+            app:layout_constraintTop_toTopOf="@+id/vote_model_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </com.google.android.material.card.MaterialCardView>

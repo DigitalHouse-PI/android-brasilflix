@@ -1,18 +1,19 @@
-package com.grupo7.brasilflixapp.ui.fragments.home.paging
+package com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.model.films.films
+import com.grupo7.brasilflixapp.ui.fragments.home.paging.TopRated.HomePageKeyedDataSourceTopRated
 
-class HomeDataSourceFactory(
-    private val tmdbDataSource: HomePageKeyedDataSource
+class HomeDataSourceFactoryUpComing (
+    private val tmdbDataSourceUpComing: HomePageKeyedDataSourceUpComing
 ): DataSource.Factory<Int, films>() {
 
     private val tmdbLiveDataSource = MutableLiveData<PageKeyedDataSource<Int, films>>()
     override fun create(): DataSource<Int, films> {
-        tmdbLiveDataSource.postValue(tmdbDataSource)
-        return tmdbDataSource
+        tmdbLiveDataSource.postValue(tmdbDataSourceUpComing)
+        return tmdbDataSourceUpComing
     }
 
     fun getLiveDataSource() : MutableLiveData<PageKeyedDataSource<Int, films>> {

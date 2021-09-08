@@ -75,7 +75,7 @@ class popularFragment : Fragment() {
             }
             binding?.let {
                 with(it) {
-                    popularRecyclerView.layoutManager = LinearLayoutManager(context)
+                    popularRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     popularRecyclerView.adapter = filmeAdapter
                     popularRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
                         .Adapter.StateRestorationPolicy

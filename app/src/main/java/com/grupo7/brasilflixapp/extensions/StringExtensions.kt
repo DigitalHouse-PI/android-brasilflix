@@ -7,6 +7,6 @@ fun String.getDateBR(): String {
     val year = dateList[0]
     val month = dateList[1]
     val day = dateList[2]
-    val date = "$day-$month-$year"
+    val date = "$day/$month/$year"
     return date
 }

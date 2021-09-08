@@ -11,4 +11,10 @@ class HomeRepository : BaseRepository() {
             RetrofitInstance.tmdbApi.getFilmes(page)
         }
     }
+
+    suspend fun getUpComingMovies(page: Int): ResponseApi {
+        return safeApiCall {
+            RetrofitInstance.tmdbApi.getUpComing(page)
+        }
+    }
 }
