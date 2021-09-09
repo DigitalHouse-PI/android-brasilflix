@@ -8,6 +8,8 @@ import androidx.paging.PagedList
 import com.grupo7.brasilflixapp.base.BaseViewModel
 import com.grupo7.brasilflixapp.ui.fragments.home.usecase.HomeUseCase
 import com.grupo7.brasilflixapp.model.films.films
+import com.grupo7.brasilflixapp.ui.fragments.home.paging.Popular.HomeDataSourceFactoryPopular
+import com.grupo7.brasilflixapp.ui.fragments.home.paging.Popular.HomePageKeyedDataSourcePopular
 import com.grupo7.brasilflixapp.ui.fragments.home.paging.TopRated.HomeDataSourceFactoryTopRated
 import com.grupo7.brasilflixapp.ui.fragments.home.paging.TopRated.HomePageKeyedDataSourceTopRated
 import com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing.HomeDataSourceFactoryUpComing
@@ -61,6 +63,29 @@ class HomeViewModel : BaseViewModel() {
 
         watchMoviesLiveDataSourceUpComing = homeDataSourceFactoryUpComing.getLiveDataSource()
         upComingPagedList = LivePagedListBuilder(homeDataSourceFactoryUpComing, pagedListConfig)
+            .build()
+
+    }
+
+    //    <---------------------------------------------------- Setup Page 2 Home - Popular-------------------------------------->
+
+    var popularPagedList: LiveData<PagedList<films>>? = null
+    private var watchMoviesLiveDataSourcePopular: LiveData<PageKeyedDataSource<Int, films>>? = null
+
+    init {
+        val pagedListConfig = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
+            .setPageSize(PAGE_SIZE).build()
+
+
+        val homePageKeyedDataSourcePopular = HomePageKeyedDataSourcePopular(
+            homeUseCase = homeUseCase,
+            homeRepository = homeRepository
+        )
+        val homeDataSourceFactoryPopular = HomeDataSourceFactoryPopular(homePageKeyedDataSourcePopular)
+
+        watchMoviesLiveDataSourcePopular = homeDataSourceFactoryPopular.getLiveDataSource()
+        popularPagedList = LivePagedListBuilder(homeDataSourceFactoryPopular, pagedListConfig)
             .build()
 
     }

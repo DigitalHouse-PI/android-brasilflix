@@ -28,6 +28,15 @@ class HomeUseCase {
         } ?: listOf()
     }
 
+    fun setupPopularList(list: filmsResults?): List<films> {
+        return list?.results?.map {
+            it.backdrop_path = it.backdrop_path?.getFullImageUrl()
+            it.poster_path = it.poster_path?.getFullImageUrl()
+            it.release_date = it.release_date?.getDateBR()
+            it
+        } ?: listOf()
+    }
+
 
 
 }

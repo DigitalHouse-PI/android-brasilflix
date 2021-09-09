@@ -3,9 +3,9 @@
 
 
     <item
-        android:id="@+id/popularFragment"
-        android:icon="@drawable/outline_theaters_white_36"
-        android:title="@string/filmsBottom" />
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/outline_favorite_border_white_36"
+        android:title="@string/favoritesBottom" />
 
     <item
         android:id="@+id/HomeFragment"

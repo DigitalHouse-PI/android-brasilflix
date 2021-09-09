@@ -17,4 +17,10 @@ class HomeRepository : BaseRepository() {
             RetrofitInstance.tmdbApi.getUpComing(page)
         }
     }
+
+    suspend fun getPopularMovies(page: Int): ResponseApi {
+        return safeApiCall {
+            RetrofitInstance.tmdbApi.getPopular(page)
+        }
+    }
 }

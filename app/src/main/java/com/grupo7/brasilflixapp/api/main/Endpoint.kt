@@ -20,6 +20,9 @@ interface Endpoint {
     @GET("tv/on_the_air")
     suspend fun getSeries(@Query("page") page: Int ) : Response<SeriesResults>
 
+    @GET("tv/top_rated")
+    suspend fun getSeriesTopRated(@Query("page") page: Int ) : Response<SeriesResults>
+
     @GET("movie/upcoming")
     suspend fun getUpComing(@Query("page") page: Int ) : Response<filmsResults>
 

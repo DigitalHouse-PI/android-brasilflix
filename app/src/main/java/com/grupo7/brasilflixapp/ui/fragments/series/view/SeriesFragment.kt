@@ -14,6 +14,7 @@ import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.ui.fragments.series.adapter.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
 import com.grupo7.brasilflixapp.model.series.Series
+import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
 import com.grupo7.brasilflixapp.ui.fragments.series.viewmodel.SeriesViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants
 
@@ -47,41 +48,43 @@ class seriesFragment : Fragment() {
 
             viewModel.command = MutableLiveData()
 
-            viewModel.getSeries()
+            setupObservablesSeries()
+            setupRecyclerViewSeries()
 
         }
 
-        // ------------- Setar dados ViewModel no RecycleView -------------//
 
-        viewModel.onSuccessTopRated.observe(viewLifecycleOwner, {
-            it?.let {
-                showSeries(it)
-            }
-        })
 
 
     }
 
-    private fun showSeries(seriesList: List<Series>) {
-        seriesList.forEach {
-            val seriesAdapter = seriesAdapter(seriesList){ serie ->
-                val bundle = Bundle()
-                serie.id?.let { it1 -> bundle.putInt(Constants.Home.KEY_BUNDLE_SERIE_ID, it1) }
-                    findNavController().navigate(
-                        R.id.action_seriesFragment_to_detailFragment,
-                        bundle
-                    )
+//    <------------------------------------------------------ Setup Page 2 - Series originals -------------------------------------->
 
-            }
-            binding?.let {
-                with(it) {
-                    seriesRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-                    seriesRecyclerView.adapter = seriesAdapter
-                    seriesRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
-                        .Adapter.StateRestorationPolicy
-                        .PREVENT_WHEN_EMPTY
-                }
-            }
+    private val seriesAdapter: seriesAdapter by lazy {
+        seriesAdapter { series ->
+            val bundle = Bundle()
+            bundle.putInt(Constants.Home.KEY_BUNDLE_MOVIE_ID, series.id ?: -1)
+            findNavController().navigate(
+                R.id.action_seriesFragment_to_detailFragment,
+                bundle
+            )
+        }
+    }
+
+    private fun setupObservablesSeries() {
+        viewModel.seriesPagedList?.observe(viewLifecycleOwner, {
+            seriesAdapter.submitList(it)
+        })
+
+    }
+
+    private fun setupRecyclerViewSeries() {
+        binding?.seriesRecyclerView?.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = seriesAdapter
+            adapter?.stateRestorationPolicy = RecyclerView
+                .Adapter.StateRestorationPolicy
+                .PREVENT_WHEN_EMPTY
         }
     }
 

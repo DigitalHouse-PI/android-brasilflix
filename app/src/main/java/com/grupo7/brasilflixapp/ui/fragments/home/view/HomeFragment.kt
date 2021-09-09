@@ -11,17 +11,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.ViewPager
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.ui.activity.account.AccountActivity
 import com.grupo7.brasilflixapp.ui.activity.profile.ProfileActivity
 import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
-import com.grupo7.brasilflixapp.ui.fragments.home.adapter.homeVPAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.upcomingAdapter
-import com.grupo7.brasilflixapp.ui.fragments.home.viewpager.HomeImageFragment
 import com.grupo7.brasilflixapp.ui.fragments.home.viewmodel.HomeViewModel
+import com.grupo7.brasilflixapp.ui.fragments.favorites.adapter.popularAdapter
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
 
 
@@ -78,6 +76,8 @@ class HomeFragment : Fragment() {
             setupRecyclerViewToprated()
             setupObservablesUpComing()
             setupRecyclerViewUpComing()
+            setupObservablesPopular()
+            setupRecyclerViewPopular()
 
         }
 
@@ -140,6 +140,36 @@ class HomeFragment : Fragment() {
         binding?.upcomingRecyclerView?.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = upcomingAdapter
+            adapter?.stateRestorationPolicy = RecyclerView
+                .Adapter.StateRestorationPolicy
+                .PREVENT_WHEN_EMPTY
+        }
+    }
+
+    //    <------------------------------------------------------ Setup Page 2 - Popular -------------------------------------->
+
+    private val popularAdapter: popularAdapter by lazy {
+        popularAdapter { popular ->
+            val bundle = Bundle()
+            bundle.putInt(KEY_BUNDLE_MOVIE_ID, popular.id ?: -1)
+            findNavController().navigate(
+                R.id.action_HomeFragment_to_detailFragment,
+                bundle
+            )
+        }
+    }
+
+    private fun setupObservablesPopular() {
+        viewModel.popularPagedList?.observe(viewLifecycleOwner, {
+            popularAdapter.submitList(it)
+        })
+
+    }
+
+    private fun setupRecyclerViewPopular() {
+        binding?.popularRecyclerView?.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = popularAdapter
             adapter?.stateRestorationPolicy = RecyclerView
                 .Adapter.StateRestorationPolicy
                 .PREVENT_WHEN_EMPTY
