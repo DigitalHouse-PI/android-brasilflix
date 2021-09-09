@@ -65,7 +65,7 @@ class seriesFragment : Fragment() {
             val bundle = Bundle()
             bundle.putInt(Constants.Home.KEY_BUNDLE_MOVIE_ID, series.id ?: -1)
             findNavController().navigate(
-                R.id.action_seriesFragment_to_detailFragment,
+                R.id.action_HomeFragment_to_detailFragment,
                 bundle
             )
         }
