@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
+import com.grupo7.brasilflixapp.model.reviews.ReviewsUser
+import com.grupo7.brasilflixapp.ui.fragments.detail.adapter.DetailReviewAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.viewmodel.DetailViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_SERIE_ID
@@ -47,6 +51,8 @@ class DetailFragment : Fragment() {
 
             viewModel.getMovieById(movieId)
 
+            viewModel.getReviewsMovies(movieId)
+
             viewModel.getSeriesById(serieId)
 
             setupDetailMovie()
@@ -58,6 +64,12 @@ class DetailFragment : Fragment() {
         binding?.ivMenu?.setOnClickListener{
             activity?.onBackPressed()
         }
+
+        viewModel.onSuccessReviewsMovies.observe(viewLifecycleOwner, {
+            it?.let {
+                setupReviewsMovies(it)
+            }
+        })
 
     }
 
@@ -101,6 +113,24 @@ class DetailFragment : Fragment() {
                 }
             }
         })
+
+
+    }
+
+    private fun setupReviewsMovies(reviewsList: List<ReviewsUser>) {
+        reviewsList.forEach {
+                val ReviewsAdapter = DetailReviewAdapter(reviewsList)
+            binding?.let {
+                with(it) {
+                    reviewsRecyclerView.layoutManager = LinearLayoutManager(context)
+                    reviewsRecyclerView.adapter = ReviewsAdapter
+                    reviewsRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
+                        .Adapter.StateRestorationPolicy
+                        .PREVENT_WHEN_EMPTY
+                }
+            }
+            }
+
 
 
     }

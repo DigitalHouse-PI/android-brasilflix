@@ -43,7 +43,7 @@
     <string name="searchBottom">Buscar</string>
     <string name="searchItens">Buscar Filmes / Séries</string>
     <string name="back">Voltar</string>
-
+    <string name="media_poster">Movie or Series Image</string>
     <string name="changeEmail">Alterar Email</string>
     <string name="doNotStay">Não fique triste, vamos\n e ajudar na alteração do seu email!</string>
     <string name="newEmail">Novo Email</string>
