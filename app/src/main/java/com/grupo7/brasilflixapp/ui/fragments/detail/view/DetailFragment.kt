@@ -96,7 +96,7 @@ class DetailFragment : Fragment() {
                         }
                         tvTitle.text = serie.original_name
                         tvTextSummary.text = serie.overview
-                        dateCardDetail.text = ("Data de lançamento:${serie.first_air_date}")
+                        dateCardDetail.text = ("Data de lançamento:  ${serie.first_air_date}")
                     }
                 }
             }
