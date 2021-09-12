@@ -37,48 +37,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
-
         <activity
-            android:name=".activity.changeEmail.ChangeEmailActivity"
-            android:exported="true">
-
-        </activity>
-
-
-        <activity
-            android:name=".activity.account.AccountActivity"
+            android:name="com.grupo7.brasilflixapp.ui.activity.detail.DetailActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.search.SearchActivity"
+            android:name="com.grupo7.brasilflixapp.ui.activity.changeEmail.ChangeEmailActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name="com.grupo7.brasilflixapp.ui.activity.account.AccountActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.profile.ProfileActivity"
+            android:name="com.grupo7.brasilflixapp.ui.activity.search.SearchActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.myPreference.MyPreferenceActivity"
+            android:name="com.grupo7.brasilflixapp.ui.activity.profile.ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.preferences.PreferencesActivity"
+            android:name="com.grupo7.brasilflixapp.ui.activity.myPreference.MyPreferenceActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.detail.DetailActivity"
+            android:name="com.grupo7.brasilflixapp.ui.activity.preferences.PreferencesActivity"
             android:exported="true" />
-
         <activity
-            android:name=".activity.tips.TipsActivity"
+            android:name="com.grupo7.brasilflixapp.ui.activity.tips.TipsActivity"
             android:exported="true" />
-        <activity android:name=".activity.home.HomeActivity" />
-
-        <activity android:name=".activity.splash.SplashActivity">
+        <activity android:name="com.grupo7.brasilflixapp.ui.activity.home.HomeActivity" />
+        <activity android:name="com.grupo7.brasilflixapp.ui.activity.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity android:name=".activity.main.MainActivity" />
+        <activity android:name="com.grupo7.brasilflixapp.ui.activity.main.MainActivity" />
     </application>
 
 </manifest>

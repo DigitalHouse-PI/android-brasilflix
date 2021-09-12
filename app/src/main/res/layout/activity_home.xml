@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.home.HomeActivity">
+    android:id="@+id/homeLayout"
+    tools:context=".ui.activity.home.HomeActivity">
 
 <!--      Nav Host -->
+
+    <!--      Bottom Nav -->
 
     <fragment
         android:id="@+id/nav_host_fragment"
@@ -14,35 +17,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/home_nav" />
-
-    <!--      App Bar -->
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/appBarLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="@string/page_home"
-            app:menu="@menu/top_app_bar"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            android:background="@color/topMenuHome"
-            />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-<!--      Bottom Nav -->
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
@@ -52,6 +33,7 @@
         app:menu="@menu/bottom_nav_home"
         app:indicatorRadius="20dp"
         app:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 
