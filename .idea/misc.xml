@@ -113,6 +113,29 @@
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/menu/bottom_nav_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/menu/top_app_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/renan/Desktop/BrasilFlix/android-brasilflix/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/drawable/confirmation_password_image.xml" value="0.24375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout-v21/Activity_change_password_confirmation.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout-v21/fragment_confirmation_email.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout-v21/fragment_confirmation_password.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_account.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_change_email.xml" value="0.20697463768115942" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_change_password.xml" value="0.20697463768115942" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_detail.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_home.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_redo_password.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/activity_tips.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/change_password_confirmation.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/confirmation_password.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_account.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_change_email.xml" value="0.2" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_change_password.xml" value="0.264" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_change_password_confirmation.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_confirmation_email.xml" value="0.1" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_confirmation_password.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_login.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/fragment_redo_password.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/AndroidStudioProjects/droid/android-brasilflix/app/src/main/res/layout/password_confirmation_fragment.xml" value="0.16" />
       </map>
     </option>
   </component>
