@@ -5,8 +5,7 @@ import com.grupo7.brasilflixapp.extensions.getDateBR
 import com.grupo7.brasilflixapp.extensions.getFullImageUrl
 import com.grupo7.brasilflixapp.ui.fragments.detail.repository.DetailRepository
 import com.grupo7.brasilflixapp.model.films.films
-import com.grupo7.brasilflixapp.model.reviews.ReviewsResults
-import com.grupo7.brasilflixapp.model.reviews.ReviewsUser
+import com.grupo7.brasilflixapp.model.reviews.ReviewResults
 import com.grupo7.brasilflixapp.model.series.Series
 
 class DetailUseCase {
@@ -46,18 +45,20 @@ class DetailUseCase {
     suspend fun getReviewsMovies(movieId: Int): ResponseApi {
         return when(val responseApi = detailRepository.getReviewsMovies(movieId)) {
             is ResponseApi.Success -> {
-                var result1: List<ReviewsUser>? = null
-                val data = responseApi.data as? ReviewsResults
-                val result = data?.results
-                result?.forEach{
-                   result1 = it.author_details
+                val data = responseApi.data as? ReviewResults
+                val result = data?.results?.map{
+                    it.author_details.avatar_path = it.author_details.avatar_path.getFullImageUrl()
+                    it
                 }
-                return ResponseApi.Success(result1)
+                return ResponseApi.Success(result)
             }
             is ResponseApi.Error -> {
                 responseApi
             }
         }
     }
+
+
+
 
 }

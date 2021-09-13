@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.grupo7.brasilflixapp.base.BaseViewModel
 import com.grupo7.brasilflixapp.ui.fragments.detail.usecase.DetailUseCase
 import com.grupo7.brasilflixapp.model.films.films
-import com.grupo7.brasilflixapp.model.reviews.ReviewsUser
+import com.grupo7.brasilflixapp.model.reviews.AuthorResults
 import com.grupo7.brasilflixapp.model.series.Series
 import kotlinx.coroutines.launch
 
@@ -22,8 +22,8 @@ class DetailViewModel: BaseViewModel() {
     val onSuccessSeriesById: LiveData<Series>
         get() = _onSuccessSeriesById
 
-    private val _onSuccessReviewsMovies: MutableLiveData<List<ReviewsUser>> = MutableLiveData()
-    val onSuccessReviewsMovies: LiveData<List<ReviewsUser>>
+    private val _onSuccessReviewsMovies: MutableLiveData<List<AuthorResults>> = MutableLiveData()
+    val onSuccessReviewsMovies: LiveData<List<AuthorResults>>
         get() = _onSuccessReviewsMovies
 
     fun getMovieById(movieId: Int) {
@@ -54,7 +54,7 @@ class DetailViewModel: BaseViewModel() {
                 onSuccess = {
                     val result = it as? List<*>
                     _onSuccessReviewsMovies.postValue(
-                        result?.filterIsInstance<ReviewsUser>()
+                        result?.filterIsInstance<AuthorResults>()
                     )
                 }
             )

@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.ReviewsBinding
-import com.grupo7.brasilflixapp.model.reviews.ReviewsUser
+import com.grupo7.brasilflixapp.model.reviews.AuthorResults
 
 class DetailReviewAdapter (
-    private val reviewsList: List<ReviewsUser>,
+    private val reviewsList: List<AuthorResults>,
 ) : RecyclerView.Adapter<DetailReviewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,15 +30,15 @@ class DetailReviewAdapter (
 
 
         fun bind(
-            ReviewsUser: ReviewsUser,
+            Result: AuthorResults,
         ) = with(binding) {
-            ReviewsUser?.let {
+            Result?.let {
                 Glide.with(itemView)
-                    .load(ReviewsUser.avatar_path)
-                    .placeholder(R.drawable.films)
+                    .load(Result.author_details.avatar_path)
+                    .placeholder(R.drawable.brflixlogo)
                     .into(reviewImage)
-                reviewTitle.text = ("Nota: $ReviewsUser.name")
-                reviewComment.text = ReviewsUser.rating.toString()
+                reviewTitle.text = Result.author_details.name
+                reviewRating.text = Result.author_details.rating.toString()
 
             }
         }

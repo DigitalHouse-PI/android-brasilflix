@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
-import com.grupo7.brasilflixapp.model.reviews.ReviewsUser
 import com.grupo7.brasilflixapp.ui.fragments.detail.adapter.DetailReviewAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.viewmodel.DetailViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
@@ -49,11 +48,13 @@ class DetailFragment : Fragment() {
 
             viewModel.command = MutableLiveData()
 
-            viewModel.getMovieById(movieId)
-
             viewModel.getReviewsMovies(movieId)
 
+            viewModel.getMovieById(movieId)
+
             viewModel.getSeriesById(serieId)
+
+            setupReviewsMovies()
 
             setupDetailMovie()
 
@@ -65,11 +66,10 @@ class DetailFragment : Fragment() {
             activity?.onBackPressed()
         }
 
-        viewModel.onSuccessReviewsMovies.observe(viewLifecycleOwner, {
-            it?.let {
-                setupReviewsMovies(it)
-            }
-        })
+
+
+
+
 
     }
 
@@ -94,7 +94,6 @@ class DetailFragment : Fragment() {
 
 
     }
-
     private fun setupDetailSerie() {
 
         viewModel.onSuccessSeriesById.observe(viewLifecycleOwner, {
@@ -117,9 +116,10 @@ class DetailFragment : Fragment() {
 
     }
 
-    private fun setupReviewsMovies(reviewsList: List<ReviewsUser>) {
-        reviewsList.forEach {
-                val ReviewsAdapter = DetailReviewAdapter(reviewsList)
+    private fun setupReviewsMovies() {
+        viewModel.onSuccessReviewsMovies.observe(viewLifecycleOwner, {
+            it?.let {
+                val ReviewsAdapter = DetailReviewAdapter(it)
             binding?.let {
                 with(it) {
                     reviewsRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -130,7 +130,7 @@ class DetailFragment : Fragment() {
                 }
             }
             }
-
+        })
 
 
     }
