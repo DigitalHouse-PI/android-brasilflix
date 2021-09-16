@@ -94,8 +94,8 @@ class HomeFragment : Fragment() {
         filmsAdapter { topRated ->
             val bundle = Bundle()
             bundle.putInt(KEY_BUNDLE_MOVIE_ID, topRated.id ?: -1)
-            bundle.putString(KEY_BUNDLE_MOVIE_POSTER, (topRated.poster_path))
-            bundle.putString(KEY_BUNDLE_MOVIE_TITLE, (topRated.title))
+            bundle.putString(KEY_BUNDLE_MOVIE_POSTER, topRated.poster_path)
+            bundle.putString(KEY_BUNDLE_MOVIE_TITLE, topRated.title)
             findNavController().navigate(
                 R.id.action_HomeFragment_to_detailFragment,
                 bundle
@@ -126,8 +126,8 @@ class HomeFragment : Fragment() {
         upcomingAdapter { upcoming ->
             val bundle = Bundle()
             bundle.putInt(KEY_BUNDLE_MOVIE_ID, upcoming.id ?: -1)
-            bundle.putString(KEY_BUNDLE_MOVIE_POSTER, (upcoming.poster_path ?: -1).toString())
-            bundle.putString(KEY_BUNDLE_MOVIE_TITLE, (upcoming.title ?: -1).toString())
+            bundle.putString(KEY_BUNDLE_MOVIE_POSTER, upcoming.poster_path)
+            bundle.putString(KEY_BUNDLE_MOVIE_TITLE, upcoming.title)
             findNavController().navigate(
                 R.id.action_HomeFragment_to_detailFragment,
                 bundle
@@ -158,8 +158,8 @@ class HomeFragment : Fragment() {
         popularAdapter { popular ->
             val bundle = Bundle()
             bundle.putInt(KEY_BUNDLE_MOVIE_ID, popular.id ?: -1)
-            bundle.putString(KEY_BUNDLE_MOVIE_POSTER, (popular.poster_path ?: -1).toString())
-            bundle.putString(KEY_BUNDLE_MOVIE_TITLE, (popular.title ?: -1).toString())
+            bundle.putString(KEY_BUNDLE_MOVIE_POSTER, popular.poster_path)
+            bundle.putString(KEY_BUNDLE_MOVIE_TITLE, popular.title)
             findNavController().navigate(
                 R.id.action_HomeFragment_to_detailFragment,
                 bundle
