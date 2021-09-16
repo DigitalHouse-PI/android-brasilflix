@@ -17,6 +17,7 @@ class DetailUseCase {
             is ResponseApi.Success -> {
                 val films = responseApi.data as? films
                 films?.backdrop_path = films?.backdrop_path?.getFullImageUrl()
+                films?.poster_path = films?.poster_path?.getFullImageUrl()
                 films?.release_date = films?.release_date?.getDateBR().toString()
                 return ResponseApi.Success(films)
             }

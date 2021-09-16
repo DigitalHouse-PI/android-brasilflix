@@ -3,6 +3,7 @@ package com.grupo7.brasilflixapp.ui.fragments.series.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
@@ -14,7 +15,7 @@ import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
 
 class seriesAdapter (
     private val onClickListener: (series: Series) -> Unit
-) : PagedListAdapter<Series, seriesAdapter.ViewHolder>(Series.DIFF_CALLBACK) {
+) : ListAdapter<Series, seriesAdapter.ViewHolder>(Series.DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = FilmsBinding

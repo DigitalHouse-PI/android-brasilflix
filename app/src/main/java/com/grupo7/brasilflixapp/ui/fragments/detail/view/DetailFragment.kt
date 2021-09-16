@@ -10,11 +10,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.grupo7.brasilflixapp.database.favorites.FavoritesDatabase
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
+import com.grupo7.brasilflixapp.model.favorites.Favorites
 import com.grupo7.brasilflixapp.ui.fragments.detail.adapter.DetailReviewAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.viewmodel.DetailViewModel
+import com.grupo7.brasilflixapp.util.constants.Constants
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
+import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_POSTER
+import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_TITLE
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_SERIE_ID
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class DetailFragment : Fragment() {
@@ -23,6 +30,10 @@ class DetailFragment : Fragment() {
     private val movieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_MOVIE_ID) ?: -1
     }
+    private val moviePoster = arguments?.getString(KEY_BUNDLE_MOVIE_POSTER)
+
+    private val movieTitle = arguments?.getString(KEY_BUNDLE_MOVIE_TITLE)
+
     private val serieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_SERIE_ID) ?: -1
     }
@@ -66,11 +77,16 @@ class DetailFragment : Fragment() {
             activity?.onBackPressed()
         }
 
-
-
-
-
-
+        binding?.ivHeart?.setOnClickListener{
+            val favorites = Favorites(movieId, moviePoster, movieTitle)
+            GlobalScope.launch {
+                context?.let { contextNonNull ->
+                    FavoritesDatabase.getDatabase(
+                        contextNonNull
+                    ).favoritesDao().insertFavorites(favorites)
+                }
+            }
+        }
     }
 
     private fun setupDetailMovie() {
@@ -81,7 +97,7 @@ class DetailFragment : Fragment() {
                     with(bindingNonNull) {
                         activity?.let { activityNonNull ->
                             Glide.with(activityNonNull)
-                                .load(movie.backdrop_path)
+                                .load(movie.poster_path)
                                 .into(imageCardDetail)
                         }
                         tvTitle.text = movie.title

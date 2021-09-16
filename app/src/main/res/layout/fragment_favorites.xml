@@ -4,27 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.favorites.view.popularFragment">
-
-    <ImageView
-        android:id="@+id/imagePopular"
-        android:layout_width="0dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/populares"
-        app:layout_constraintBottom_toTopOf="@id/popularRecyclerView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ui.fragments.favorites.view.FavoritesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/popularRecyclerView"
+        android:id="@+id/favoritesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="600dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagePopular"
+        app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="10"
         tools:listitem="@layout/films" />
 
