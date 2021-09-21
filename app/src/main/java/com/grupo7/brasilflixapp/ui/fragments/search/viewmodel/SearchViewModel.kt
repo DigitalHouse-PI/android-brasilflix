@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.search.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -8,7 +9,9 @@ import com.grupo7.brasilflixapp.ui.fragments.search.usecase.SearchUseCase
 import com.grupo7.brasilflixapp.model.films.films
 import kotlinx.coroutines.launch
 
-class SearchViewModel : BaseViewModel(){
+class SearchViewModel(
+    application: Application
+) : BaseViewModel(application){
 
     private val searchUseCase = SearchUseCase()
 

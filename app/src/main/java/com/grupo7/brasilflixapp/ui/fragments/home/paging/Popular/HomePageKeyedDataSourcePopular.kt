@@ -2,6 +2,7 @@ package com.grupo7.brasilflixapp.ui.fragments.home.paging.Popular
 
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.api.util.ResponseApi
+import com.grupo7.brasilflixapp.database.popular.model.Popular
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
@@ -22,6 +23,7 @@ class HomePageKeyedDataSourcePopular (
     ) {
         CoroutineScope(Dispatchers.IO).launch {
             val movies: List<films> = getPopularMovies(Constants.Home.FIRST_PAGE)
+            homeUseCase.savePopularDatabase(movies)
             callback.onResult(movies, null, Constants.Home.FIRST_PAGE + 1)
         }
     }
@@ -37,6 +39,7 @@ class HomePageKeyedDataSourcePopular (
     private fun loadData(page: Int, nextPage: Int, callback: LoadCallback<Int, films>) {
         CoroutineScope(Dispatchers.IO).launch {
             val films: List<films> = getPopularMovies(page)
+            homeUseCase.savePopularDatabase(films)
             callback.onResult(films, nextPage)
         }
 

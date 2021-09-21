@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.grupo7.brasilflixapp.database.favorites.FavoritesDatabase
+import com.grupo7.brasilflixapp.database.favorites.database.FavoritesDatabase
 import com.grupo7.brasilflixapp.databinding.FragmentFavoritesBinding
-import com.grupo7.brasilflixapp.model.favorites.Favorites
+import com.grupo7.brasilflixapp.database.favorites.model.Favorites
 import com.grupo7.brasilflixapp.ui.fragments.favorites.adapter.FavoritesAdapter
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

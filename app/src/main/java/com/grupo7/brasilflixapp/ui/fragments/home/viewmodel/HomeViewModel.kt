@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.home.viewmodel
 
+import android.app.Application
 import android.nfc.tech.MifareUltralight.PAGE_SIZE
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
@@ -16,10 +17,12 @@ import com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing.HomeDataSource
 import com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing.HomePageKeyedDataSourceUpComing
 import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
 
-class HomeViewModel : BaseViewModel() {
+class HomeViewModel(
+    application: Application
+) : BaseViewModel(application) {
 
-    private val homeUseCase = HomeUseCase()
-    private val homeRepository = HomeRepository()
+    private val homeUseCase = HomeUseCase(getApplication())
+    private val homeRepository = HomeRepository(getApplication<Application>())
 
 //    <---------------------------------------------------- Setup Page 2 Home - Top Rated-------------------------------------->
 

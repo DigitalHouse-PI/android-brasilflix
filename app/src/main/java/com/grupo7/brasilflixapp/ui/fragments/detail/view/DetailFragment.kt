@@ -10,12 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.grupo7.brasilflixapp.database.favorites.FavoritesDatabase
+import com.grupo7.brasilflixapp.database.favorites.database.FavoritesDatabase
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
-import com.grupo7.brasilflixapp.model.favorites.Favorites
+import com.grupo7.brasilflixapp.database.favorites.model.Favorites
 import com.grupo7.brasilflixapp.ui.fragments.detail.adapter.DetailReviewAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.viewmodel.DetailViewModel
-import com.grupo7.brasilflixapp.util.constants.Constants
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_POSTER
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_TITLE

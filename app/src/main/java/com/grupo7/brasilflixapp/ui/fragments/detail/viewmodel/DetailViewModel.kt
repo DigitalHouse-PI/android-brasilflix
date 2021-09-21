@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.detail.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -10,7 +11,9 @@ import com.grupo7.brasilflixapp.model.reviews.AuthorResults
 import com.grupo7.brasilflixapp.model.series.Series
 import kotlinx.coroutines.launch
 
-class DetailViewModel: BaseViewModel() {
+class DetailViewModel(
+    application: Application
+): BaseViewModel(application) {
 
     private val detailUseCase = DetailUseCase()
 

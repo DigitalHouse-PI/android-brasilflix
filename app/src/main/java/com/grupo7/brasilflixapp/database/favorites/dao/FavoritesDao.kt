@@ -1,7 +1,7 @@
-package com.grupo7.brasilflixapp.database.favorites
+package com.grupo7.brasilflixapp.database.favorites.dao
 
 import androidx.room.*
-import com.grupo7.brasilflixapp.model.favorites.Favorites
+import com.grupo7.brasilflixapp.database.favorites.model.Favorites
 
 @Dao
 interface FavoritesDao {
@@ -21,3 +21,4 @@ interface FavoritesDao {
     @Delete
     suspend fun delete(favorites: Favorites)
 }
+

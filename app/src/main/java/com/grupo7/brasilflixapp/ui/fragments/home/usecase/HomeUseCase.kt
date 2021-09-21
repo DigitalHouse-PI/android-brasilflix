@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.home.usecase
 
+import android.app.Application
 import com.grupo7.brasilflixapp.api.util.ResponseApi
 import com.grupo7.brasilflixapp.extensions.getDateBR
 import com.grupo7.brasilflixapp.extensions.getFullImageUrl
@@ -8,7 +9,10 @@ import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
 import com.grupo7.brasilflixapp.model.films.filmsResults
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.FIRST_PAGE
 
-class HomeUseCase {
+class HomeUseCase(
+    private val application: Application
+) {
+    private val homeRepository = HomeRepository(application)
 
     fun setupTopRatedList(list: filmsResults?): List<films> {
         return list?.results?.map {
@@ -37,6 +41,8 @@ class HomeUseCase {
         } ?: listOf()
     }
 
-
+    suspend fun savePopularDatabase(movies: List<films>) {
+        homeRepository.savePopularDatabase(movies)
+    }
 
 }

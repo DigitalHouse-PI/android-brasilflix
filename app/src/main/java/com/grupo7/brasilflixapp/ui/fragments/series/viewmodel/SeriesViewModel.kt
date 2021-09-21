@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.series.viewmodel
 
+import android.app.Application
 import android.nfc.tech.MifareUltralight
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,7 +20,9 @@ import com.grupo7.brasilflixapp.ui.fragments.series.paging.series.HomePageKeyedD
 import com.grupo7.brasilflixapp.ui.fragments.series.repository.SeriesRepository
 import kotlinx.coroutines.launch
 
-class SeriesViewModel : BaseViewModel() {
+class SeriesViewModel(
+    application: Application
+) : BaseViewModel(application) {
 
     private val seriesUseCase = SeriesUseCase()
     private val seriesRepository = SeriesRepository()

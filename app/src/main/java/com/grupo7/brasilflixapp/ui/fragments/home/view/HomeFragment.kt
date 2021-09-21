@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grupo7.brasilflixapp.R
+import com.grupo7.brasilflixapp.database.popular.model.Popular
 import com.grupo7.brasilflixapp.ui.activity.account.AccountActivity
 import com.grupo7.brasilflixapp.ui.activity.profile.ProfileActivity
 import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity

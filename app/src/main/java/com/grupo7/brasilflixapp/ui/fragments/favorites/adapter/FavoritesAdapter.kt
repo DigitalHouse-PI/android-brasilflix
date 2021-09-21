@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FilmsBinding
-import com.grupo7.brasilflixapp.model.favorites.Favorites
-import com.grupo7.brasilflixapp.model.films.films
-import com.grupo7.brasilflixapp.ui.fragments.search.adapter.searchAdapter
+import com.grupo7.brasilflixapp.database.favorites.model.Favorites
 
 class FavoritesAdapter (
     private val filmsList: List<Favorites>,
