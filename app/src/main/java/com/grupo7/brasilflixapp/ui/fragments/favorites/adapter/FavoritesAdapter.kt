@@ -7,9 +7,10 @@ import com.bumptech.glide.Glide
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FilmsBinding
 import com.grupo7.brasilflixapp.database.favorites.model.Favorites
+import com.grupo7.brasilflixapp.database.popular.model.Popular
 
 class FavoritesAdapter (
-    private val filmsList: List<Favorites>,
+    private val filmsList: List<Popular>,
 ) : RecyclerView.Adapter<FavoritesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,7 +28,7 @@ class FavoritesAdapter (
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            films: Favorites,
+            films: Popular,
         ) = with(binding) {
             films.let {
                 Glide.with(itemView)

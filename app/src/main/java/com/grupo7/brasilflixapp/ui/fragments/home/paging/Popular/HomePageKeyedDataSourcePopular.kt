@@ -1,21 +1,29 @@
 package com.grupo7.brasilflixapp.ui.fragments.home.paging.Popular
 
+import android.app.Application
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.api.util.ResponseApi
+import com.grupo7.brasilflixapp.database.popular.database.PopularDatabase
 import com.grupo7.brasilflixapp.database.popular.model.Popular
+import com.grupo7.brasilflixapp.database.popular.model.tofilmsDb
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.films.filmsResults
+import com.grupo7.brasilflixapp.model.films.toPopularDb
 import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
 import com.grupo7.brasilflixapp.ui.fragments.home.usecase.HomeUseCase
 import com.grupo7.brasilflixapp.util.constants.Constants
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class HomePageKeyedDataSourcePopular (
+class HomePageKeyedDataSourcePopular(
     private val homeRepository: HomeRepository,
-    private val homeUseCase: HomeUseCase
+    private val homeUseCase: HomeUseCase,
+    val application: Application
 ) : PageKeyedDataSource<Int, films>() {
+
+
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
@@ -44,7 +52,9 @@ class HomePageKeyedDataSourcePopular (
         }
 
     }
-    suspend fun getPopularMovies(page: Int): List<films>{
+
+    suspend fun getPopularMovies(page: Int): List<films> {
+
         return when (
             val response = homeRepository.getPopularMovies(page)
         ) {
@@ -53,7 +63,17 @@ class HomePageKeyedDataSourcePopular (
                 return homeUseCase.setupPopularList(list)
             }
             is ResponseApi.Error -> {
-                listOf()
+                var popularList: List<films> = listOf()
+                var popularDB: List<Popular> =  PopularDatabase
+                    .getDatabase(application)
+                    .popularDao()
+                    .getAllPopular()
+                popularDB.forEach {
+                    popularList = listOf(it.tofilmsDb())
+                }
+
+                return popularList
+
             }
         }
     }

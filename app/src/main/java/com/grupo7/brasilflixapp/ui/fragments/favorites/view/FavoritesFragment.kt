@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.grupo7.brasilflixapp.database.favorites.database.FavoritesDatabase
 import com.grupo7.brasilflixapp.databinding.FragmentFavoritesBinding
 import com.grupo7.brasilflixapp.database.favorites.model.Favorites
+import com.grupo7.brasilflixapp.database.popular.database.PopularDatabase
+import com.grupo7.brasilflixapp.database.popular.model.Popular
 import com.grupo7.brasilflixapp.ui.fragments.favorites.adapter.FavoritesAdapter
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -17,7 +19,7 @@ import kotlinx.coroutines.launch
 class FavoritesFragment : Fragment() {
 
     private var binding: FragmentFavoritesBinding? = null
-    private var favoriteslist: List<Favorites>? = null
+    private var favoriteslist: List<Popular>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,9 +47,9 @@ class FavoritesFragment : Fragment() {
 
         GlobalScope.launch {
             context?.let { contextNonNull ->
-                favoriteslist = FavoritesDatabase.getDatabase(
+                favoriteslist = PopularDatabase.getDatabase(
                     contextNonNull
-                ).favoritesDao().getAllFavorites()
+                ).popularDao().getAllPopular()
             }
         }
 

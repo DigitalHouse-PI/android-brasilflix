@@ -37,7 +37,8 @@ class HomeViewModel(
 
         val homePageKeyedDataSource = HomePageKeyedDataSourceTopRated(
             homeUseCase = homeUseCase,
-            homeRepository = homeRepository
+            homeRepository = homeRepository,
+            application = application
         )
         val homeDataSourceFactory = HomeDataSourceFactoryTopRated(homePageKeyedDataSource)
 
@@ -60,7 +61,8 @@ class HomeViewModel(
 
         val homePageKeyedDataSourceUpComing = HomePageKeyedDataSourceUpComing(
             homeUseCase = homeUseCase,
-            homeRepository = homeRepository
+            homeRepository = homeRepository,
+                    application = application
         )
         val homeDataSourceFactoryUpComing = HomeDataSourceFactoryUpComing(homePageKeyedDataSourceUpComing)
 
@@ -83,7 +85,8 @@ class HomeViewModel(
 
         val homePageKeyedDataSourcePopular = HomePageKeyedDataSourcePopular(
             homeUseCase = homeUseCase,
-            homeRepository = homeRepository
+            homeRepository = homeRepository,
+            application = application
         )
         val homeDataSourceFactoryPopular = HomeDataSourceFactoryPopular(homePageKeyedDataSourcePopular)
 

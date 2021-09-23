@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing
 
+import android.app.Application
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.api.util.ResponseApi
 import com.grupo7.brasilflixapp.model.films.films
@@ -13,7 +14,8 @@ import kotlinx.coroutines.launch
 
 class HomePageKeyedDataSourceUpComing (
     private val homeRepository: HomeRepository,
-    private val homeUseCase: HomeUseCase
+    private val homeUseCase: HomeUseCase,
+    val application: Application
 ) : PageKeyedDataSource<Int, films>() {
 
     override fun loadInitial(
