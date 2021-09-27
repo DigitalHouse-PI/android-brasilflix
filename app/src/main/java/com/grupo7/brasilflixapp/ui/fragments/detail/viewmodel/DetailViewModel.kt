@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.grupo7.brasilflixapp.base.BaseViewModel
+import com.grupo7.brasilflixapp.database.allmovies.model.allmovies
 import com.grupo7.brasilflixapp.ui.fragments.detail.usecase.DetailUseCase
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.reviews.AuthorResults
@@ -15,7 +16,7 @@ class DetailViewModel(
     application: Application
 ): BaseViewModel(application) {
 
-    private val detailUseCase = DetailUseCase()
+    private val detailUseCase = DetailUseCase(getApplication<Application>())
 
     private val _onSuccessMovieById: MutableLiveData<films> = MutableLiveData()
     val onSuccessMovieById: LiveData<films>
@@ -29,13 +30,18 @@ class DetailViewModel(
     val onSuccessReviewsMovies: LiveData<List<AuthorResults>>
         get() = _onSuccessReviewsMovies
 
+    private val _onSuccessMovieDbByIdFromDb: MutableLiveData<films> = MutableLiveData()
+    val onSuccessMovieDbByIdFromDb: LiveData<films>
+        get() = _onSuccessMovieDbByIdFromDb
+
     fun getMovieById(movieId: Int) {
         viewModelScope.launch {
             callApi(
                 suspend { detailUseCase.getMovieById(movieId) },
                 onSuccess = {
                     _onSuccessMovieById.postValue(it as? films)
-                }
+                },
+
             )
         }
     }
@@ -64,5 +70,16 @@ class DetailViewModel(
         }
     }
 
+//    fun getMovieByIdFromDb(movieId: Int) {
+//        viewModelScope.launch {
+//            val movieFromDb = detailUseCase.getMovieByIdFromDb(movieId)
+//            val movieFromDbfilms: films? = null
+//            movieFromDbfilms?.backdrop_path = movieFromDb.backdrop_path
+//            movieFromDbfilms?.title = movieFromDb.title
+//            movieFromDbfilms?.overview = movieFromDb.overview
+//            movieFromDbfilms?.release_date = movieFromDb.release_date
+//            _onSuccessMovieDbByIdFromDb.postValue(movieFromDbfilms!!)
+//        }
+//    }
 
 }

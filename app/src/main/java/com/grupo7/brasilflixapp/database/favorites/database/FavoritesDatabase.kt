@@ -9,15 +9,15 @@ import com.grupo7.brasilflixapp.database.favorites.model.Favorites
 
 object FavoritesDatabase {
 
-    @Database(entities = [Favorites::class], version = 2)
-    abstract class DatabaseFavorites : RoomDatabase() {
+    @Database(entities = [Favorites::class], version = 1)
+    abstract class DatabaseFavoritesMovies : RoomDatabase() {
         abstract fun favoritesDao(): FavoritesDao
     }
 
-    fun getDatabase(context: Context) : DatabaseFavorites {
+    fun getDatabase(context: Context) : DatabaseFavoritesMovies {
         return Room.databaseBuilder(
             context,
-            DatabaseFavorites::class.java, "favorites_db"
+            DatabaseFavoritesMovies::class.java, "favoritesMovies_db"
         ).build()
     }
 }

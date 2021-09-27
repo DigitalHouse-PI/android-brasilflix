@@ -19,7 +19,7 @@ data class films(
     @SerializedName("id")
     val id: Int? = null,
     @SerializedName("overview")
-    val overview: String? = null
+    var overview: String? = null
 ) {
 
     companion object {

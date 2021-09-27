@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.detail.view
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.database.favorites.database.FavoritesDatabase
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
@@ -24,15 +26,13 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 
-class DetailFragment : Fragment() {
+class DetailFragment(
+) : Fragment() {
     private var binding: FragmentDetailBinding? = null
     private lateinit var viewModel: DetailViewModel
     private val movieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_MOVIE_ID) ?: -1
     }
-    private val moviePoster = arguments?.getString(KEY_BUNDLE_MOVIE_POSTER)
-
-    private val movieTitle = arguments?.getString(KEY_BUNDLE_MOVIE_TITLE)
 
     private val serieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_SERIE_ID) ?: -1
@@ -78,14 +78,25 @@ class DetailFragment : Fragment() {
         }
 
         binding?.ivHeart?.setOnClickListener{
-            val favorites = Favorites(movieId, moviePoster, movieTitle)
-            GlobalScope.launch {
-                context?.let { contextNonNull ->
-                    FavoritesDatabase.getDatabase(
-                        contextNonNull
-                    ).favoritesDao().insertFavorites(favorites)
-                }
-            }
+          viewModel.onSuccessMovieById.observe(viewLifecycleOwner,{
+              val id = it.id
+              val poster = it.poster_path
+              val title = it.title
+              val favorite = Favorites(id, poster, title)
+              GlobalScope.launch {
+                  context?.let { contextNonNull ->
+                      FavoritesDatabase.getDatabase(
+                          contextNonNull
+                      ).favoritesDao().insertFavorites(favorite)
+                  }
+              }
+              Snackbar.make(
+                  this.requireView(),
+                  getString(R.string.favoriteadded),
+                  Snackbar.LENGTH_SHORT
+              ).show()
+          })
+
         }
     }
 
