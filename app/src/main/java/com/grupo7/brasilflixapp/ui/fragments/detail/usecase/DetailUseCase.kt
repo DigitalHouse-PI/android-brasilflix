@@ -65,5 +65,8 @@ class DetailUseCase(
     suspend fun getMovieByIdFromDb(movieId: Int) =
         detailRepository.getMovieByIdFromDb(movieId)
 
+    suspend fun getSerieByIdFromDb(serieId: Int) =
+        detailRepository.getSerieByIdFromDb(serieId)
+
 
 }

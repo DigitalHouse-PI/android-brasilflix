@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.grupo7.brasilflixapp.base.BaseViewModel
 import com.grupo7.brasilflixapp.database.allmovies.model.allmovies
+import com.grupo7.brasilflixapp.database.allseries.model.allseries
 import com.grupo7.brasilflixapp.ui.fragments.detail.usecase.DetailUseCase
 import com.grupo7.brasilflixapp.model.films.films
 import com.grupo7.brasilflixapp.model.reviews.AuthorResults
@@ -33,6 +34,10 @@ class DetailViewModel(
     private val _onSuccessMovieDbByIdFromDb: MutableLiveData<films> = MutableLiveData()
     val onSuccessMovieDbByIdFromDb: LiveData<films>
         get() = _onSuccessMovieDbByIdFromDb
+
+    private val _onSuccessSerieDbByIdFromDb: MutableLiveData<allseries> = MutableLiveData()
+    val onSuccessSerieDbByIdFromDb: LiveData<allseries>
+        get() = _onSuccessSerieDbByIdFromDb
 
     fun getMovieById(movieId: Int) {
         viewModelScope.launch {
@@ -70,16 +75,11 @@ class DetailViewModel(
         }
     }
 
-//    fun getMovieByIdFromDb(movieId: Int) {
-//        viewModelScope.launch {
-//            val movieFromDb = detailUseCase.getMovieByIdFromDb(movieId)
-//            val movieFromDbfilms: films? = null
-//            movieFromDbfilms?.backdrop_path = movieFromDb.backdrop_path
-//            movieFromDbfilms?.title = movieFromDb.title
-//            movieFromDbfilms?.overview = movieFromDb.overview
-//            movieFromDbfilms?.release_date = movieFromDb.release_date
-//            _onSuccessMovieDbByIdFromDb.postValue(movieFromDbfilms!!)
-//        }
-//    }
+    fun getSerieByIdFromDb(serieId: Int) {
+        viewModelScope.launch {
+            val serieFromDb = detailUseCase.getSerieByIdFromDb(serieId)
+            _onSuccessSerieDbByIdFromDb.postValue(serieFromDb)
+        }
+    }
 
 }

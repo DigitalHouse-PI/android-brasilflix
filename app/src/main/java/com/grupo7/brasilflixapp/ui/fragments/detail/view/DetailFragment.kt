@@ -64,7 +64,7 @@ class DetailFragment(
 
             viewModel.getMovieById(movieId)
 
-            viewModel.getSeriesById(serieId)
+            viewModel.getSerieByIdFromDb(serieId)
 
             setupReviewsMovies()
 
@@ -98,7 +98,7 @@ class DetailFragment(
               ).show()
           })
 
-            viewModel.onSuccessSeriesById.observe(viewLifecycleOwner,{
+            viewModel.onSuccessSerieDbByIdFromDb.observe(viewLifecycleOwner,{
                 val id = it.id
                 val poster = it.poster_path
                 val title = it.original_name
@@ -144,13 +144,14 @@ class DetailFragment(
     }
     private fun setupDetailSerie() {
 
-        viewModel.onSuccessSeriesById.observe(viewLifecycleOwner, {
+        viewModel.onSuccessSerieDbByIdFromDb.observe(viewLifecycleOwner, {
             it?.let { serie ->
                 binding?.let { bindingNonNull ->
                     with(bindingNonNull) {
                         activity?.let { activityNonNull ->
                             Glide.with(activityNonNull)
                                 .load(serie.poster_path)
+                                .placeholder(R.drawable.brflixlogo)
                                 .into(imageCardDetail)
                         }
                         tvTitle.text = serie.original_name
