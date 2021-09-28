@@ -43,4 +43,10 @@ class SeriesRepository(
             RetrofitInstance.tmdbApi.getSeriesTopRated(page)
         }
     }
+
+    suspend fun getSeriesPopular(page: Int): ResponseApi {
+        return safeApiCall {
+            RetrofitInstance.tmdbApi.getSeriesPopular(page)
+        }
+    }
 }

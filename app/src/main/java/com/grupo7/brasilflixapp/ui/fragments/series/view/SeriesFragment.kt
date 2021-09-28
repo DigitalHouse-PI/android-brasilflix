@@ -15,6 +15,7 @@ import com.grupo7.brasilflixapp.ui.fragments.series.adapter.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
 import com.grupo7.brasilflixapp.model.series.Series
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
+import com.grupo7.brasilflixapp.ui.fragments.series.adapter.popular.SeriesPopularAdapter
 import com.grupo7.brasilflixapp.ui.fragments.series.adapter.toprated.SeriesTopRatedAdapter
 import com.grupo7.brasilflixapp.ui.fragments.series.viewmodel.SeriesViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants
@@ -53,6 +54,8 @@ class seriesFragment : Fragment() {
             setupRecyclerViewSeries()
             setupObservablesSeriesTopRated()
             setupRecyclerViewSeriesTopRated()
+            setupObservablesSeriesPopular()
+            setupRecyclerViewSeriesPopular()
 
         }
     }
@@ -111,6 +114,36 @@ class seriesFragment : Fragment() {
         binding?.seriesRecyclerViewTopRated?.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = seriesTopRatedAdapter
+            adapter?.stateRestorationPolicy = RecyclerView
+                .Adapter.StateRestorationPolicy
+                .PREVENT_WHEN_EMPTY
+        }
+    }
+
+    //    <------------------------------------------------------ Setup Page 2 - Series Popular -------------------------------------->
+
+    private val seriesPopularAdapter: SeriesPopularAdapter by lazy {
+        SeriesPopularAdapter { popular ->
+            val bundle = Bundle()
+            bundle.putInt(Constants.Home.KEY_BUNDLE_SERIE_ID, popular.id ?: -1)
+            findNavController().navigate(
+                R.id.action_seriesFragment_to_detailFragment,
+                bundle
+            )
+        }
+    }
+
+    private fun setupObservablesSeriesPopular() {
+        viewModel.seriesPopularPagedList?.observe(viewLifecycleOwner, {
+            seriesPopularAdapter.submitList(it)
+        })
+
+    }
+
+    private fun setupRecyclerViewSeriesPopular() {
+        binding?.seriesRecyclerViewPopular?.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = seriesPopularAdapter
             adapter?.stateRestorationPolicy = RecyclerView
                 .Adapter.StateRestorationPolicy
                 .PREVENT_WHEN_EMPTY

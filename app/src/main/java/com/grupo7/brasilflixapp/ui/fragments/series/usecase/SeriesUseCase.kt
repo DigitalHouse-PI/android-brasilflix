@@ -35,4 +35,12 @@ class SeriesUseCase(
             it
         } ?: listOf()
     }
+
+    suspend fun setupSeriesPopularList(list: SeriesResults?): List<Series> {
+        return list?.results?.map {
+            it.poster_path = it.poster_path?.getFullImageUrl()
+            it.first_air_date = it.first_air_date?.getDateBR()
+            it
+        } ?: listOf()
+    }
 }
