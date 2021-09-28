@@ -31,6 +31,23 @@
         tools:itemCount="10"
         tools:listitem="@layout/films" />
 
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/textFavoritesFilms"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="29dp"-->
+<!--            android:fontFamily="@font/rubik_bold"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="Ops, nada aqui"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageFavoritesMovies"/>-->
+
     <ImageView
         android:id="@+id/imageSeries"
         android:layout_width="200dp"
@@ -51,5 +68,22 @@
         app:layout_constraintTop_toBottomOf="@+id/imageSeries"
         tools:itemCount="10"
         tools:listitem="@layout/films" />
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/textFavoritesSeries"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:layout_marginBottom="29dp"-->
+<!--            android:fontFamily="@font/rubik_bold"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="Ops, nada aqui"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageSeries"/>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -16,6 +16,7 @@ import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.database.favorites.database.FavoritesDatabase
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
 import com.grupo7.brasilflixapp.database.favorites.model.Favorites
+import com.grupo7.brasilflixapp.database.favorites.model.FavoritesSeries
 import com.grupo7.brasilflixapp.ui.fragments.detail.adapter.DetailReviewAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.viewmodel.DetailViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
@@ -96,6 +97,25 @@ class DetailFragment(
                   Snackbar.LENGTH_SHORT
               ).show()
           })
+
+            viewModel.onSuccessSeriesById.observe(viewLifecycleOwner,{
+                val id = it.id
+                val poster = it.poster_path
+                val title = it.original_name
+                val favorite = FavoritesSeries(id, poster, title)
+                GlobalScope.launch {
+                    context?.let { contextNonNull ->
+                        FavoritesDatabase.getDatabase(
+                            contextNonNull
+                        ).favoritesSeriesDao().insertFavoritesSeries(favorite)
+                    }
+                }
+                Snackbar.make(
+                    this.requireView(),
+                    getString(R.string.favoriteadded),
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            })
 
         }
     }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ import com.grupo7.brasilflixapp.database.favorites.model.Favorites
 import com.grupo7.brasilflixapp.database.popular.database.PopularDatabase
 import com.grupo7.brasilflixapp.database.popular.model.Popular
 import com.grupo7.brasilflixapp.ui.fragments.favorites.adapter.FavoritesAdapter
+import com.grupo7.brasilflixapp.ui.fragments.favorites.adapter.FavoritesSeriesAdapter
 import com.grupo7.brasilflixapp.ui.fragments.favorites.viewmodel.FavoritesViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -48,28 +50,55 @@ class FavoritesFragment : Fragment() {
             viewModel = ViewModelProvider(it)[FavoritesViewModel::class.java]
 
             viewModel.getFavoritesMovieFromDb()
+            viewModel.getFavoritesSeriesFromDb()
 
-            setupObservables()
+            setupObservablesMovies()
+
+            setupObservablesSeries()
 
         }
 
     }
-    private fun setupObservables() {
+    private fun setupObservablesMovies() {
         viewModel.onSuccessFavoritesMoviesFromDb.observe(viewLifecycleOwner, {
             it?.let {
-                val favoritesAdapter = FavoritesAdapter(it){
-                    viewModel.removeFavoritesMovieDb(it)
-                    findNavController().navigateUp()
+
+                val favoritesAdapter = FavoritesAdapter(it) {
+                        viewModel.removeFavoritesMovieDb(it)
+                        findNavController().navigateUp()
+                    }
+                    binding?.favoritesRecyclerView?.apply {
+                        layoutManager =
+                            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                        adapter = favoritesAdapter
+                        adapter?.stateRestorationPolicy = RecyclerView
+                            .Adapter.StateRestorationPolicy
+                            .PREVENT_WHEN_EMPTY
+                    }
                 }
 
-                binding?.favoritesRecyclerView?.apply {
-                    layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        })
+
+    }
+
+    private fun setupObservablesSeries() {
+        viewModel.onSuccessFavoritesSeriesFromDb.observe(viewLifecycleOwner, {
+            it?.let {
+
+                val favoritesAdapter = FavoritesSeriesAdapter(it) {
+                    viewModel.removeFavoritesSeriesDb(it)
+                    findNavController().navigateUp()
+                }
+                binding?.favoritesRecyclerViewSeries?.apply {
+                    layoutManager =
+                        LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     adapter = favoritesAdapter
                     adapter?.stateRestorationPolicy = RecyclerView
                         .Adapter.StateRestorationPolicy
                         .PREVENT_WHEN_EMPTY
                 }
             }
+
         })
 
     }
