@@ -15,6 +15,7 @@ import com.grupo7.brasilflixapp.ui.fragments.series.adapter.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
 import com.grupo7.brasilflixapp.model.series.Series
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
+import com.grupo7.brasilflixapp.ui.fragments.series.adapter.toprated.SeriesTopRatedAdapter
 import com.grupo7.brasilflixapp.ui.fragments.series.viewmodel.SeriesViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants
 
@@ -50,15 +51,13 @@ class seriesFragment : Fragment() {
 
             setupObservablesSeries()
             setupRecyclerViewSeries()
+            setupObservablesSeriesTopRated()
+            setupRecyclerViewSeriesTopRated()
 
         }
-
-
-
-
     }
 
-//    <------------------------------------------------------ Setup Page 2 - Series originals -------------------------------------->
+//    <------------------------------------------------------ Setup Page 2 - Series On The Air -------------------------------------->
 
     private val seriesAdapter: seriesAdapter by lazy {
         seriesAdapter { series ->
@@ -82,6 +81,36 @@ class seriesFragment : Fragment() {
         binding?.seriesRecyclerView?.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = seriesAdapter
+            adapter?.stateRestorationPolicy = RecyclerView
+                .Adapter.StateRestorationPolicy
+                .PREVENT_WHEN_EMPTY
+        }
+    }
+
+    //    <------------------------------------------------------ Setup Page 2 - Series TopRated -------------------------------------->
+
+    private val seriesTopRatedAdapter: SeriesTopRatedAdapter by lazy {
+        SeriesTopRatedAdapter { toprated ->
+            val bundle = Bundle()
+            bundle.putInt(Constants.Home.KEY_BUNDLE_SERIE_ID, toprated.id ?: -1)
+            findNavController().navigate(
+                R.id.action_seriesFragment_to_detailFragment,
+                bundle
+            )
+        }
+    }
+
+    private fun setupObservablesSeriesTopRated() {
+        viewModel.seriesTopRatedPagedList?.observe(viewLifecycleOwner, {
+            seriesTopRatedAdapter.submitList(it)
+        })
+
+    }
+
+    private fun setupRecyclerViewSeriesTopRated() {
+        binding?.seriesRecyclerViewTopRated?.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = seriesTopRatedAdapter
             adapter?.stateRestorationPolicy = RecyclerView
                 .Adapter.StateRestorationPolicy
                 .PREVENT_WHEN_EMPTY

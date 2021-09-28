@@ -4,6 +4,9 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.grupo7.brasilflixapp.database.popular.model.Popular
+import com.grupo7.brasilflixapp.model.films.films
+import com.grupo7.brasilflixapp.model.series.Series
 import kotlinx.parcelize.Parcelize
 
 @Entity
@@ -19,3 +22,4 @@ data class allseries(
     val id: Int?,
     val overview: String?
 ): Parcelable
+

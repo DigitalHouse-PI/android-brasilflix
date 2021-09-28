@@ -2,6 +2,8 @@ package com.grupo7.brasilflixapp.model.series
 
 import androidx.recyclerview.widget.DiffUtil
 import com.google.gson.annotations.SerializedName
+import com.grupo7.brasilflixapp.database.allmovies.model.allmovies
+import com.grupo7.brasilflixapp.database.allseries.model.allseries
 import com.grupo7.brasilflixapp.model.films.films
 
 class Series (
@@ -17,8 +19,6 @@ class Series (
     var backdrop_path: String?,
     @SerializedName("id")
     val id: Int?,
-    @SerializedName("title")
-    var title: String?,
     @SerializedName("overview")
     val overview: String?
 
@@ -36,4 +36,17 @@ class Series (
                 }
             }
     }
+
+}
+
+fun Series.toAllSeriesDb(): allseries {
+    return allseries(
+        id = this.id,
+        backdrop_path = this.backdrop_path,
+        overview = this.overview,
+        poster_path = this.poster_path,
+        first_air_date = this.first_air_date,
+        original_name = this.original_name,
+        vote_average = this.vote_average
+    )
 }
