@@ -20,7 +20,5 @@ Devs:
 
 👨 Tania Mara Alves Ferreira
 
-👨 Bruno Rocha
-
 👨 Renan Cleber
 
