@@ -1,7 +1,7 @@
-package com.grupo7.brasilflixapp.data.database.allseries.dao
+package com.grupo7.brasilflixapp.data.database.series.allseries.dao
 
 import androidx.room.*
-import com.grupo7.brasilflixapp.data.database.allseries.entity.allseries
+import com.grupo7.brasilflixapp.data.database.series.allseries.entity.allseries
 
 @Dao
 interface AllSeriesDao {

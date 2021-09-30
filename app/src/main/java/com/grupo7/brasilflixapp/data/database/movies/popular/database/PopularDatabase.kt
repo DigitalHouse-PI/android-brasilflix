@@ -1,11 +1,11 @@
-package com.grupo7.brasilflixapp.data.database.popular.database
+package com.grupo7.brasilflixapp.data.database.movies.popular.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.grupo7.brasilflixapp.data.database.popular.dao.PopularDao
-import com.grupo7.brasilflixapp.data.database.popular.entity.Popular
+import com.grupo7.brasilflixapp.data.database.movies.popular.dao.PopularDao
+import com.grupo7.brasilflixapp.data.database.movies.popular.entity.Popular
 
 object PopularDatabase {
 

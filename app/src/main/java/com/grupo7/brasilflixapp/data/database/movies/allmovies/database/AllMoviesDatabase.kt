@@ -1,11 +1,11 @@
-package com.grupo7.brasilflixapp.data.database.allmovies.database
+package com.grupo7.brasilflixapp.data.database.movies.allmovies.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.grupo7.brasilflixapp.data.database.allmovies.dao.AllMoviesDao
-import com.grupo7.brasilflixapp.data.database.allmovies.entity.allmovies
+import com.grupo7.brasilflixapp.data.database.movies.allmovies.dao.AllMoviesDao
+import com.grupo7.brasilflixapp.data.database.movies.allmovies.entity.allmovies
 
 object AllMoviesDatabase {
 

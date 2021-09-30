@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.data.database.popular.entity
+package com.grupo7.brasilflixapp.data.database.movies.popular.entity
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

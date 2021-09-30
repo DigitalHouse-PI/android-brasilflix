@@ -1,7 +1,7 @@
-package com.grupo7.brasilflixapp.data.database.allmovies.dao
+package com.grupo7.brasilflixapp.data.database.movies.allmovies.dao
 
 import androidx.room.*
-import com.grupo7.brasilflixapp.data.database.allmovies.entity.allmovies
+import com.grupo7.brasilflixapp.data.database.movies.allmovies.entity.allmovies
 
 
 @Dao

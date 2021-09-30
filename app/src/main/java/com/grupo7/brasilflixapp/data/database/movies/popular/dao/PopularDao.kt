@@ -1,7 +1,7 @@
-package com.grupo7.brasilflixapp.data.database.popular.dao
+package com.grupo7.brasilflixapp.data.database.movies.popular.dao
 
 import androidx.room.*
-import com.grupo7.brasilflixapp.data.database.popular.entity.Popular
+import com.grupo7.brasilflixapp.data.database.movies.popular.entity.Popular
 
 @Dao
 interface PopularDao {

@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.data.database.allmovies.entity
+package com.grupo7.brasilflixapp.data.database.series.allseries.entity
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
@@ -8,14 +8,15 @@ import kotlinx.parcelize.Parcelize
 
 @Entity
 @Parcelize
-data class allmovies(
+data class allseries(
     var poster_path: String?,
-    var release_date: String?,
-    var title: String?,
+    var first_air_date: String?,
+    var original_name: String?,
     var vote_average: Double?,
     var backdrop_path: String?,
     @PrimaryKey
-    @ColumnInfo(name = "movieId")
+    @ColumnInfo(name = "serieId")
     val id: Int?,
     val overview: String?
 ): Parcelable
+
