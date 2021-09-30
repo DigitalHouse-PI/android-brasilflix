@@ -3,6 +3,10 @@ package com.grupo7.brasilflixapp.ui.fragments.series.paging.seriestoprated
 import android.app.Application
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.data.api.util.ResponseApi
+import com.grupo7.brasilflixapp.data.database.movies.popular.database.PopularDatabase
+import com.grupo7.brasilflixapp.data.database.movies.popular.entity.tofilmsDb
+import com.grupo7.brasilflixapp.data.database.series.toprated.database.TopRatedSeriesDatabase
+import com.grupo7.brasilflixapp.data.database.series.toprated.entity.toSeriesDb
 import com.grupo7.brasilflixapp.ui.model.series.Series
 import com.grupo7.brasilflixapp.ui.model.series.SeriesResults
 import com.grupo7.brasilflixapp.ui.fragments.series.repository.SeriesRepository
@@ -12,7 +16,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomePageKeyedDataSourceSeriesTopRated (
+class PageKeyedDataSourceSeriesTopRated (
     private val seriesRepository: SeriesRepository,
     private val seriesUseCase: SeriesUseCase,
     val application: Application
@@ -23,9 +27,10 @@ class HomePageKeyedDataSourceSeriesTopRated (
         callback: LoadInitialCallback<Int, Series>
     ) {
         CoroutineScope(Dispatchers.IO).launch {
-            val movies: List<Series> = getSeriesTopRated(Constants.Home.FIRST_PAGE)
-            seriesUseCase.saveAllSeriesDatabase(movies)
-            callback.onResult(movies, null, Constants.Home.FIRST_PAGE + 1)
+            val series: List<Series> = getSeriesTopRated(Constants.Home.FIRST_PAGE)
+            seriesUseCase.saveAllSeriesDatabase(series)
+            seriesUseCase.saveTopRatedSeriesDatabase(series)
+            callback.onResult(series, null, Constants.Home.FIRST_PAGE + 1)
         }
     }
 
@@ -41,6 +46,7 @@ class HomePageKeyedDataSourceSeriesTopRated (
         CoroutineScope(Dispatchers.IO).launch {
             val series: List<Series> = getSeriesTopRated(page)
             seriesUseCase.saveAllSeriesDatabase(series)
+            seriesUseCase.saveTopRatedSeriesDatabase(series)
             callback.onResult(series, nextPage)
         }
 
@@ -54,7 +60,14 @@ class HomePageKeyedDataSourceSeriesTopRated (
                 return seriesUseCase.setupSeriesTopRatedList(list)
             }
             is ResponseApi.Error -> {
-                listOf()
+                var topratedDB =  TopRatedSeriesDatabase
+                    .getDatabase(application)
+                    .topratedDao()
+                    .getAllTopRatedSeries()
+
+                return topratedDB.map {
+                    it.toSeriesDb()
+                }
             }
         }
     }

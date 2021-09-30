@@ -1,8 +1,12 @@
-package com.grupo7.brasilflixapp.ui.fragments.series.paging.series
+package com.grupo7.brasilflixapp.ui.fragments.series.paging.seriespopular
 
 import android.app.Application
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.data.api.util.ResponseApi
+import com.grupo7.brasilflixapp.data.database.movies.popular.database.PopularDatabase
+import com.grupo7.brasilflixapp.data.database.movies.popular.entity.tofilmsDb
+import com.grupo7.brasilflixapp.data.database.series.popular.database.PopularSeriesDatabase
+import com.grupo7.brasilflixapp.data.database.series.popular.entity.toSeriesDb
 import com.grupo7.brasilflixapp.ui.model.series.Series
 import com.grupo7.brasilflixapp.ui.model.series.SeriesResults
 import com.grupo7.brasilflixapp.ui.fragments.series.repository.SeriesRepository
@@ -12,7 +16,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomePageKeyedDataSourceSeries (
+class PageKeyedDataSourceSeriesPopular (
     private val seriesRepository: SeriesRepository,
     private val seriesUseCase: SeriesUseCase,
     val application: Application
@@ -23,9 +27,10 @@ class HomePageKeyedDataSourceSeries (
         callback: LoadInitialCallback<Int, Series>
     ) {
         CoroutineScope(Dispatchers.IO).launch {
-            val movies: List<Series> = getSeries(Constants.Home.FIRST_PAGE)
-            seriesUseCase.saveAllSeriesDatabase(movies)
-            callback.onResult(movies, null, Constants.Home.FIRST_PAGE + 1)
+            val series: List<Series> = getSeriesPopular(Constants.Home.FIRST_PAGE)
+            seriesUseCase.saveAllSeriesDatabase(series)
+            seriesUseCase.savePopularSeriesDatabase(series)
+            callback.onResult(series, null, Constants.Home.FIRST_PAGE + 1)
         }
     }
 
@@ -39,22 +44,30 @@ class HomePageKeyedDataSourceSeries (
 
     private fun loadData(page: Int, nextPage: Int, callback: LoadCallback<Int, Series>) {
         CoroutineScope(Dispatchers.IO).launch {
-            val series: List<Series> = getSeries(page)
+            val series: List<Series> = getSeriesPopular(page)
             seriesUseCase.saveAllSeriesDatabase(series)
+            seriesUseCase.savePopularSeriesDatabase(series)
             callback.onResult(series, nextPage)
         }
 
     }
-    suspend fun getSeries(page: Int): List<Series>{
+    suspend fun getSeriesPopular(page: Int): List<Series>{
         return when (
-            val response = seriesRepository.getSeries(page)
+            val response = seriesRepository.getSeriesPopular(page)
         ) {
             is ResponseApi.Success -> {
                 val list = response.data as? SeriesResults
-                return seriesUseCase.setupSeriesList(list)
+                return seriesUseCase.setupSeriesPopularList(list)
             }
             is ResponseApi.Error -> {
-                listOf()
+                var popularDB =  PopularSeriesDatabase
+                    .getDatabase(application)
+                    .popularseriesDao()
+                    .getAllPopularSeries()
+
+                return popularDB.map {
+                    it.toSeriesDb()
+                }
             }
         }
     }

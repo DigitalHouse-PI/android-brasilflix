@@ -5,8 +5,8 @@ import androidx.paging.DataSource
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.ui.model.series.Series
 
-class HomeDataSourceFactorySeriesTopRated (
-    private val tmdbDataSourceSeriesTopRated: HomePageKeyedDataSourceSeriesTopRated
+class DataSourceFactorySeriesTopRated (
+    private val tmdbDataSourceSeriesTopRated: PageKeyedDataSourceSeriesTopRated
 ): DataSource.Factory<Int, Series>() {
 
     private val tmdbLiveDataSourceTopRated = MutableLiveData<PageKeyedDataSource<Int, Series>>()

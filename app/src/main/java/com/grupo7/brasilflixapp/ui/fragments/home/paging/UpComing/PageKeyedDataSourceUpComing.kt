@@ -1,10 +1,12 @@
-package com.grupo7.brasilflixapp.ui.fragments.home.paging.Popular
+package com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing
 
 import android.app.Application
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.data.api.util.ResponseApi
 import com.grupo7.brasilflixapp.data.database.movies.popular.database.PopularDatabase
 import com.grupo7.brasilflixapp.data.database.movies.popular.entity.tofilmsDb
+import com.grupo7.brasilflixapp.data.database.movies.upcoming.database.UpComingDatabase
+import com.grupo7.brasilflixapp.data.database.movies.upcoming.entity.tofilmsDb
 import com.grupo7.brasilflixapp.ui.model.films.films
 import com.grupo7.brasilflixapp.ui.model.films.filmsResults
 import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
@@ -14,22 +16,20 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomePageKeyedDataSourcePopular(
+class PageKeyedDataSourceUpComing (
     private val homeRepository: HomeRepository,
     private val homeUseCase: HomeUseCase,
     val application: Application
 ) : PageKeyedDataSource<Int, films>() {
-
-
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
         callback: LoadInitialCallback<Int, films>
     ) {
         CoroutineScope(Dispatchers.IO).launch {
-            val movies: List<films> = getPopularMovies(Constants.Home.FIRST_PAGE)
-            homeUseCase.savePopularDatabase(movies)
+            val movies: List<films> = getUpComingMovies(Constants.Home.FIRST_PAGE)
             homeUseCase.saveAllMoviesDatabase(movies)
+            homeUseCase.saveUpComingDatabase(movies)
             callback.onResult(movies, null, Constants.Home.FIRST_PAGE + 1)
         }
     }
@@ -44,35 +44,31 @@ class HomePageKeyedDataSourcePopular(
 
     private fun loadData(page: Int, nextPage: Int, callback: LoadCallback<Int, films>) {
         CoroutineScope(Dispatchers.IO).launch {
-            val films: List<films> = getPopularMovies(page)
-            homeUseCase.savePopularDatabase(films)
+            val films: List<films> = getUpComingMovies(page)
             homeUseCase.saveAllMoviesDatabase(films)
+            homeUseCase.saveUpComingDatabase(films)
             callback.onResult(films, nextPage)
         }
 
     }
-
-    suspend fun getPopularMovies(page: Int): List<films> {
-
+    suspend fun getUpComingMovies(page: Int): List<films>{
         return when (
-            val response = homeRepository.getPopularMovies(page)
+            val response = homeRepository.getUpComingMovies(page)
         ) {
             is ResponseApi.Success -> {
                 val list = response.data as? filmsResults
-                return homeUseCase.setupPopularList(list)
+                return homeUseCase.setupUpComingList(list)
             }
             is ResponseApi.Error -> {
-                var popularDB =  PopularDatabase
+                var upcomingDB =  UpComingDatabase
                     .getDatabase(application)
-                    .popularDao()
-                    .getAllPopular()
+                    .upcomingDao()
+                    .getAllUpComing()
 
-                return popularDB.map {
+                return upcomingDB.map {
                     it.tofilmsDb()
                 }
-
             }
-
         }
     }
 

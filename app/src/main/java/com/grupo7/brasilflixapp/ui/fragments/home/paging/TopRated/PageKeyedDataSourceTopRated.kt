@@ -1,22 +1,22 @@
-package com.grupo7.brasilflixapp.ui.fragments.home.paging.UpComing
+package com.grupo7.brasilflixapp.ui.fragments.home.paging.TopRated
 
 import android.app.Application
 import androidx.paging.PageKeyedDataSource
 import com.grupo7.brasilflixapp.data.api.util.ResponseApi
 import com.grupo7.brasilflixapp.data.database.movies.popular.database.PopularDatabase
 import com.grupo7.brasilflixapp.data.database.movies.popular.entity.tofilmsDb
-import com.grupo7.brasilflixapp.data.database.movies.upcoming.database.UpComingDatabase
-import com.grupo7.brasilflixapp.data.database.movies.upcoming.entity.tofilmsDb
+import com.grupo7.brasilflixapp.data.database.movies.toprated.database.TopRatedDatabase
+import com.grupo7.brasilflixapp.data.database.movies.toprated.entity.tofilmsDb
 import com.grupo7.brasilflixapp.ui.model.films.films
 import com.grupo7.brasilflixapp.ui.model.films.filmsResults
 import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
 import com.grupo7.brasilflixapp.ui.fragments.home.usecase.HomeUseCase
-import com.grupo7.brasilflixapp.util.constants.Constants
+import com.grupo7.brasilflixapp.util.constants.Constants.Home.FIRST_PAGE
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomePageKeyedDataSourceUpComing (
+class PageKeyedDataSourceTopRated(
     private val homeRepository: HomeRepository,
     private val homeUseCase: HomeUseCase,
     val application: Application
@@ -27,10 +27,10 @@ class HomePageKeyedDataSourceUpComing (
         callback: LoadInitialCallback<Int, films>
     ) {
         CoroutineScope(Dispatchers.IO).launch {
-            val movies: List<films> = getUpComingMovies(Constants.Home.FIRST_PAGE)
+            val movies: List<films> = getTopRatedMovies(FIRST_PAGE)
             homeUseCase.saveAllMoviesDatabase(movies)
-            homeUseCase.saveUpComingDatabase(movies)
-            callback.onResult(movies, null, Constants.Home.FIRST_PAGE + 1)
+            homeUseCase.saveTopRatedDatabase(movies)
+            callback.onResult(movies, null, FIRST_PAGE + 1)
         }
     }
 
@@ -44,28 +44,28 @@ class HomePageKeyedDataSourceUpComing (
 
     private fun loadData(page: Int, nextPage: Int, callback: LoadCallback<Int, films>) {
         CoroutineScope(Dispatchers.IO).launch {
-            val films: List<films> = getUpComingMovies(page)
+            val films: List<films> = getTopRatedMovies(page)
             homeUseCase.saveAllMoviesDatabase(films)
-            homeUseCase.saveUpComingDatabase(films)
+            homeUseCase.saveTopRatedDatabase(films)
             callback.onResult(films, nextPage)
         }
 
     }
-    suspend fun getUpComingMovies(page: Int): List<films>{
+    suspend fun getTopRatedMovies(page: Int): List<films>{
         return when (
-            val response = homeRepository.getUpComingMovies(page)
+            val response = homeRepository.getTopRatedMovies(page)
         ) {
             is ResponseApi.Success -> {
                 val list = response.data as? filmsResults
-                return homeUseCase.setupUpComingList(list)
+               return homeUseCase.setupTopRatedList(list)
             }
             is ResponseApi.Error -> {
-                var upcomingDB =  UpComingDatabase
+                var topratedDB =  TopRatedDatabase
                     .getDatabase(application)
-                    .upcomingDao()
-                    .getAllUpComing()
+                    .topratedDao()
+                    .getAllTopRated()
 
-                return upcomingDB.map {
+                return topratedDB.map {
                     it.tofilmsDb()
                 }
             }
