@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.profile.view.profileFragment">
+    tools:context=".ui.fragments.profile.view.profileFragment"
+    android:background="@drawable/gradiente">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProfileItemList"
