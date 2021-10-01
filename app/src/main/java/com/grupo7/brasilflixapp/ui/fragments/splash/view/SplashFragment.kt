@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentLoginBinding
@@ -48,7 +49,7 @@ class SplashFragment : Fragment() {
         viewModel.checarOnline().observe(viewLifecycleOwner, {
             if(it){
                 Handler().postDelayed({
-                    startActivity(Intent(activity, MainActivity::class.java))
+                    findNavController().navigate(R.id.action_splashFragment_to_inicial_nav)
                     onDestroyView()
                 }, 2000L)
             } else{
