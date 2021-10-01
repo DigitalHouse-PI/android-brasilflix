@@ -3,18 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.profile.view.profileFragment"
+    tools:context=".ui.fragments.tips.TipsImageFragment"
     android:background="@drawable/gradiente">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProfileItemList"
+    <ImageView
+        android:id="@+id/imgImageTab"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/profile_clickable_item"
-        tools:itemCount="5"
-        android:layout_marginTop="50dp"
-        />
-
-
+        tools:src="@drawable/tipsimageone" />
 
 </FrameLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.preferences.PreferencesActivity"
+    tools:context=".ui.activity.tips.TipsActivity"
     android:background="@drawable/gradiente">
 
     <fragment
@@ -17,6 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/preferences_nav" />
+        app:navGraph="@navigation/tips_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
