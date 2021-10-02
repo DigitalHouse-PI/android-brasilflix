@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentAccountBinding
 import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
@@ -36,7 +39,14 @@ class accountFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.buttonLogout?.setOnClickListener{
+            Firebase.auth.signOut()
+            Snackbar.make(
+                this.requireView(),
+                getString(R.string.logoutAccount),
+                Snackbar.LENGTH_SHORT
+            ).show()
             startActivity(Intent(activity, MainActivity::class.java))
+            onDestroyView()
         }
 
     }

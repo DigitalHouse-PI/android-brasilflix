@@ -102,5 +102,6 @@
     <string name="profile_config">Alterar foto e etc..</string>
     <string name="accountBar">Conta</string>
     <string name="profileBar">Perfil</string>
+    <string name="logoutAccount">Perfil deslogado</string>
 
 </resources>
