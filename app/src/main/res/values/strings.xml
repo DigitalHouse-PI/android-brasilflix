@@ -96,5 +96,11 @@
     <string name="accept" color="#003880">Home</string>
     <string name="dialogplashText1">Sem conexão com a internet!</string>
     <string name="limitedFunctionsSplash">Funcionalidades do app limitadas</string>
+    <string name="accountLogout">Sair</string>
+    <string name="account_description_logout">Deslogar da conta</string>
+    <string name="profileDetails">Configuração do Perfil</string>
+    <string name="profile_config">Alterar foto e etc..</string>
+    <string name="accountBar">Conta</string>
+    <string name="profileBar">Perfil</string>
 
 </resources>

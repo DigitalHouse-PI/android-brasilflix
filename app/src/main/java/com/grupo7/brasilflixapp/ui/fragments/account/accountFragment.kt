@@ -1,20 +1,24 @@
 package com.grupo7.brasilflixapp.ui.fragments.account
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.grupo7.brasilflixapp.ui.fragments.profile.adapter.ProfileItemAdapter
+import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentAccountBinding
+import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
+import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity
 import com.grupo7.brasilflixapp.ui.model.profile.ItemProfile
 import com.grupo7.brasilflixapp.util.enumarators.ProfileItemActionEnum
 import com.grupo7.brasilflixapp.util.interfaces.IProfileItemClick
 
 
-class accountFragment : Fragment(), IProfileItemClick {
+class accountFragment : Fragment() {
 
     private var binding: FragmentAccountBinding? = null
 
@@ -30,22 +34,11 @@ class accountFragment : Fragment(), IProfileItemClick {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val item1 = ItemProfile("Alterar Senha", "", true, ProfileItemActionEnum.GO_TO_EDIT_ACCOUNT)
-        val item2 = ItemProfile("Alterar foto do perfil", "", true, ProfileItemActionEnum.NO_ACTION)
-        val item3 = ItemProfile("Alterar email", "", true, ProfileItemActionEnum.NO_ACTION)
-        val item4 = ItemProfile("Cancelar conta", "", true, ProfileItemActionEnum.NO_ACTION)
 
-        val list = listOf<ItemProfile>(item1, item2, item3, item4)
-        val itemAdapter = ProfileItemAdapter(list, this) {
-            Log.i("item", it.itemTitle)
+        binding?.buttonLogout?.setOnClickListener{
+            startActivity(Intent(activity, MainActivity::class.java))
         }
 
-        binding?.let {
-            with(it) {
-                rvAccountItemList.layoutManager = LinearLayoutManager(context)
-                rvAccountItemList.adapter = itemAdapter
-            }
-        }
     }
 
     override fun onDestroyView() {
@@ -53,9 +46,7 @@ class accountFragment : Fragment(), IProfileItemClick {
         binding = null
     }
 
-    override fun itemProfileCLick(item: ItemProfile) {
-        TODO("Not yet implemented")
-    }
+
 
 
 }

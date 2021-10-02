@@ -49,7 +49,10 @@ class SplashFragment : Fragment() {
         viewModel.checarOnline().observe(viewLifecycleOwner, {
             if(it){
                 Handler().postDelayed({
-                    findNavController().navigate(R.id.action_splashFragment_to_inicial_nav)
+                    view?.post {
+//                        findNavController().navigate(R.id.action_splashFragment_to_inicial_nav)
+                        startActivity(Intent(activity, MainActivity::class.java))
+                    }
                     onDestroyView()
                 }, 2000L)
             } else{
