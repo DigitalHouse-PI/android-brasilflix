@@ -1,5 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.account
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -40,14 +43,20 @@ class accountFragment : Fragment() {
 
         binding?.buttonLogout?.setOnClickListener{
             Firebase.auth.signOut()
-            Snackbar.make(
-                this.requireView(),
-                getString(R.string.logoutAccount),
-                Snackbar.LENGTH_SHORT
-            ).show()
             startActivity(Intent(activity, MainActivity::class.java))
             onDestroyView()
         }
+
+    }
+
+    private fun logoutGoogle() {
+        val gso = GoogleSignInOptions
+            .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        GoogleSignIn.getClient(Activity(), gso).signOut()
 
     }
 
