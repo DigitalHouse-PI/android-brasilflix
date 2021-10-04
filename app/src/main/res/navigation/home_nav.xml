@@ -28,14 +28,23 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.detail.main.view.DetailSearchFragment"
+        android:name="com.grupo7.brasilflixapp.ui.fragments.detail.main.view.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_detailFragment_to_VideosFragment"
+            app:destination="@id/VideosFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.grupo7.brasilflixapp.ui.fragments.favorites.view.FavoritesFragment"
         android:label="FavoritesFragment"
         tools:layout="@layout/fragment_favorites"/>
+    <fragment
+        android:id="@+id/VideosFragment"
+        android:name="com.grupo7.brasilflixapp.ui.fragments.videos.view.VideosFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_videos" />
 
 
 </navigation>

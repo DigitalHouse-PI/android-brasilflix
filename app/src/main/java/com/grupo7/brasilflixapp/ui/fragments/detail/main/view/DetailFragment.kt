@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -18,6 +19,8 @@ import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesSeries
 import com.grupo7.brasilflixapp.ui.fragments.detail.main.adapter.DetailReviewSearchAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.main.viewmodel.DetailSearchViewModel
 import com.grupo7.brasilflixapp.ui.fragments.detail.main.viewmodel.DetailViewModel
+import com.grupo7.brasilflixapp.util.constants.Constants.Detail.KEY_BUNDLE_VIDEO_ID_MOVIE
+import com.grupo7.brasilflixapp.util.constants.Constants.Detail.KEY_BUNDLE_VIDEO_ID_SERIE
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_SERIE_ID
 import com.grupo7.brasilflixapp.util.constants.Constants.Series.KET_BUNDLE_SERIES
@@ -79,6 +82,25 @@ class DetailFragment(
 
         binding?.ivMenu?.setOnClickListener {
             activity?.onBackPressed()
+        }
+
+        binding?.ivMovie?.setOnClickListener {
+
+            if (serieFragment == 50) {
+                val bundle = Bundle()
+                bundle.putInt(KEY_BUNDLE_VIDEO_ID_SERIE, serieId)
+                findNavController().navigate(
+                    R.id.action_detailFragment_to_VideosFragment,
+                    bundle
+                )
+            } else {
+                val bundle = Bundle()
+                bundle.putInt(KEY_BUNDLE_VIDEO_ID_MOVIE, movieId)
+                findNavController().navigate(
+                    R.id.action_detailFragment_to_VideosFragment,
+                    bundle
+                )
+            }
         }
 
         binding?.ivHeart?.setOnClickListener {

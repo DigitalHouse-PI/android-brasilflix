@@ -103,5 +103,8 @@
     <string name="accountBar">Conta</string>
     <string name="profileBar">Perfil</string>
     <string name="logoutAccount">Perfil deslogado</string>
+    <string name="videoCardText">Video</string>
+    <string name="watchVideoCard">Assistir</string>
+    <string name="videoFragmentText">Trailers disponíveis</string>
 
 </resources>
