@@ -3,25 +3,18 @@ package com.grupo7.brasilflixapp.ui.fragments.account
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentAccountBinding
 import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
-import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity
-import com.grupo7.brasilflixapp.ui.model.profile.ItemProfile
-import com.grupo7.brasilflixapp.util.enumarators.ProfileItemActionEnum
-import com.grupo7.brasilflixapp.util.interfaces.IProfileItemClick
+
 
 
 class accountFragment : Fragment() {
@@ -48,7 +41,6 @@ class accountFragment : Fragment() {
         }
 
     }
-
     private fun logoutGoogle() {
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -57,6 +49,7 @@ class accountFragment : Fragment() {
             .build()
 
         GoogleSignIn.getClient(Activity(), gso).signOut()
+
 
     }
 
