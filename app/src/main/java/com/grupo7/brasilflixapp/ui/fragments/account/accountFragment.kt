@@ -14,7 +14,8 @@ import com.google.firebase.ktx.Firebase
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentAccountBinding
 import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
-
+import com.grupo7.brasilflixapp.util.constants.Constants
+import com.grupo7.brasilflixapp.util.constants.Constants.Logout.LOGIN_TYPE
 
 
 class accountFragment : Fragment() {
@@ -35,9 +36,16 @@ class accountFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.buttonLogout?.setOnClickListener{
-            Firebase.auth.signOut()
-            startActivity(Intent(activity, MainActivity::class.java))
-            onDestroyView()
+            if(LOGIN_TYPE == 10) {
+                Firebase.auth.signOut()
+                startActivity(Intent(activity, MainActivity::class.java))
+                onDestroyView()
+            } else if (LOGIN_TYPE == 20){
+                Firebase.auth.signOut()
+                logoutGoogle()
+                startActivity(Intent(activity, MainActivity::class.java))
+                onDestroyView()
+            }
         }
 
     }
@@ -48,7 +56,7 @@ class accountFragment : Fragment() {
             .requestEmail()
             .build()
 
-        GoogleSignIn.getClient(Activity(), gso).signOut()
+        GoogleSignIn.getClient(this.requireActivity(), gso).signOut()
 
 
     }

@@ -1,6 +1,6 @@
 package com.grupo7.brasilflixapp.ui.fragments.login
 
-import android.app.Activity
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +22,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentLoginBinding
+import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
+import com.grupo7.brasilflixapp.util.constants.Constants.Logout.LOGIN_TYPE
 
 
 class LoginFragment : Fragment() {
@@ -29,17 +31,38 @@ class LoginFragment : Fragment() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var auth: FirebaseAuth
 
+    companion object {
+        private const val RC_SIGN_IN = 1
+        private const val TAG = "EmailPassword"
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+
+        if (currentUser != null) {
+            goToPreferences()
+            Snackbar.make(
+                this.requireView(),
+                getString(R.string.alreadyloggedin),
+                Snackbar.LENGTH_SHORT
+            ).show()
+
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = Firebase.auth
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        googleSignInClient = GoogleSignIn.getClient(activity, gso)
+        googleSignInClient = GoogleSignIn.getClient(this.requireActivity(), gso)
+        auth = Firebase.auth
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,7 +73,6 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         binding?.floatingActionButton?.setOnClickListener {
 
@@ -65,7 +87,6 @@ class LoginFragment : Fragment() {
                 ).show()
             } else {
                 signInFirebase(email, password)
-
             }
         }
 
@@ -73,12 +94,6 @@ class LoginFragment : Fragment() {
             signInGoogle()
         }
 
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 
     private fun signInGoogle() {
@@ -93,8 +108,7 @@ class LoginFragment : Fragment() {
             .addOnCompleteListener(this.requireActivity()) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithEmail:success")
-                    val user = auth.currentUser
-                    updateUI(user)
+                    LOGIN_TYPE = 10
                     goToPreferences()
                     Snackbar.make(
                         this.requireView(),
@@ -113,42 +127,6 @@ class LoginFragment : Fragment() {
             }
 
     }
-
-    private fun updateUI(user: FirebaseUser?) {
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-        val currentUser = auth.currentUser
-
-        if (currentUser != null) {
-            goToPreferences()
-            Snackbar.make(
-                this.requireView(),
-                getString(R.string.alreadyloggedin),
-                Snackbar.LENGTH_SHORT
-            ).show()
-
-        }
-    }
-
-    private fun goToPreferences() {
-        findNavController().navigate(R.id.action_initialFragment_to_preferences_nav)
-    }
-
-    private fun reload() {
-
-    }
-
-    companion object {
-        private const val RC_SIGN_IN = 1
-        private const val TAG = "EmailPassword"
-        private const val TAG2 = "GoogleActivity"
-        const val KEY_USER = "user"
-        const val KEY_PASSWORD = "password"
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -169,22 +147,34 @@ class LoginFragment : Fragment() {
 
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
-        activity?.let {
-            auth.signInWithCredential(credential)
-                .addOnCompleteListener(it) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        goToPreferences()
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w("TAG", "signInWithCredential:failure", task.exception)
-                        Toast.makeText(
-                            context,
-                            "Erro ao efetuar o login, verificar login/senha",
-                            Toast.LENGTH_LONG
-                        ).show()
-                    }
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this.requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
+                    LOGIN_TYPE = 20
+                    goToPreferences()
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    Toast.makeText(
+                        context,
+                        "Erro ao efetuar o login, verificar login/senha",
+                        Toast.LENGTH_LONG
+                    ).show()
                 }
-        }
+            }
     }
+
+    private fun goToPreferences() {
+        findNavController().navigate(R.id.action_initialFragment_to_preferences_nav)
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
+
 }
