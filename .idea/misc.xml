@@ -11,9 +11,10 @@
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/activity_splash.xml" value="0.2898550724637681" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/favorites.xml" value="0.25" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/films.xml" value="0.1671195652173913" />
+        <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_account.xml" value="0.1712962962962963" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_detail_search.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_detail_series.xml" value="0.16875" />
+        <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_detail_series.xml" value="0.21" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_favorites.xml" value="0.22" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_favorites_movies.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_favorites_series.xml" value="0.20416666666666666" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_series.xml" value="0.15081521739130435" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/fragment_videos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/reviews.xml" value="0.1712962962962963" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/search.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Lucas Coelho/Documents/AndroidProjects/android-brasilflix/app/src/main/res/layout/videos.xml" value="0.25" />
         <entry key="..\:/Users/bruno/Documents/Estudos/Digital House/android-brasilflix/app/src/main/res/drawable/outline_chevron_right_24.xml" value="0.29583333333333334" />

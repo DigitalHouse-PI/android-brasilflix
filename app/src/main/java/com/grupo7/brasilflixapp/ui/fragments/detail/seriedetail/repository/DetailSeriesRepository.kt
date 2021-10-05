@@ -21,6 +21,12 @@ class DetailSeriesRepository (
         }
     }
 
+    suspend fun getReviewsSeries(serieId: Int): ResponseApi {
+        return safeApiCall {
+            RetrofitInstance.tmdbApi.getReviewsSeries(serieId, Constants.Home.FIRST_PAGE)
+        }
+    }
+
     suspend fun getSerieByIdFromDb(serieId: Int) =
         AllSeriesDatabase.getDatabase(application)
             .allseriesDao().loadAllSeriesById(serieId)

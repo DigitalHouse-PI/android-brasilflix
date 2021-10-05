@@ -108,5 +108,7 @@
     <string name="videoFragmentText">Trailers disponíveis</string>
     <string name="favoritesMovies">Filmes</string>
     <string name="favoritesSeries">Séries</string>
+    <string name="noavailableMovies">Ops, sem Trailer por aqui!</string>
+    <string name="backVideosFragment">Voltar</string>
 
 </resources>

@@ -12,7 +12,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentVideosBinding
+import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
 import com.grupo7.brasilflixapp.ui.fragments.videos.adapter.VideosAdapter
 import com.grupo7.brasilflixapp.ui.fragments.videos.viewmodel.VideosViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Detail.KEY_BUNDLE_VIDEO_ID_MOVIE
@@ -62,26 +65,37 @@ class VideosFragment : Fragment() {
             viewModel.getMoviesVideos(movieId)
 
             viewModel.getSeriesVideos(serieId)
-            Log.i("tagserieid", "$serieId")
 
             setupObservablesMovies()
 
             setupObservablesSeries()
         }
     }
+
     private fun setupObservablesMovies() {
         viewModel.onSuccessMoviesVideos?.observe(viewLifecycleOwner, {
-            it?.let {
-                val VideosAdapter = VideosAdapter(it){
-                    startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(it.key)))
+            if (it.isEmpty()) {
+                context?.let { it1 ->
+                    MaterialAlertDialogBuilder(it1)
+                        .setTitle(resources.getString(R.string.noavailableMovies))
+                        .setPositiveButton(resources.getString(R.string.backVideosFragment)) { dialog, which ->
+                            activity?.onBackPressed()
+                        }
+                        .show()
                 }
-                binding?.let {
-                    with(it) {
-                        videosRecyclerView.layoutManager = LinearLayoutManager(context)
-                        videosRecyclerView.adapter = VideosAdapter
-                        videosRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
-                            .Adapter.StateRestorationPolicy
-                            .PREVENT_WHEN_EMPTY
+            } else {
+                it?.let {
+                    val VideosAdapter = VideosAdapter(it) {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it.key)))
+                    }
+                    binding?.let {
+                        with(it) {
+                            videosRecyclerView.layoutManager = LinearLayoutManager(context)
+                            videosRecyclerView.adapter = VideosAdapter
+                            videosRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
+                                .Adapter.StateRestorationPolicy
+                                .PREVENT_WHEN_EMPTY
+                        }
                     }
                 }
             }
@@ -91,24 +105,34 @@ class VideosFragment : Fragment() {
 
     private fun setupObservablesSeries() {
         viewModel.onSuccessSeriesVideos?.observe(viewLifecycleOwner, {
-            it?.let {
-                val VideosAdapter = VideosAdapter(it){
-                    startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(it.key)))
+            if (it.isEmpty()) {
+                context?.let { it1 ->
+                    MaterialAlertDialogBuilder(it1)
+                        .setTitle(resources.getString(R.string.noavailableMovies))
+                        .setPositiveButton(resources.getString(R.string.backVideosFragment)) { dialog, which ->
+                            activity?.onBackPressed()
+                        }
+                        .show()
                 }
-                binding?.let {
-                    with(it) {
-                        videosRecyclerView.layoutManager = LinearLayoutManager(context)
-                        videosRecyclerView.adapter = VideosAdapter
-                        videosRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
-                            .Adapter.StateRestorationPolicy
-                            .PREVENT_WHEN_EMPTY
+            } else {
+                it?.let {
+                    val VideosAdapter = VideosAdapter(it) {
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it.key)))
+                    }
+                    binding?.let {
+                        with(it) {
+                            videosRecyclerView.layoutManager = LinearLayoutManager(context)
+                            videosRecyclerView.adapter = VideosAdapter
+                            videosRecyclerView.adapter?.stateRestorationPolicy = RecyclerView
+                                .Adapter.StateRestorationPolicy
+                                .PREVENT_WHEN_EMPTY
+                        }
                     }
                 }
             }
         })
 
     }
-
 
 
 }
