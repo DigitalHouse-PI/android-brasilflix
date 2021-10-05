@@ -20,6 +20,7 @@ import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.adapter.DetailRe
 import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.viewmodel.DetailViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Detail.KEY_BUNDLE_VIDEO_ID_MOVIE
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
+import com.grupo7.brasilflixapp.util.share.ShareImage
 
 
 class DetailFragment(
@@ -29,6 +30,7 @@ class DetailFragment(
     private val movieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_MOVIE_ID) ?: -1
     }
+    private val mainView = binding?.mainViewDetail
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,16 +85,13 @@ class DetailFragment(
 
         binding?.ivHeart?.setOnClickListener {
 
-
             detailViewModel.onSuccessMovieById.observe(viewLifecycleOwner, {
-
 
                 val id = it.id
                 val poster = it.poster_path
                 val title = it.title
                 val favorite = Favorites(id, poster, title)
                 detailViewModel.saveFavoritesDb(favorite)
-
 
                 Snackbar.make(
                     this.requireView(),
@@ -128,7 +127,6 @@ class DetailFragment(
 
 
     }
-
 
     private fun setupReviewsMovies() {
         detailViewModel.onSuccessReviewsMovies.observe(viewLifecycleOwner, {
