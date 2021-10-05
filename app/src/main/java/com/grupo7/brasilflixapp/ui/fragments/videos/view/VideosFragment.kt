@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -75,14 +76,8 @@ class VideosFragment : Fragment() {
     private fun setupObservablesMovies() {
         viewModel.onSuccessMoviesVideos?.observe(viewLifecycleOwner, {
             if (it.isEmpty()) {
-                context?.let { it1 ->
-                    MaterialAlertDialogBuilder(it1)
-                        .setTitle(resources.getString(R.string.noavailableMovies))
-                        .setPositiveButton(resources.getString(R.string.backVideosFragment)) { dialog, which ->
-                            activity?.onBackPressed()
-                        }
-                        .show()
-                }
+                binding?.notrailerCard?.isVisible = true
+                binding?.videosRecyclerView?.isVisible = false
             } else {
                 it?.let {
                     val VideosAdapter = VideosAdapter(it) {
@@ -106,14 +101,8 @@ class VideosFragment : Fragment() {
     private fun setupObservablesSeries() {
         viewModel.onSuccessSeriesVideos?.observe(viewLifecycleOwner, {
             if (it.isEmpty()) {
-                context?.let { it1 ->
-                    MaterialAlertDialogBuilder(it1)
-                        .setTitle(resources.getString(R.string.noavailableMovies))
-                        .setPositiveButton(resources.getString(R.string.backVideosFragment)) { dialog, which ->
-                            activity?.onBackPressed()
-                        }
-                        .show()
-                }
+                binding?.notrailerCard?.isVisible = true
+                binding?.videosRecyclerView?.isVisible = false
             } else {
                 it?.let {
                     val VideosAdapter = VideosAdapter(it) {

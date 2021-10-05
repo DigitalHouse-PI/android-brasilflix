@@ -110,5 +110,6 @@
     <string name="favoritesSeries">Séries</string>
     <string name="noavailableMovies">Ops, sem Trailer por aqui!</string>
     <string name="backVideosFragment">Voltar</string>
+    <string name="notrailer">Ops! Nenhum trailer encontrado!</string>
 
 </resources>
