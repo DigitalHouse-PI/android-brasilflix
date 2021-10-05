@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.ui.fragments.detail.main.repository
+package com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.repository
 
 import android.app.Application
 import com.grupo7.brasilflixapp.data.api.main.RetrofitInstance

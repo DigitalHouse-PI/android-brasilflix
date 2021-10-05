@@ -106,5 +106,7 @@
     <string name="videoCardText">Video</string>
     <string name="watchVideoCard">Assistir</string>
     <string name="videoFragmentText">Trailers disponíveis</string>
+    <string name="favoritesMovies">Filmes</string>
+    <string name="favoritesSeries">Séries</string>
 
 </resources>

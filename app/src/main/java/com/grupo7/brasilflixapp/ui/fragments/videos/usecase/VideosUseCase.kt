@@ -1,15 +1,12 @@
 package com.grupo7.brasilflixapp.ui.fragments.videos.usecase
 
 import android.app.Application
+import android.util.Log
 import com.grupo7.brasilflixapp.data.api.util.ResponseApi
-import com.grupo7.brasilflixapp.extensions.getDateBR
-import com.grupo7.brasilflixapp.extensions.getFullImageUrl
 import com.grupo7.brasilflixapp.extensions.getFullYoutubeUrl
-import com.grupo7.brasilflixapp.ui.fragments.detail.main.repository.DetailRepository
 import com.grupo7.brasilflixapp.ui.fragments.videos.repository.VideosRepository
-import com.grupo7.brasilflixapp.ui.model.films.films
-import com.grupo7.brasilflixapp.ui.model.series.Series
 import com.grupo7.brasilflixapp.ui.model.videos.Videos
+import com.grupo7.brasilflixapp.ui.model.videos.VideosResults
 
 class VideosUseCase(
     private val application: Application
@@ -20,9 +17,14 @@ class VideosUseCase(
     suspend fun getMoviesVideos(movieId: Int): ResponseApi {
         return when(val responseApi = videosRepository.getMoviesVideos(movieId)) {
             is ResponseApi.Success -> {
-                val films = responseApi.data as? Videos
-                films?.key = films?.key?.getFullYoutubeUrl()
-                return ResponseApi.Success(films)
+                val films = responseApi.data as? VideosResults
+                Log.i("tag1movie", "$films")
+                var result = films?.results?.map {
+                    it.key = it.key.getFullYoutubeUrl()
+                    it
+                }
+                return ResponseApi.Success(result)
+
             }
             is ResponseApi.Error -> {
                 responseApi

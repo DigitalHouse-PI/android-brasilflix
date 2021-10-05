@@ -1,14 +1,12 @@
-package com.grupo7.brasilflixapp.ui.fragments.detail.main.repository
+package com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.repository
 
 import android.app.Application
 import com.grupo7.brasilflixapp.data.api.main.RetrofitInstance
 import com.grupo7.brasilflixapp.data.api.util.ResponseApi
 import com.grupo7.brasilflixapp.base.BaseRepository
 import com.grupo7.brasilflixapp.data.database.movies.allmovies.database.AllMoviesDatabase
-import com.grupo7.brasilflixapp.data.database.series.allseries.database.AllSeriesDatabase
 import com.grupo7.brasilflixapp.data.database.favorites.database.FavoritesDatabase
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
-import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesSeries
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.FIRST_PAGE
 
 class DetailRepository(
@@ -18,12 +16,6 @@ class DetailRepository(
     suspend fun getMovieById(movieId: Int): ResponseApi {
         return safeApiCall {
             RetrofitInstance.tmdbApi.getMovieById(movieId)
-        }
-    }
-
-    suspend fun getSeriesById(serieId: Int): ResponseApi {
-        return safeApiCall {
-            RetrofitInstance.tmdbApi.getSeriesById(serieId)
         }
     }
 
@@ -37,19 +29,12 @@ class DetailRepository(
         AllMoviesDatabase.getDatabase(application)
             .allmoviesDao().loadAllMoviesById(movieId)
 
-    suspend fun getSerieByIdFromDb(serieId: Int) =
-        AllSeriesDatabase.getDatabase(application)
-            .allseriesDao().loadAllSeriesById(serieId)
 
     suspend fun saveFavoritesDb(favorites: Favorites) =
         FavoritesDatabase.getDatabase(
             application
         ).favoritesDao().insertFavorites(favorites)
 
-    suspend fun saveFavoritesSeriesDb(favorites: FavoritesSeries) =
-        FavoritesDatabase.getDatabase(
-            application
-        ).favoritesSeriesDao().insertFavoritesSeries(favorites)
 
 
 }

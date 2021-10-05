@@ -5,11 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.grupo7.brasilflixapp.base.BaseViewModel
-import com.grupo7.brasilflixapp.ui.fragments.detail.main.usecase.DetailUseCase
 import com.grupo7.brasilflixapp.ui.fragments.videos.usecase.VideosUseCase
-import com.grupo7.brasilflixapp.ui.model.films.films
-import com.grupo7.brasilflixapp.ui.model.reviews.AuthorResults
-import com.grupo7.brasilflixapp.ui.model.series.Series
 import com.grupo7.brasilflixapp.ui.model.videos.Videos
 import kotlinx.coroutines.launch
 

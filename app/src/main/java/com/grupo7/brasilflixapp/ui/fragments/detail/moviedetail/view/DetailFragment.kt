@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.ui.fragments.detail.main.view
+package com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,15 +15,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
-import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesSeries
-import com.grupo7.brasilflixapp.ui.fragments.detail.main.adapter.DetailReviewSearchAdapter
-import com.grupo7.brasilflixapp.ui.fragments.detail.main.viewmodel.DetailSearchViewModel
-import com.grupo7.brasilflixapp.ui.fragments.detail.main.viewmodel.DetailViewModel
+import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.adapter.DetailReviewAdapter
+import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.viewmodel.DetailViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants.Detail.KEY_BUNDLE_VIDEO_ID_MOVIE
-import com.grupo7.brasilflixapp.util.constants.Constants.Detail.KEY_BUNDLE_VIDEO_ID_SERIE
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
-import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_SERIE_ID
-import com.grupo7.brasilflixapp.util.constants.Constants.Series.KET_BUNDLE_SERIES
 
 
 class DetailFragment(
@@ -32,14 +27,6 @@ class DetailFragment(
     private lateinit var detailViewModel: DetailViewModel
     private val movieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_MOVIE_ID) ?: -1
-    }
-
-    private val serieId: Int by lazy {
-        arguments?.getInt(KEY_BUNDLE_SERIE_ID) ?: -1
-    }
-
-    private val serieFragment: Int by lazy {
-        arguments?.getInt(KET_BUNDLE_SERIES) ?: -1
     }
 
 
@@ -70,13 +57,11 @@ class DetailFragment(
 
             detailViewModel.getMovieByIdFromDb(movieId)
 
-            detailViewModel.getSerieByIdFromDb(serieId)
 
             setupReviewsMovies()
 
             setupDetailMovie()
 
-            setupDetailSerie()
 
         }
 
@@ -85,63 +70,37 @@ class DetailFragment(
         }
 
         binding?.ivMovie?.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt(KEY_BUNDLE_VIDEO_ID_MOVIE, movieId)
 
-            if (serieFragment == 50) {
-                val bundle = Bundle()
-                bundle.putInt(KEY_BUNDLE_VIDEO_ID_SERIE, serieId)
-                findNavController().navigate(
-                    R.id.action_detailFragment_to_VideosFragment,
-                    bundle
-                )
-            } else {
-                val bundle = Bundle()
-                bundle.putInt(KEY_BUNDLE_VIDEO_ID_MOVIE, movieId)
-                findNavController().navigate(
-                    R.id.action_detailFragment_to_VideosFragment,
-                    bundle
-                )
-            }
+            findNavController().navigate(
+                R.id.action_detailFragment_to_VideosFragment,
+                bundle
+            )
+
         }
 
         binding?.ivHeart?.setOnClickListener {
 
 
-            if (serieFragment == 50) {
-                detailViewModel.onSuccessSerieDbByIdFromDb.observe(viewLifecycleOwner, {
-
-                    val id = it.id
-                    val poster = it.poster_path
-                    val title = it.original_name
-                    val favorite = FavoritesSeries(id, poster, title)
-                    detailViewModel.saveFavoritesSeriesDb(favorite)
-
-                    Snackbar.make(
-                        this.requireView(),
-                        getString(R.string.favoriteadded),
-                        Snackbar.LENGTH_SHORT
-                    ).show()
-                })
-
-            } else {
-                detailViewModel.onSuccessMovieById.observe(viewLifecycleOwner, {
+            detailViewModel.onSuccessMovieById.observe(viewLifecycleOwner, {
 
 
-                    val id = it.id
-                    val poster = it.poster_path
-                    val title = it.title
-                    val favorite = Favorites(id, poster, title)
-                    detailViewModel.saveFavoritesDb(favorite)
+                val id = it.id
+                val poster = it.poster_path
+                val title = it.title
+                val favorite = Favorites(id, poster, title)
+                detailViewModel.saveFavoritesDb(favorite)
 
 
-                    Snackbar.make(
-                        this.requireView(),
-                        getString(R.string.favoriteadded),
-                        Snackbar.LENGTH_SHORT
-                    ).show()
-                })
+                Snackbar.make(
+                    this.requireView(),
+                    getString(R.string.favoriteadded),
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            })
 
 
-            }
         }
     }
 
@@ -168,33 +127,11 @@ class DetailFragment(
 
     }
 
-    private fun setupDetailSerie() {
-
-        detailViewModel.onSuccessSerieDbByIdFromDb.observe(viewLifecycleOwner, {
-            it?.let { serie ->
-                binding?.let { bindingNonNull ->
-                    with(bindingNonNull) {
-                        activity?.let { activityNonNull ->
-                            Glide.with(activityNonNull)
-                                .load(serie.poster_path)
-                                .placeholder(R.drawable.brflixlogo)
-                                .into(imageCardDetail)
-                        }
-                        tvTitle.text = serie.original_name
-                        tvTextSummary.text = serie.overview
-                        dateCardDetail.text = ("Data de lançamento:  ${serie.first_air_date}")
-                    }
-                }
-            }
-        })
-
-
-    }
 
     private fun setupReviewsMovies() {
         detailViewModel.onSuccessReviewsMovies.observe(viewLifecycleOwner, {
             it?.let {
-                val ReviewsAdapter = DetailReviewSearchAdapter(it)
+                val ReviewsAdapter = DetailReviewAdapter(it)
                 binding?.let {
                     with(it) {
                         reviewsRecyclerView.layoutManager = LinearLayoutManager(context)
