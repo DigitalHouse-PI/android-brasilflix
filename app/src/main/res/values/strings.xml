@@ -2,7 +2,7 @@
     <string name="app_name">BrasilFlix</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Fragmento Novo</string>
-    <string name="login">Alterar foto</string>
+    <string name="login">Login</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="nome">Nome</string>
     <string name="cpf">CPF</string>
@@ -115,5 +115,8 @@
     <string name="profile_picture">Alteração de foto</string>
     <string name="profilePictureChange">Alterar Foto</string>
     <string name="google_sign">Entrar com Google</string>
+    <string name="changepicture">Alterar Foto</string>
+    <string name="confirmation_register">Obrigado por se juntar a nós!</string>
+    <string name="back_to_login">Login</string>
 
 </resources>

@@ -46,7 +46,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/rubik_bold"
-            android:text="@string/login"
+            android:text="@string/changepicture"
             android:textSize="11sp"
             android:textStyle="bold"
             app:backgroundTint="@color/button"

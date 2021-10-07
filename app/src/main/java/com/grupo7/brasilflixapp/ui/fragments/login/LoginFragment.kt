@@ -167,6 +167,7 @@ class LoginFragment : Fragment() {
                     ).show()
                 }
             }
+
     }
 
     private fun goToPreferences() {
