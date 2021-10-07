@@ -22,7 +22,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FragmentLoginBinding
+import com.grupo7.brasilflixapp.extensions.getUserID
 import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
+import com.grupo7.brasilflixapp.util.constants.Constants.Login.UserID
 import com.grupo7.brasilflixapp.util.constants.Constants.Logout.LOGIN_TYPE
 
 
@@ -39,8 +41,9 @@ class LoginFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
-
         if (currentUser != null) {
+            UserID = currentUser.uid.toString()
+            Log.i("testeID", "$UserID")
             goToPreferences()
             Snackbar.make(
                 this.requireView(),
@@ -105,6 +108,8 @@ class LoginFragment : Fragment() {
             .addOnCompleteListener(this.requireActivity()) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "signInWithEmail:success")
+                    val currentUser = auth.currentUser
+                    UserID = currentUser?.uid.toString()
                     LOGIN_TYPE = 10
                     goToPreferences()
                     Snackbar.make(
@@ -148,6 +153,8 @@ class LoginFragment : Fragment() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
+                    val currentUser = auth.currentUser
+                    UserID = currentUser?.uid.toString()
                     LOGIN_TYPE = 20
                     goToPreferences()
                 } else {

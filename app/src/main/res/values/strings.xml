@@ -2,7 +2,7 @@
     <string name="app_name">BrasilFlix</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Fragmento Novo</string>
-    <string name="login">Login</string>
+    <string name="login">Alterar foto</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="nome">Nome</string>
     <string name="cpf">CPF</string>
@@ -98,7 +98,7 @@
     <string name="limitedFunctionsSplash">Funcionalidades do app limitadas</string>
     <string name="accountLogout">Sair</string>
     <string name="account_description_logout">Deslogar da conta</string>
-    <string name="profileDetails">Configuração do Perfil</string>
+    <string name="profileDetails">Dados pessoais, e-mail e etc..</string>
     <string name="profile_config">Alterar foto e etc..</string>
     <string name="accountBar">Conta</string>
     <string name="profileBar">Perfil</string>
@@ -112,5 +112,7 @@
     <string name="backVideosFragment">Voltar</string>
     <string name="notrailer">Ops! Nenhum trailer encontrado!</string>
     <string name="title_share_card">Compartilhando Série/Filme</string>
+    <string name="profile_picture">Alteração de foto</string>
+    <string name="profilePictureChange">Alterar Foto</string>
 
 </resources>
