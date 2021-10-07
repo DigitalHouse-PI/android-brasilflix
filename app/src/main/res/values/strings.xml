@@ -118,5 +118,10 @@
     <string name="changepicture">Alterar Foto</string>
     <string name="confirmation_register">Obrigado por se juntar a nós!</string>
     <string name="back_to_login">Login</string>
+    <string name="forgotPasswordLogin">Esqueceu a senha? Clique aqui</string>
+    <string name="forgotPasswordDetails">Iremos te enviar o link para reset da senha!</string>
+    <string name="forgotPassword">Enviar</string>
+    <string name="forgotPasswordsuccessfully">E-mail enviado com sucesso!</string>
+    <string name="forgotPasswordfailure">Ocorreu um erro ao enviar o email!</string>
 
 </resources>

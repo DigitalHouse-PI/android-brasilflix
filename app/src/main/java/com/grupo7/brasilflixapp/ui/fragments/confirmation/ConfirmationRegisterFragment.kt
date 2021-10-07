@@ -1,4 +1,4 @@
-package com.grupo7.brasilflixapp.ui.fragments.confirmation.register
+package com.grupo7.brasilflixapp.ui.fragments.confirmation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

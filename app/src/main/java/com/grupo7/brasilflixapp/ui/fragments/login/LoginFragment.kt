@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
 
     companion object {
         private const val RC_SIGN_IN = 1
-        private const val TAG = "EmailPassword"
+        const val TAG = "EmailPassword"
     }
 
     override fun onStart() {
@@ -93,6 +93,10 @@ class LoginFragment : Fragment() {
 
         binding?.signInButton?.setOnClickListener {
             signInGoogle()
+        }
+
+        binding?.forgotPasswordLogin?.setOnClickListener{
+            findNavController().navigate(R.id.action_initialFragment_to_forgotPasswordFragment)
         }
 
     }

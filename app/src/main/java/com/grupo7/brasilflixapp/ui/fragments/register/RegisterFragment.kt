@@ -85,10 +85,7 @@ class RegisterFragment : Fragment() {
                 binding?.layoutCpf?.error = "CPF inválido ou informações incorretas"
             }
         }
-
-
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
@@ -117,7 +114,4 @@ class RegisterFragment : Fragment() {
                 }
             }
     }
-
-
-
 }
