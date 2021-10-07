@@ -114,5 +114,6 @@
     <string name="title_share_card">Compartilhando Série/Filme</string>
     <string name="profile_picture">Alteração de foto</string>
     <string name="profilePictureChange">Alterar Foto</string>
+    <string name="google_sign">Entrar com Google</string>
 
 </resources>
