@@ -190,6 +190,53 @@
         <entry key="..\:/Users/tania/AndroidStudioProjects/original/android-brasilflix/app/src/main/res/layout/profile_non_clickable_item.xml" value="0.19907407407407407" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/original/android-brasilflix/app/src/main/res/layout/reviews.xml" value="0.19907407407407407" />
         <entry key="..\:/Users/tania/AndroidStudioProjects/original/android-brasilflix/app/src/main/res/layout/search.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22962962962962963" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/button_search.xml" value="0.24375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/gradiente.xml" value="0.24375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/gradiente_externo.xml" value="0.24375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/ic_default_person.xml" value="0.22962962962962963" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/ic_favorite_24px.xml" value="0.22962962962962963" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/ic_favorite_border_24px.xml" value="0.22962962962962963" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/ic_menu_white_hamburger.xml" value="0.22962962962962963" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/drawable/ic_movie.xml" value="0.22962962962962963" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_account.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_change_email.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_main.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_my_preference.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_preferences.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_profile.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_search.xml" value="0.4" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/activity_splash.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/favorites.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/films.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_account.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_change_email.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_confirmation_email.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_detail.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_detail_search.xml" value="0.20121951219512196" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_detail_series.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_favorites.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_favorites_movies.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_favorites_series.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_home.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_home_image.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_initial.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_login.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_my_preference.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_preferences.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_register.xml" value="0.264" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_search.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_series.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_splash.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/fragment_videos.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/reviews.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/search.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/layout/videos.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/menu/back_menu.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/menu/bottom_nav_home.xml" value="0.2234375" />
+        <entry key="..\:/Users/tania/Documents/android-brasilflix/app/src/main/res/menu/top_app_bar.xml" value="0.2234375" />
       </map>
     </option>
   </component>
