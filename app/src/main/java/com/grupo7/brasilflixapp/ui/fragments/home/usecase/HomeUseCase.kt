@@ -8,9 +8,9 @@ import com.grupo7.brasilflixapp.ui.fragments.home.repository.HomeRepository
 import com.grupo7.brasilflixapp.ui.model.films.filmsResults
 
 class HomeUseCase(
-    private val application: Application
+
 ) {
-    private val homeRepository = HomeRepository(application)
+    private val homeRepository = HomeRepository()
 
     fun setupTopRatedList(list: filmsResults?): List<films> {
         return list?.results?.filter{

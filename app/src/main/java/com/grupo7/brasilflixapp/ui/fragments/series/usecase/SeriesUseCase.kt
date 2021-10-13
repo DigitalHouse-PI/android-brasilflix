@@ -8,10 +8,10 @@ import com.grupo7.brasilflixapp.ui.fragments.series.repository.SeriesRepository
 import com.grupo7.brasilflixapp.ui.model.series.SeriesResults
 
 class SeriesUseCase(
-    private val application: Application
+
 ) {
 
-    private val seriesRepository = SeriesRepository(application)
+    private val seriesRepository = SeriesRepository()
 
     suspend fun setupSeriesList(list: SeriesResults?): List<Series> {
         return list?.results?.filter {
