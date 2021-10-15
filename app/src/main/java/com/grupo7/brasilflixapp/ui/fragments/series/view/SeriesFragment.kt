@@ -1,10 +1,13 @@
 package com.grupo7.brasilflixapp.ui.fragments.series.view
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -13,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.base.BaseFragment
 import com.grupo7.brasilflixapp.data.api.util.Command
-import com.grupo7.brasilflixapp.ui.fragments.series.adapter.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
+import com.grupo7.brasilflixapp.ui.fragments.series.adapter.seriesAdapter
 import com.grupo7.brasilflixapp.ui.fragments.series.adapter.popular.SeriesPopularAdapter
 import com.grupo7.brasilflixapp.ui.fragments.series.adapter.toprated.SeriesTopRatedAdapter
 import com.grupo7.brasilflixapp.ui.fragments.series.viewmodel.SeriesViewModel
@@ -50,12 +53,18 @@ class seriesFragment : BaseFragment() {
 
             viewModel.command = MutableLiveData()
 
-            setupObservablesSeries()
-            setupRecyclerViewSeries()
-            setupObservablesSeriesTopRated()
-            setupRecyclerViewSeriesTopRated()
-            setupObservablesSeriesPopular()
-            setupRecyclerViewSeriesPopular()
+            Handler(Looper.getMainLooper()).postDelayed({
+                view.post {
+                    binding?.layoutRecycleMain?.isVisible = true
+                    binding?.loadingLottieSeries?.isVisible = false
+                    setupObservablesSeries()
+                    setupRecyclerViewSeries()
+                    setupObservablesSeriesTopRated()
+                    setupRecyclerViewSeriesTopRated()
+                    setupObservablesSeriesPopular()
+                    setupRecyclerViewSeriesPopular()
+                }
+            }, 1000L)
 
         }
     }

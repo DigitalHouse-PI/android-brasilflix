@@ -2,6 +2,8 @@ package com.grupo7.brasilflixapp.ui.fragments.home.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +21,7 @@ import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
 import com.grupo7.brasilflixapp.ui.activity.account.AccountActivity
+import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
 import com.grupo7.brasilflixapp.ui.activity.profile.ProfileActivity
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.upcomingAdapter
 import com.grupo7.brasilflixapp.ui.fragments.home.viewmodel.HomeViewModel
@@ -75,13 +78,18 @@ class HomeFragment : BaseFragment() {
 
             viewModel.command = command
 
-            setupObservablesToprated()
-            setupRecyclerViewToprated()
-            setupObservablesUpComing()
-            setupRecyclerViewUpComing()
-            setupObservablesPopular()
-            setupRecyclerViewPopular()
-
+            Handler(Looper.getMainLooper()).postDelayed({
+                view.post {
+                    binding?.layoutRecycleMain?.isVisible = true
+                    binding?.loadingLottieHome?.isVisible = false
+                    setupObservablesToprated()
+                    setupRecyclerViewToprated()
+                    setupObservablesUpComing()
+                    setupRecyclerViewUpComing()
+                    setupObservablesPopular()
+                    setupRecyclerViewPopular()
+                }
+            }, 1000L)
         }
 
     }
@@ -157,7 +165,6 @@ class HomeFragment : BaseFragment() {
         })
 
     }
-
     private fun setupRecyclerViewUpComing() {
         binding?.upcomingRecyclerView?.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
