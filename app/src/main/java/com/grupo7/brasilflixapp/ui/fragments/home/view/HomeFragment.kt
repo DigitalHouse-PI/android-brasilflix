@@ -6,12 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grupo7.brasilflixapp.R
+import com.grupo7.brasilflixapp.base.BaseFragment
+import com.grupo7.brasilflixapp.data.api.util.Command
 import com.grupo7.brasilflixapp.ui.activity.search.SearchActivity
 import com.grupo7.brasilflixapp.ui.fragments.home.adapter.filmsAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentHomeBinding
@@ -23,7 +26,7 @@ import com.grupo7.brasilflixapp.ui.fragments.favorites.adapter.popularAdapter
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_ID
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
     private var binding: FragmentHomeBinding? = null
     var fragments: List<Fragment>? = null
     private lateinit var viewModel: HomeViewModel
@@ -70,7 +73,7 @@ class HomeFragment : Fragment() {
         activity?.let {
             viewModel = ViewModelProvider(it)[HomeViewModel::class.java]
 
-            viewModel.command = MutableLiveData()
+            viewModel.command = command
 
             setupObservablesToprated()
             setupRecyclerViewToprated()
@@ -102,6 +105,17 @@ class HomeFragment : Fragment() {
     private fun setupObservablesToprated() {
         viewModel.topRatedPagedList?.observe(viewLifecycleOwner, {
             filmsAdapter.submitList(it)
+        })
+
+        viewModel.command.observe(viewLifecycleOwner, {
+            when (it) {
+                is Command.Loading -> {
+
+                }
+                is Command.Error -> {
+
+                }
+            }
         })
 
     }
@@ -180,5 +194,7 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         binding = null
     }
+
+    override var command: MutableLiveData<Command> = MutableLiveData()
 
 }
