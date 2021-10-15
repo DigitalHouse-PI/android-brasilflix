@@ -11,6 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grupo7.brasilflixapp.R
+import com.grupo7.brasilflixapp.base.BaseFragment
+import com.grupo7.brasilflixapp.data.api.util.Command
 import com.grupo7.brasilflixapp.ui.fragments.series.adapter.seriesAdapter
 import com.grupo7.brasilflixapp.databinding.FragmentSeriesBinding
 import com.grupo7.brasilflixapp.ui.fragments.series.adapter.popular.SeriesPopularAdapter
@@ -19,7 +21,7 @@ import com.grupo7.brasilflixapp.ui.fragments.series.viewmodel.SeriesViewModel
 import com.grupo7.brasilflixapp.util.constants.Constants
 
 
-class seriesFragment : Fragment() {
+class seriesFragment : BaseFragment() {
 
     private var binding: FragmentSeriesBinding? = null
     private lateinit var viewModel: SeriesViewModel
@@ -76,6 +78,17 @@ class seriesFragment : Fragment() {
             seriesAdapter.submitList(it)
         })
 
+        viewModel.command.observe(viewLifecycleOwner, {
+            when (it) {
+                is Command.Loading -> {
+
+                }
+                is Command.Error -> {
+
+                }
+            }
+        })
+
     }
 
     private fun setupRecyclerViewSeries() {
@@ -104,6 +117,17 @@ class seriesFragment : Fragment() {
     private fun setupObservablesSeriesTopRated() {
         viewModel.seriesTopRatedPagedList?.observe(viewLifecycleOwner, {
             seriesTopRatedAdapter.submitList(it)
+        })
+
+        viewModel.command.observe(viewLifecycleOwner, {
+            when (it) {
+                is Command.Loading -> {
+
+                }
+                is Command.Error -> {
+
+                }
+            }
         })
 
     }
@@ -136,6 +160,17 @@ class seriesFragment : Fragment() {
             seriesPopularAdapter.submitList(it)
         })
 
+        viewModel.command.observe(viewLifecycleOwner, {
+            when (it) {
+                is Command.Loading -> {
+
+                }
+                is Command.Error -> {
+
+                }
+            }
+        })
+
     }
 
     private fun setupRecyclerViewSeriesPopular() {
@@ -152,5 +187,7 @@ class seriesFragment : Fragment() {
         super.onDestroyView()
         binding = null
     }
+
+    override var command: MutableLiveData<Command> = MutableLiveData()
 
 }

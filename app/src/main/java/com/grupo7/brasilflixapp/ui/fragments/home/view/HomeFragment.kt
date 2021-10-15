@@ -84,9 +84,6 @@ class HomeFragment : BaseFragment() {
 
         }
 
-        // ------------- Mostrar ViewPager Tela Home -------------//
-
-//        showViewPagerHome()
     }
 
 //    <------------------------------------------------------ Setup Page 2 - TopRated -------------------------------------->
@@ -148,6 +145,17 @@ class HomeFragment : BaseFragment() {
             upcomingAdapter.submitList(it)
         })
 
+        viewModel.command.observe(viewLifecycleOwner, {
+            when (it) {
+                is Command.Loading -> {
+
+                }
+                is Command.Error -> {
+
+                }
+            }
+        })
+
     }
 
     private fun setupRecyclerViewUpComing() {
@@ -178,8 +186,18 @@ class HomeFragment : BaseFragment() {
             popularAdapter.submitList(it)
         })
 
-    }
+        viewModel.command.observe(viewLifecycleOwner, {
+            when (it) {
+                is Command.Loading -> {
 
+                }
+                is Command.Error -> {
+
+                }
+            }
+        })
+
+    }
     private fun setupRecyclerViewPopular() {
         binding?.popularRecyclerView?.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
