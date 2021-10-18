@@ -195,5 +195,5 @@ class DetailFragment(
         super.onDestroyView()
         binding = null
     }
-    
+
 }
