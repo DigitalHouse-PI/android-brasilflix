@@ -138,5 +138,6 @@
     <string name="emailResetPasswordDoesNotMatch">Ops! O e-mail informado difere do cadastrado!</string>
     <string name="emailResetPasswordConnection">Ops! Houve algum problema na comunicação.</string>
     <string name="confirmationEmailResetPassword">Enviamos um e-mail para reset de sua senha! OBS: Checar a caixa de SPAM.</string>
+    <string name="removeFavorites">Remover</string>
 
 </resources>
