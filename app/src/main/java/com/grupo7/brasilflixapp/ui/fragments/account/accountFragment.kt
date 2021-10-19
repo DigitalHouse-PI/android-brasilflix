@@ -39,12 +39,10 @@ class accountFragment : Fragment() {
             if(LOGIN_TYPE == 10) {
                 Firebase.auth.signOut()
                 startActivity(Intent(activity, MainActivity::class.java))
-                onDestroyView()
             } else if (LOGIN_TYPE == 20){
                 Firebase.auth.signOut()
                 logoutGoogle()
                 startActivity(Intent(activity, MainActivity::class.java))
-                onDestroyView()
             }
         }
 
