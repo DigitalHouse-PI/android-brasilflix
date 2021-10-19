@@ -29,7 +29,7 @@ class DetailSeriesFragment : Fragment() {
 
     private var binding: FragmentDetailSeriesBinding? = null
     private lateinit var detailSeriesViewModel: DetailSeriesViewModel
-
+    private var imageSerie: String? = null
     private val serieId: Int by lazy {
         arguments?.getInt(Constants.Home.KEY_BUNDLE_SERIE_ID) ?: -1
     }
@@ -63,6 +63,8 @@ class DetailSeriesFragment : Fragment() {
             setupReviewsSeries()
 
             setupDetailSerie()
+
+            setupImageOrVideo(imageSerie)
 
         }
 
@@ -111,7 +113,7 @@ class DetailSeriesFragment : Fragment() {
         }
     }
 
-    private fun setupImageOrVideo(imageSerie: String) {
+    private fun setupImageOrVideo(imageSerie: String?) {
         detailSeriesViewModel.onSuccessSeriesVideos.observe(viewLifecycleOwner, {
             if (it.isNotEmpty()) {
                 val youtube = it.last()
@@ -121,7 +123,7 @@ class DetailSeriesFragment : Fragment() {
                         override fun onReady(youTubePlayer: YouTubePlayer) {
                             youtube.key?.let { it1 -> youTubePlayer.loadVideo(it1, 0f) }
                         }
-                    })
+                        })
                     youtubePlayerDetail.isFullScreen()
                 }
 
@@ -149,7 +151,7 @@ class DetailSeriesFragment : Fragment() {
             it?.let { serie ->
                 binding?.let { bindingNonNull ->
                     with(bindingNonNull) {
-                        serie.backdrop_path?.let { it1 -> setupImageOrVideo(it1) }
+                        imageSerie = serie.backdrop_path
                         tvTitle.text = serie.original_name
                         tvTextSummary.text = serie.overview
                         dateCardDetail.text = ("Data de lançamento:  ${serie.first_air_date}")
