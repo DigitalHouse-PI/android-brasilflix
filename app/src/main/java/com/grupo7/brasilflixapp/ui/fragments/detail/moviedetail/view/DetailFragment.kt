@@ -67,7 +67,7 @@ class DetailFragment(
 
             setupReviewsMovies()
             setupDetailMovie()
-            setupImageOrVideo(imageMovie)
+
         }
 
         binding?.ivMenu?.setOnClickListener {
@@ -153,7 +153,7 @@ class DetailFragment(
             it?.let { movie ->
                 binding?.let { bindingNonNull ->
                     with(bindingNonNull) {
-                        imageMovie = movie.backdrop_path
+                        movie.backdrop_path?.let { it1 -> setupImageOrVideo(it1) }
                         tvTitle.text = movie.title
                         tvTextSummary.text = movie.overview
                         dateCardDetail.text = ("Data de lançamento:  ${movie.release_date}")
