@@ -56,29 +56,10 @@ class HomeFragment : BaseFragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding?.root
     }
-
-    override fun onStart() {
-        super.onStart()
-
-        loadProfileImageFromStorageAndUserName()
-    }
-
     // ------------- Configuração Top Bar -------------//
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        loadProfileImageFromStorageAndUserName()
-
-        binding?.searchHome?.setOnClickListener{
-            startActivity(Intent(activity, SearchActivity::class.java))
-        }
-
-        binding?.pictureProfileCard?.setOnClickListener{
-            startActivity(Intent(activity, ProfileActivity::class.java))
-        }
-
-
 
         // ------------- Chamando ViewModel -------------//
 
@@ -100,6 +81,17 @@ class HomeFragment : BaseFragment() {
                 }
             }, 1000L)
         }
+
+        loadProfileImageFromStorageAndUserName()
+
+        binding?.searchHome?.setOnClickListener{
+            startActivity(Intent(activity, SearchActivity::class.java))
+        }
+
+        binding?.pictureProfileCard?.setOnClickListener{
+            startActivity(Intent(activity, ProfileActivity::class.java))
+        }
+
 
     }
 
