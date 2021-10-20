@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.preferences.PreferencesFragment"
-    android:background="@drawable/gradiente_externo">
+    android:background="@drawable/gradiente">
 
     <TextView
         android:id="@+id/tvTextoBr"
@@ -96,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next"
-        android:textColor="@color/topMenuHome"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:padding="16sp"
         android:background="?selectableItemBackground"

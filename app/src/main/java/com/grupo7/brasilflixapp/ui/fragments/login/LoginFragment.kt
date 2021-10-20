@@ -26,6 +26,7 @@ import com.grupo7.brasilflixapp.databinding.FragmentLoginBinding
 import com.grupo7.brasilflixapp.extensions.getUserID
 import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
 import com.grupo7.brasilflixapp.util.constants.Constants.Login.UserID
+import com.grupo7.brasilflixapp.util.constants.Constants.Login.UserName
 import com.grupo7.brasilflixapp.util.constants.Constants.Logout.LOGIN_TYPE
 
 
@@ -43,7 +44,8 @@ class LoginFragment : Fragment() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            UserID = currentUser.uid.toString()
+            UserID = currentUser.uid
+            UserName = currentUser.displayName.toString()
             Log.i("testeID", "$UserID")
             goToPreferences()
             Snackbar.make(
