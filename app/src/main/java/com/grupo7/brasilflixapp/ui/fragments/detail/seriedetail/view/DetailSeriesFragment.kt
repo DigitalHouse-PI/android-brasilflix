@@ -64,7 +64,6 @@ class DetailSeriesFragment : Fragment() {
 
             setupDetailSerie()
 
-            setupImageOrVideo(imageSerie)
 
         }
 
@@ -151,7 +150,7 @@ class DetailSeriesFragment : Fragment() {
             it?.let { serie ->
                 binding?.let { bindingNonNull ->
                     with(bindingNonNull) {
-                        imageSerie = serie.backdrop_path
+                        serie.backdrop_path?.let { it1 -> setupImageOrVideo(it1) }
                         tvTitle.text = serie.original_name
                         tvTextSummary.text = serie.overview
                         dateCardDetail.text = ("Data de lançamento:  ${serie.first_air_date}")
