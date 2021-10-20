@@ -45,6 +45,11 @@ class LoginFragment : Fragment() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             UserID = currentUser.uid
+            if(currentUser.displayName.isNullOrEmpty()){
+                UserName = currentUser.email.toString()
+            }else{
+                UserName = currentUser.displayName.toString()
+            }
             Log.i("testeID", "$UserID")
             goToPreferences()
             Snackbar.make(

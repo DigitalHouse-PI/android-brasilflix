@@ -84,6 +84,8 @@ class HomeFragment : BaseFragment() {
 
         loadProfileImageFromStorageAndUserName()
 
+        binding?.userHomeText?.text = "Olá, $UserName"
+
         binding?.searchHome?.setOnClickListener{
             startActivity(Intent(activity, SearchActivity::class.java))
         }
@@ -224,15 +226,22 @@ class HomeFragment : BaseFragment() {
     private fun loadProfileImageFromStorageAndUserName() {
         val firebase = FirebaseStorage.getInstance()
         val storage = firebase.getReference("UserProfileImages")
-        storage.child("${Constants.Login.UserID}.jpeg").downloadUrl.addOnSuccessListener {
-            Picasso.get()
-                .load(it.toString())
-                .error(R.drawable.nophoto)
-                .into(binding?.photoProfile)
+        
+        try {
+            storage.child("${Constants.Login.UserID}.jpeg").downloadUrl.addOnSuccessListener {
+                Picasso.get()
+                    .load(it.toString())
+                    .placeholder(R.drawable.nophoto)
+                    .into(binding?.photoProfile)
 
+            }
+        } catch(e: Exception){
+            Picasso.get()
+                .load(R.drawable.nophoto)
+                .into(binding?.photoProfile)
         }
 
-        binding?.userHomeText?.text = "Olá, $UserName"
+
 
     }
 
