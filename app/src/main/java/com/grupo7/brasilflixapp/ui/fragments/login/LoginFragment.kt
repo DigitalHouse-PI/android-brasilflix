@@ -116,7 +116,6 @@ class LoginFragment : Fragment() {
                     Log.d(TAG, "signInWithEmail:success")
                     val currentUser = auth.currentUser
                     UserID = currentUser?.uid.toString()
-                    UserName = currentUser?.displayName.toString()
                     LOGIN_TYPE = 10
                     goToPreferences()
                     Snackbar.make(
