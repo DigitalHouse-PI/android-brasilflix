@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -17,6 +18,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
+import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesDetails
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
 import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.adapter.DetailReviewAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.viewmodel.DetailViewModel
@@ -30,7 +32,6 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 class DetailFragment(
 ) : Fragment() {
     private var binding: FragmentDetailBinding? = null
-    var fm: FragmentManager? = fragmentManager
     private lateinit var detailViewModel: DetailViewModel
     private val movieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_MOVIE_ID) ?: -1
@@ -48,10 +49,13 @@ class DetailFragment(
     ): View? {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding?.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
 
         activity?.let {
             detailViewModel = ViewModelProvider(it)[DetailViewModel::class.java]
@@ -66,16 +70,18 @@ class DetailFragment(
 
             detailViewModel.getMoviesVideos(movieId)
 
+            detailViewModel.getFavoritesDetailsDb(movieId)
+
+            checkFavoriteChecked()
             setupReviewsMovies()
             setupDetailMovie()
 
         }
 
         binding?.ivMenu?.setOnClickListener {
-//            fm?.beginTransaction()
-//                ?.remove(this)
-            fm?.popBackStack()
-            activity?.onBackPressed()
+
+            binding?.youtubePlayerDetail?.release()
+            this.activity?.onBackPressed()
 
         }
 
@@ -102,14 +108,15 @@ class DetailFragment(
         }
 
         binding?.ivHeart?.setOnClickListener {
-
+            binding?.ivHeart?.setImageResource(R.drawable.ic_heart_red)
             detailViewModel.onSuccessMovieById.observe(viewLifecycleOwner, {
-
                 val id = it.id
                 val poster = it.poster_path
                 val title = it.title
                 val favorite = Favorites(id, poster, title)
+                val favoriteDetail = FavoritesDetails(id, true)
                 detailViewModel.saveFavoritesDb(favorite)
+                detailViewModel.saveFavoritesDetailsDb(favoriteDetail)
 
                 Snackbar.make(
                     this.requireView(),
@@ -121,6 +128,20 @@ class DetailFragment(
 
         }
     }
+
+
+
+
+    private fun checkFavoriteChecked(){
+        detailViewModel.onSuccessFavoriteIdFromDb.observe(viewLifecycleOwner, {
+            it?.let {
+            if (it.isFavorite) {
+                binding?.ivHeart?.setImageResource(R.drawable.ic_heart_red)
+            }
+        }
+        })
+    }
+
 
     private fun setupImageOrVideo(imageMovie: String?) {
         detailViewModel.onSuccessMoviesVideos.observe(viewLifecycleOwner, {
@@ -200,6 +221,7 @@ class DetailFragment(
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+
 
         binding?.youtubePlayerDetail?.release()
 

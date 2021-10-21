@@ -87,11 +87,11 @@ class DetailSearchFragment(
         }
 
         binding?.ivMenu?.setOnClickListener {
-            activity?.onBackPressed()
+            this.activity?.onBackPressed()
         }
 
         binding?.ivHeart?.setOnClickListener {
-
+            binding?.ivHeart?.setImageResource(R.drawable.ic_heart_red)
             if (serieFragment == 50) {
                 detailsearchViewModel.onSuccessSerieDbByIdFromDb.observe(viewLifecycleOwner, {
 

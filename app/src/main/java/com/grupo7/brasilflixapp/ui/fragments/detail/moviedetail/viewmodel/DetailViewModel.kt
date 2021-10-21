@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.grupo7.brasilflixapp.base.BaseViewModel
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
+import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesDetails
 import com.grupo7.brasilflixapp.data.database.movies.allmovies.entity.allmovies
 import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.usecase.DetailUseCase
 import com.grupo7.brasilflixapp.ui.model.films.films
@@ -28,6 +29,10 @@ class DetailViewModel(): BaseViewModel() {
     private val _onSuccessMovieDbByIdFromDb: MutableLiveData<allmovies> = MutableLiveData()
     val onSuccessMovieDbByIdFromDb: LiveData<allmovies>
         get() = _onSuccessMovieDbByIdFromDb
+
+    private val _onSuccessFavoriteIdFromDb: MutableLiveData<FavoritesDetails> = MutableLiveData()
+    val onSuccessFavoriteIdFromDb: LiveData<FavoritesDetails>
+        get() = _onSuccessFavoriteIdFromDb
 
     private val _onSuccessMoviesVideos: MutableLiveData<List<Videos>> = MutableLiveData()
     val onSuccessMoviesVideos: LiveData<List<Videos>>
@@ -86,6 +91,20 @@ class DetailViewModel(): BaseViewModel() {
         viewModelScope.launch {
             detailUseCase.saveFavoritesDb(favorites)
 
+        }
+    }
+
+    fun saveFavoritesDetailsDb(favorites: FavoritesDetails) {
+        viewModelScope.launch {
+            detailUseCase.saveFavoritesDetailsDb(favorites)
+
+        }
+    }
+
+    fun getFavoritesDetailsDb(favoritesId: Int) {
+        viewModelScope.launch {
+            val favoriteFromDb = detailUseCase.getFavoritesDetailsDb(favoritesId)
+            _onSuccessFavoriteIdFromDb.postValue(favoriteFromDb)
         }
     }
 

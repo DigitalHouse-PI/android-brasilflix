@@ -32,7 +32,6 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 class DetailSeriesFragment : Fragment() {
 
     private var binding: FragmentDetailSeriesBinding? = null
-    var fm: FragmentManager? = fragmentManager
     private lateinit var detailSeriesViewModel: DetailSeriesViewModel
     private var imageSerie: String? = null
     private val serieId: Int by lazy {
@@ -85,10 +84,8 @@ class DetailSeriesFragment : Fragment() {
 
 
         binding?.ivMenu?.setOnClickListener {
-            fm?.popBackStack()
-            activity?.onBackPressed()
-
-
+            binding?.youtubePlayerDetail?.release()
+            this.activity?.onBackPressed()
 
         }
 
@@ -103,7 +100,7 @@ class DetailSeriesFragment : Fragment() {
         }
 
         binding?.ivHeart?.setOnClickListener {
-
+            binding?.ivHeart?.setImageResource(R.drawable.ic_heart_red)
             detailSeriesViewModel.onSuccessSerieDbByIdFromDb.observe(viewLifecycleOwner, {
 
                 val id = it.id

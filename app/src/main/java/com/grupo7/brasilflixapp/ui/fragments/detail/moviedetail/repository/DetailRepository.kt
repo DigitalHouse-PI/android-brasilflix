@@ -7,6 +7,7 @@ import com.grupo7.brasilflixapp.base.BaseRepository
 import com.grupo7.brasilflixapp.data.database.movies.allmovies.database.AllMoviesDatabase
 import com.grupo7.brasilflixapp.data.database.favorites.database.FavoritesDatabase
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
+import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesDetails
 import com.grupo7.brasilflixapp.util.constants.Constants.Home.FIRST_PAGE
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -32,6 +33,15 @@ class DetailRepository(
         AllMoviesDatabase.getDatabase(application)
             .allmoviesDao().loadAllMoviesById(movieId)
 
+    suspend fun getFavoritesDetailsDb(favoriteId: Int) =
+        FavoritesDatabase.getDatabase(
+            application
+        ).favoritesDetailsDao().loadFavoritesDetailsById(favoriteId)
+
+    suspend fun saveFavoritesDetailsDb(favorites: FavoritesDetails) =
+        FavoritesDatabase.getDatabase(
+            application
+        ).favoritesDetailsDao().insertFavoritesDetails(favorites)
 
     suspend fun saveFavoritesDb(favorites: Favorites) =
         FavoritesDatabase.getDatabase(
