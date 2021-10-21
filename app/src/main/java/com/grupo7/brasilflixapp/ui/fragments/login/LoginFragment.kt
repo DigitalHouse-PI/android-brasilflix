@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.registerForActivityResult
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -28,6 +29,7 @@ import com.grupo7.brasilflixapp.ui.activity.main.MainActivity
 import com.grupo7.brasilflixapp.util.constants.Constants.Login.UserID
 import com.grupo7.brasilflixapp.util.constants.Constants.Login.UserName
 import com.grupo7.brasilflixapp.util.constants.Constants.Logout.LOGIN_TYPE
+import kotlinx.coroutines.launch
 
 
 class LoginFragment : Fragment() {
@@ -45,9 +47,9 @@ class LoginFragment : Fragment() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             UserID = currentUser.uid
-            if(currentUser.displayName.isNullOrEmpty()){
+            if (currentUser.displayName.isNullOrEmpty()) {
                 UserName = currentUser.email.toString()
-            }else{
+            } else {
                 UserName = currentUser.displayName.toString()
             }
             goToPreferences()
@@ -70,6 +72,7 @@ class LoginFragment : Fragment() {
         auth = Firebase.auth
 
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -93,19 +96,24 @@ class LoginFragment : Fragment() {
                     Snackbar.LENGTH_SHORT
                 ).show()
             } else {
-                signInFirebase(email, password)
+                lifecycleScope.launch {
+                    signInFirebase(email, password)
+                }
             }
         }
 
         binding?.signInButton?.setOnClickListener {
-            signInGoogle()
+            lifecycleScope.launch {
+                signInGoogle()
+            }
         }
 
-        binding?.forgotPasswordLogin?.setOnClickListener{
+        binding?.forgotPasswordLogin?.setOnClickListener {
             findNavController().navigate(R.id.action_initialFragment_to_forgotPasswordFragment)
         }
 
     }
+
     private fun signInGoogle() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
@@ -139,6 +147,7 @@ class LoginFragment : Fragment() {
                 }
             }
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
