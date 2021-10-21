@@ -1,11 +1,13 @@
 package com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.view
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -14,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.grupo7.brasilflixapp.R
-
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
 import com.grupo7.brasilflixapp.databinding.FragmentDetailBinding
 import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.adapter.DetailReviewAdapter
@@ -24,12 +25,12 @@ import com.grupo7.brasilflixapp.util.constants.Constants.Home.KEY_BUNDLE_MOVIE_I
 import com.grupo7.brasilflixapp.util.share.ShareImage
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener
 
 
 class DetailFragment(
 ) : Fragment() {
     private var binding: FragmentDetailBinding? = null
+    var fm: FragmentManager? = fragmentManager
     private lateinit var detailViewModel: DetailViewModel
     private val movieId: Int by lazy {
         arguments?.getInt(KEY_BUNDLE_MOVIE_ID) ?: -1
@@ -71,7 +72,11 @@ class DetailFragment(
         }
 
         binding?.ivMenu?.setOnClickListener {
+//            fm?.beginTransaction()
+//                ?.remove(this)
+            fm?.popBackStack()
             activity?.onBackPressed()
+
         }
 
         binding?.ivShare?.setOnClickListener {
@@ -191,6 +196,13 @@ class DetailFragment(
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        binding?.youtubePlayerDetail?.release()
+
     }
 
 }
