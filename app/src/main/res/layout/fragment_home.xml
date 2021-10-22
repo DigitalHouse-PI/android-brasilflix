@@ -63,12 +63,15 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
+
                         android:id="@+id/photoProfile"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:src="@drawable/nophoto"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/outline_account_circle_black_18" />
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="@color/button"/>
 
                 </androidx.cardview.widget.CardView>
 
