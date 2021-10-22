@@ -1,11 +1,14 @@
 package com.grupo7.brasilflixapp.ui.fragments.detail.seriedetail.view
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -19,6 +22,7 @@ import com.grupo7.brasilflixapp.databinding.FragmentDetailSeriesBinding
 import com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.adapter.DetailReviewAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.seriedetail.adapter.DetailReviewSeriesAdapter
 import com.grupo7.brasilflixapp.ui.fragments.detail.seriedetail.viewmodel.DetailSeriesViewModel
+import com.grupo7.brasilflixapp.ui.fragments.home.view.HomeFragment
 import com.grupo7.brasilflixapp.util.constants.Constants
 import com.grupo7.brasilflixapp.util.share.ShareImage
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
@@ -77,9 +81,11 @@ class DetailSeriesFragment : Fragment() {
             }
         }
 
-        binding?.ivMenu?.setOnClickListener {
-            activity?.onBackPressed()
 
+
+        binding?.ivMenu?.setOnClickListener {
+            binding?.youtubePlayerDetail?.release()
+            this.activity?.onBackPressed()
 
         }
 
@@ -94,7 +100,7 @@ class DetailSeriesFragment : Fragment() {
         }
 
         binding?.ivHeart?.setOnClickListener {
-
+            binding?.ivHeart?.setImageResource(R.drawable.ic_heart_red)
             detailSeriesViewModel.onSuccessSerieDbByIdFromDb.observe(viewLifecycleOwner, {
 
                 val id = it.id
@@ -186,5 +192,12 @@ class DetailSeriesFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        binding?.youtubePlayerDetail?.release()
+
     }
 }

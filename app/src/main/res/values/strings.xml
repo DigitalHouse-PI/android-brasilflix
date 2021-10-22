@@ -140,5 +140,6 @@
     <string name="confirmationEmailResetPassword">Enviamos um e-mail para reset de sua senha! OBS: Checar a caixa de SPAM.</string>
     <string name="removeFavorites">Remover</string>
     <string name="welcomeUserHome">Olá, Lucas</string>
+    <string name="animation">Animation</string>
 
 </resources>

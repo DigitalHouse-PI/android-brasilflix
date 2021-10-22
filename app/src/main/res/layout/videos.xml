@@ -6,12 +6,12 @@
     style="@style/WatchCardDefault"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/gradiente_externo">
+    android:background="@drawable/gradiente">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="@drawable/gradiente_externo">
+        android:background="@drawable/gradiente">
 
         <ImageView
             android:id="@+id/ivWatchImage"
