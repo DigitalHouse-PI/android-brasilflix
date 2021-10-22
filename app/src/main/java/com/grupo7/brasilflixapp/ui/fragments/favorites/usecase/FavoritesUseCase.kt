@@ -2,6 +2,7 @@ package com.grupo7.brasilflixapp.ui.fragments.favorites.usecase
 
 import android.app.Application
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
+import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesDetails
 import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesSeries
 import com.grupo7.brasilflixapp.ui.fragments.favorites.repository.FavoritesRepository
 
@@ -21,6 +22,11 @@ class FavoritesUseCase() {
 
     suspend fun removeFavoritesSeriesDb(favorites: FavoritesSeries) {
         favoritesRepository.removeFavoritesSeriesDb(favorites)
+
+    }
+
+    suspend fun removeFavoritesDetailsDb(favorites: FavoritesDetails) {
+        favoritesRepository.removeFavoritesDetailsDb(favorites)
 
     }
 

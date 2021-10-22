@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.grupo7.brasilflixapp.R
+import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesDetails
 import com.grupo7.brasilflixapp.databinding.FragmentFavoritesMoviesBinding
 import com.grupo7.brasilflixapp.databinding.FragmentInitialBinding
 import com.grupo7.brasilflixapp.ui.fragments.favorites.adapter.FavoritesAdapter
@@ -59,7 +60,9 @@ class FavoritesMoviesFragment : Fragment() {
                     }
                 } else {
                     val favoritesAdapter = FavoritesAdapter(it) {
+                        val favoritesDetails = FavoritesDetails(it.id, true)
                         viewModel.removeFavoritesMovieDb(it)
+                        viewModel.removeFavoritesDetailsDb(favoritesDetails)
                         viewModel.getFavoritesMovieFromDb()
                     }
                     binding?.favoritesRecyclerViewMovies?.apply {

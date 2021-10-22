@@ -6,16 +6,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
-
 @Entity
 @Parcelize
-data class Favorites(
+data class FavoritesDetails(
     @PrimaryKey
     @ColumnInfo(name = "id")
     val id: Int?,
-    @ColumnInfo(name = "poster_path")
-    var poster_path: String?,
-    @ColumnInfo(name = "title")
-    var title: String?
-    ): Parcelable {
-    }
+    @ColumnInfo(name = "isChecked")
+    var isFavorite: Boolean = false,
+    ) : Parcelable

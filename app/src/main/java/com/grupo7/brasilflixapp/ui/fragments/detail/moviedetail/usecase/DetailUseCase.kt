@@ -3,6 +3,7 @@ package com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.usecase
 import android.app.Application
 import com.grupo7.brasilflixapp.data.api.util.ResponseApi
 import com.grupo7.brasilflixapp.data.database.favorites.entity.Favorites
+import com.grupo7.brasilflixapp.data.database.favorites.entity.FavoritesDetails
 import com.grupo7.brasilflixapp.extensions.getDateBR
 import com.grupo7.brasilflixapp.extensions.getFullImageUrl
 import com.grupo7.brasilflixapp.extensions.getFullYoutubeUrl
@@ -52,8 +53,15 @@ class DetailUseCase() {
         detailRepository.getMovieByIdFromDb(movieId)
 
 
+
     suspend fun saveFavoritesDb(favorites: Favorites) =
         detailRepository.saveFavoritesDb(favorites)
+
+    suspend fun saveFavoritesDetailsDb(favorites: FavoritesDetails) =
+        detailRepository.saveFavoritesDetailsDb(favorites)
+
+    suspend fun getFavoritesDetailsDb(favoritesId: Int) =
+        detailRepository.getFavoritesDetailsDb(favoritesId)
 
     suspend fun getMoviesVideos(movieId: Int): ResponseApi {
         return when(val responseApi = detailRepository.getMoviesVideos(movieId)) {
