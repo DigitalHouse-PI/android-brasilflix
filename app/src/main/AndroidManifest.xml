@@ -35,7 +35,7 @@
         android:name=".application.MyApp"
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@drawable/brflixlogo"
+        android:icon="@drawable/logonewbrasilflix"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"

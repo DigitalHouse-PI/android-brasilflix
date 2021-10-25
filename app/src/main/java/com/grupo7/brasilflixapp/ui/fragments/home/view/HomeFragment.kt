@@ -88,7 +88,7 @@ class HomeFragment : BaseFragment() {
             startActivity(Intent(activity, SearchActivity::class.java))
         }
 
-        binding?.pictureProfileCard?.setOnClickListener{
+        binding?.photoProfile?.setOnClickListener{
             startActivity(Intent(activity, ProfileActivity::class.java))
         }
 
