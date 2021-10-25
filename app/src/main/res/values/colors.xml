@@ -19,6 +19,7 @@
     <color name="lighter_gray">#F2F2F2</color>
     <color name="topRatedButton">#003880</color>
     <color name="ProgressIndicatorButton">#003880</color>
+    <color name="bottomDetails">#FF000000</color>
     <color name="topMenuHome">#FFFFFFFF</color>
     <color name="bottomMenuHome">#003880</color>
     <color name="secondary_blue">#0C3559</color>

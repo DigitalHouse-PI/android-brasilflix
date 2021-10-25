@@ -123,6 +123,8 @@
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/films.xml" value="0.33" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_account.xml" value="0.2" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
+        <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_detail_search.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_detail_series.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_favorites.xml" value="0.18" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_favorites_movies.xml" value="0.10643115942028986" />
         <entry key="..\:/Users/lucas/Documents/android-brasilflix/app/src/main/res/layout/fragment_favorites_series.xml" value="0.1671195652173913" />
