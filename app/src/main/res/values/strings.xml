@@ -141,5 +141,6 @@
     <string name="removeFavorites">Remover</string>
     <string name="welcomeUserHome">Olá, Lucas</string>
     <string name="animation">Animation</string>
+    <string name="welcome_name">Olá, %1$s!</string>
 
 </resources>

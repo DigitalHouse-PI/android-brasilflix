@@ -82,7 +82,7 @@ class HomeFragment : BaseFragment() {
 
         loadProfileImageFromStorageAndUserName()
 
-        binding?.userHomeText?.text = "Olá, $UserName"
+        binding?.userHomeText?.text = getString(R.string.welcome_name, UserName)
 
         binding?.searchHome?.setOnClickListener{
             startActivity(Intent(activity, SearchActivity::class.java))

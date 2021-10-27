@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.grupo7.brasilflixapp.R
 import com.grupo7.brasilflixapp.databinding.FilmsBinding
 import com.grupo7.brasilflixapp.ui.model.series.Series
@@ -33,6 +34,7 @@ class SeriesTopRatedAdapter(
             series?.let {
                 Glide.with(itemView)
                     .load(series.poster_path)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .placeholder(R.drawable.films)
                     .into(fotoFilme)
                 filmeName.text = series.original_name

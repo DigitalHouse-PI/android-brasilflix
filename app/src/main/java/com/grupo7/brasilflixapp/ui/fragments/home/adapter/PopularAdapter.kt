@@ -33,6 +33,7 @@ class popularAdapter (
             films?.let {
                 Glide.with(itemView)
                     .load(films.poster_path)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .placeholder(R.drawable.films)
                     .into(fotoFilme)
                 filmeName.text = films.title
