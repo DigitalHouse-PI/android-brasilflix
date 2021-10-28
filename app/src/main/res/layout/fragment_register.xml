@@ -9,7 +9,7 @@
     android:background="@drawable/gradiente">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -33,7 +33,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_nome"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layoutCpf"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             app:errorEnabled="true"
             app:layout_constraintTop_toBottomOf="@+id/layout_nome"
             android:layout_width="match_parent"
@@ -76,7 +76,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_email"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/layoutCpf"
@@ -98,7 +98,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_telefone"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             app:layout_constraintTop_toBottomOf="@+id/layout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_senha"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             app:layout_constraintTop_toBottomOf="@+id/layout_telefone"
             app:passwordToggleEnabled="true"
             android:layout_width="match_parent"

@@ -38,6 +38,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.0-alpha01"
+    }
+
 }
 
 dependencies {
@@ -119,6 +124,9 @@ dependencies {
 
     // Koin
     implementation 'io.insert-koin:koin-android:3.1.2'
+
+    //Material Compose 3
+    implementation("androidx.compose.material3:material3:1.0.0-alpha01")
 
 
 

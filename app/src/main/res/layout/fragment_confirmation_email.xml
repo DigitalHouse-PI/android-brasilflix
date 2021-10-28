@@ -74,6 +74,7 @@
         android:paddingEnd="10dp"
         app:backgroundTint="@color/button"
         android:text="@string/voltar_para_a_home"
+
         />
 
 

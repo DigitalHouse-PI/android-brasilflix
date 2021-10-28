@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.BrasilFlixapp" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.BrasilFlixapp" parent="Theme.Material3.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -26,7 +26,7 @@
         <item name="cardElevation">@dimen/watch_card_elevation</item>
     </style>
 
-    <style name="ButtonIcon" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+    <style name="ButtonIcon" parent="Widget.Material3.Button.TextButton.Icon">
         <item name="iconPadding">0dp</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
@@ -34,7 +34,7 @@
         <item name="android:minHeight">@dimen/button_icon_size</item>
     </style>
 
-    <style name="Widget.App.CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+    <style name="Widget.App.CircularProgressIndicator" parent="Widget.Material3.CircularProgressIndicator">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.CircularProgressIndicator</item>
         <item name="trackThickness">20dp</item>
     </style>
@@ -129,6 +129,8 @@
         <item name="android:textAlignment">viewStart</item>
         <item name="fontWeight">100</item>
     </style>
+
+
 
 
 </resources>
