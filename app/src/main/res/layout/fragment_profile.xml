@@ -29,7 +29,7 @@
             android:layout_marginRight="20dp"
             android:scaleType="centerCrop"
             android:src="@drawable/nophoto"
-            app:civ_border_color="@color/button"
+            app:civ_border_color="@color/circularImageHome"
             app:civ_border_width="3dp"
             app:layout_constraintBottom_toTopOf="@+id/changePictureProfile"
             app:layout_constraintEnd_toEndOf="parent"

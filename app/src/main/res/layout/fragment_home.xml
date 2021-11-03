@@ -5,8 +5,8 @@
     android:id="@+id/layoutHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@drawable/gradiente">
+    android:background="@drawable/gradiente"
+    android:fillViewport="true">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,98 +14,57 @@
         android:layout_height="wrap_content"
         tools:context=".ui.fragments.home.view.HomeFragment">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/mainCardHome"
-            android:layout_width="0dp"
-            android:layout_height="176dp"
-            android:background="@drawable/gradiente_externo"
-            app:layout_constraintEnd_toEndOf="parent"
+
+        <ImageView
+            android:id="@+id/imageHome"
+            android:layout_width="300dp"
+            android:layout_height="135dp"
+            android:src="@drawable/logobrflixnovo"
+            app:layout_constraintBottom_toTopOf="@+id/userHomeText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/roundimageview">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/gradiente_externo">
-
-                <ImageView
-                    android:id="@+id/imageHome"
-                    android:layout_width="200dp"
-                    android:layout_height="105dp"
-                    android:src="@drawable/brflixlogo"
-                    app:layout_constraintBottom_toTopOf="@+id/userHomeText"
-                    app:layout_constraintEnd_toStartOf="@+id/searchHome"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/userHomeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="@font/rubik_light"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontUserNameHome"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageHome"
-                    tools:text="@string/welcomeUserHome" />
+        <TextView
+            android:id="@+id/userHomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/rubik_light"
+            android:textColor="@color/black"
+            android:textSize="@dimen/fontUserNameHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageHome"
+            tools:text="@string/welcomeUserHome" />
 
 
-                <de.hdodenhof.circleimageview.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
 
-                    android:id="@+id/photoProfile"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/nophoto"
-                    app:civ_border_color="@color/button"
-                    app:civ_border_width="3dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <ImageView
-                    android:id="@+id/searchHome"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/outline_search_black_36"
-                    app:layout_constraintEnd_toStartOf="@+id/photoProfile"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+            android:id="@+id/photoProfile"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/nophoto"
+            app:civ_border_color="@color/circularImageHome"
+            app:civ_border_width="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-        <!--      App Bar -->
+        <ImageView
+            android:id="@+id/searchHome"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/outline_search_black_36"
+            app:layout_constraintEnd_toStartOf="@+id/photoProfile"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!--        <com.google.android.material.appbar.AppBarLayout-->
-        <!--            android:id="@+id/mainCardHome"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent">-->
-
-        <!--            <com.google.android.material.appbar.MaterialToolbar-->
-        <!--                android:id="@+id/topAppBar"-->
-        <!--                style="@style/Widget.MaterialComponents.Toolbar.Primary"-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="?attr/actionBarSize"-->
-        <!--                android:background="@color/topMenuHome"-->
-        <!--                app:menu="@menu/top_app_bar"-->
-        <!--                app:title="@string/page_home"-->
-
-        <!--                />-->
-
-        <!--        </com.google.android.material.appbar.AppBarLayout>-->
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loadingLottieHome"
@@ -114,17 +73,17 @@
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mainCardHome"
-            app:lottie_rawRes="@raw/loadingcard"
+            app:layout_constraintTop_toBottomOf="@+id/userHomeText"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true" />
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loadingcard" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutRecycleMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/layoutRecycleMain"
             android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/mainCardHome">
+            app:layout_constraintTop_toBottomOf="@+id/userHomeText">
 
             <ImageView
                 android:id="@+id/imageTopRated"
@@ -141,9 +100,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageUpComing"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageTopRated"
-                app:layout_constraintBottom_toTopOf="@+id/imageUpComing"
                 tools:listitem="@layout/films" />
 
             <ImageView

@@ -9,17 +9,17 @@
     android:padding="5dp"
     android:id="@+id/filmesContainer"
     app:cardCornerRadius="30dp"
-    android:background="@drawable/gradiente">
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="220dp"
-        android:layout_height="400dp"
-        android:background="@drawable/gradiente">
+        android:layout_width="190dp"
+        android:layout_height="300dp"
+        android:background="@color/black">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/fotoFilme"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:clickable="true"
             android:focusable="true"
             android:scaleType="centerCrop"
@@ -40,6 +40,7 @@
             android:gravity="center"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/dataLancamento"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/filmeName"
             tools:text="10" />
@@ -69,6 +71,7 @@
             android:fontFamily="@font/rubik_light"
             android:gravity="center"
             android:textSize="18sp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/filmeName"
