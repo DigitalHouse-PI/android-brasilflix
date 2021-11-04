@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.changeemail.ChangeEmailFragment"
-    android:background="@drawable/gradiente">
+    >
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -16,10 +16,10 @@
 
     <ImageView
         android:id="@+id/ivLogo1"
-        android:layout_width="105dp"
-        android:layout_height="48dp"
-        android:src="@drawable/brflixlogo"
-        android:layout_marginTop="96dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logobrflixhome"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivLogo1"/>

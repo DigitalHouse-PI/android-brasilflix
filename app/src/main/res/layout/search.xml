@@ -14,7 +14,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="150dp"
         android:layout_height="250dp"
-        android:background="@drawable/gradiente_externo">
+        android:background="@color/colorBlack">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/fotoFilme"
@@ -40,6 +40,7 @@
             android:gravity="center"
             android:textSize="14sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/dataLancamento"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,14 +49,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/vote_model_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="11dp"
+            android:layout_height="12dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/rubik_light"
             android:gravity="center"
             android:textSize="14sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/filmeName"
             tools:text="10" />
@@ -70,6 +72,7 @@
             android:gravity="center"
             android:textSize="12sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/filmeName"
             tools:text="2020" />

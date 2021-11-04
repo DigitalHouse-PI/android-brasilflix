@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.preferences.PreferencesFragment"
-    android:background="@drawable/gradiente">
+    >
 
     <TextView
         android:id="@+id/tvTextoBr"
@@ -95,14 +95,14 @@
         android:id="@+id/tvPreferencesNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next"
-        android:textColor="@color/topMenuHome"
-        android:textSize="16sp"
-        android:padding="16sp"
-        android:background="?selectableItemBackground"
         android:layout_marginEnd="40dp"
-         android:layout_marginBottom="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_marginBottom="36dp"
+        android:background="?selectableItemBackground"
+        android:padding="16sp"
+        android:text="@string/next"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

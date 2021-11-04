@@ -6,13 +6,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.email.ConfirmationResetEmailFragment"
     android:paddingHorizontal="50dp"
-    android:background="@drawable/gradiente">
+    >
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/brflixlogo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logobrflixnovo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

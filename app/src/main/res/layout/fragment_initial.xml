@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.initial.initialFragment"
-    android:background="@drawable/gradiente">
+    >
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabIndicatorColor="@color/dotsTips1"
-        app:tabTextColor="@color/dotsTips2">
+        app:tabTextColor="@color/black">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

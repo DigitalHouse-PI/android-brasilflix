@@ -15,6 +15,7 @@
     <color name="button">#FF000000</color>
     <color name="circularImageHome">#FFD501</color>
     <color name="tabtextColorNEW">#FFCC00</color>
+    <color name="buttonHome">#FFCC00</color>
     <color name="dotsTips1">#FFCC00</color>
     <color name="dotsTips2">#003880</color>
     <color name="lighter_gray">#F2F2F2</color>
@@ -27,6 +28,17 @@
     <color name="pink">#F21B42</color>
     <color name="blue">#148BA6</color>
     <color name="boxSearch">#003880</color>
+
+    <!--Backgrounds-->
+    <color name="colorDarkGrey">#DBDBDB</color>
+    <color name="colorDarkGreySearch">#F2F2F2</color>
+    <color name="colorGreyBackground">#E6E6E6</color>
+    <color name="colorGrey">#757575</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorBgGrey">#f0f0f0</color>
+    <color name="colorConcierge">#6E6AC6</color>
+    <color name="colorPopup">#DBDB22</color>
 
 
 </resources>

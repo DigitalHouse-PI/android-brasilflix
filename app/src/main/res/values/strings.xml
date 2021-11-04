@@ -142,5 +142,7 @@
     <string name="welcomeUserHome">Olá, Lucas</string>
     <string name="animation">Animation</string>
     <string name="welcome_name">Olá, %1$s!</string>
+    <string name="termsRegister">Ao clicar em Cadastre-se, você concorda com os Termos e condições e com a Política de privacidade do aplicativo.</string>
+    <string name="buttonHome">Se ligaaaaa! Aqui tem os trailers!</string>
 
 </resources>

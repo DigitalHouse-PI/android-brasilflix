@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/gradiente">
+        android:background="@color/colorBlack">
 
         <ImageView
             android:id="@+id/reviewImage"
@@ -18,7 +18,7 @@
             android:layout_height="90dp"
             android:contentDescription="@string/media_poster"
             android:scaleType="fitCenter"
-            android:src="@drawable/brflixlogo"
+            android:src="@drawable/iconbrflixnovo"
             android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +29,7 @@
             style="@style/WatchCardTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toStartOf="@id/reviewImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -50,6 +51,7 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/reviewStar"
             app:layout_constraintTop_toBottomOf="@id/reviewTitle"
             android:text="@string/ratingReview" />

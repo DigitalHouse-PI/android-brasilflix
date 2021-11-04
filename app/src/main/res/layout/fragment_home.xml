@@ -5,7 +5,6 @@
     android:id="@+id/layoutHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiente"
     android:fillViewport="true">
 
 
@@ -14,27 +13,30 @@
         android:layout_height="wrap_content"
         tools:context=".ui.fragments.home.view.HomeFragment">
 
-
-        <ImageView
-            android:id="@+id/imageHome"
-            android:layout_width="300dp"
-            android:layout_height="135dp"
-            android:src="@drawable/logobrflixnovo"
-            app:layout_constraintBottom_toTopOf="@+id/userHomeText"
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userHomeText"
+            android:text="@string/buttonHome"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/buttonHome"
+            app:icon="@drawable/outline_theaters_white_24"/>
 
         <TextView
             android:id="@+id/userHomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/rubik_light"
             android:textColor="@color/black"
             android:textSize="@dimen/fontUserNameHome"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageHome"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/welcomeUserHome" />
 
 
@@ -73,7 +75,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userHomeText"
+            app:layout_constraintTop_toBottomOf="@+id/extended_fab"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/loadingcard" />
@@ -83,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@+id/userHomeText">
+            app:layout_constraintTop_toBottomOf="@+id/extended_fab">
 
             <ImageView
                 android:id="@+id/imageTopRated"

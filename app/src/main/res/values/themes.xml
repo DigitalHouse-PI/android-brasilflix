@@ -130,7 +130,11 @@
         <item name="fontWeight">100</item>
     </style>
 
-
+    <style name="CharStyleText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:fontFamily">@font/rubik_light</item>
+    </style>
 
 
 </resources>

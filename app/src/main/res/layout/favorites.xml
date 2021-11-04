@@ -9,12 +9,12 @@
     android:padding="5dp"
     android:id="@+id/favoritesContainer"
     app:cardCornerRadius="30dp"
-    android:background="@drawable/gradiente">
+    android:background="@color/colorBlack">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="150dp"
         android:layout_height="300dp"
-        android:background="@drawable/gradiente">
+        android:background="@color/colorBlack">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/fotoFilme"
