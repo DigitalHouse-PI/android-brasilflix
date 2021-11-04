@@ -164,7 +164,7 @@ class DetailSearchFragment(
                         activity?.let { activityNonNull ->
                             Glide.with(activityNonNull)
                                 .load(serie.poster_path)
-                                .placeholder(R.drawable.brflixlogo)
+                                .placeholder(R.drawable.iconbrflixnovo)
                                 .into(imageCardDetail)
                         }
                         tvTitle.text = serie.original_name

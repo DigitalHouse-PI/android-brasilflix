@@ -163,7 +163,7 @@ class DetailFragment(
                     activity?.let { activityNonNull ->
                         Glide.with(activityNonNull)
                             .load(imageMovie)
-                            .placeholder(R.drawable.brflixlogo)
+                            .placeholder(R.drawable.iconbrflixnovo)
                             .override(900, 500)
                             .into(imageCardDetail)
                     }
