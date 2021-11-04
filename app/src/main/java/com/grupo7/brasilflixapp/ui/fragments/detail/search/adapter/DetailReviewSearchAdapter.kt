@@ -35,7 +35,7 @@ class DetailReviewSearchAdapter (
             Result?.let {
                 Glide.with(itemView)
                     .load(Result.author_details.avatar_path)
-                    .placeholder(R.drawable.brflixlogo)
+                    .placeholder(R.drawable.iconbrflixnovo)
                     .into(reviewImage)
                 reviewTitle.text = Result.author_details.name
                 reviewRating.text = Result.author_details.rating.toString()
