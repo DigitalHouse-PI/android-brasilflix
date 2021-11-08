@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.profile.view.profileFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.profile.view.profileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/passwordResetFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.passwordreset.PasswordResetFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.passwordreset.PasswordResetFragment"
         android:label="fragment_password_reset"
         tools:layout="@layout/fragment_password_reset" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmationResetEmailFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.email.ConfirmationResetEmailFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.email.ConfirmationResetEmailFragment"
         android:label="fragment_confirmation_reset_email"
         tools:layout="@layout/fragment_confirmation_reset_email" />
 </navigation>

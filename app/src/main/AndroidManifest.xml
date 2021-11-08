@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.grupo7.brasilflixapp">
+    package="com.grupo7.brflixapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -32,7 +32,7 @@
     </queries>
 
     <application
-        android:name=".application.MyApp"
+        android:name="com.grupo7.brflixapp.application.MyApp"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@drawable/iconbrflixnovo"
@@ -41,29 +41,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrasilFlixapp">
         <activity
-            android:name=".ui.activity.profile.ProfileActivity"
+            android:name="com.grupo7.brflixapp.ui.activity.profile.ProfileActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.changeEmail.ChangeEmailActivity"
+            android:name="com.grupo7.brflixapp.ui.activity.changeEmail.ChangeEmailActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.search.SearchActivity"
+            android:name="com.grupo7.brflixapp.ui.activity.search.SearchActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.myPreference.MyPreferenceActivity"
+            android:name="com.grupo7.brflixapp.ui.activity.myPreference.MyPreferenceActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
         <activity
-            android:name=".ui.activity.preferences.PreferencesActivity"
+            android:name="com.grupo7.brflixapp.ui.activity.preferences.PreferencesActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
-        <activity android:name=".ui.activity.home.HomeActivity"
+        <activity android:name="com.grupo7.brflixapp.ui.activity.home.HomeActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
-        <activity android:name=".ui.activity.splash.SplashActivity"
+        <activity android:name="com.grupo7.brflixapp.ui.activity.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
@@ -72,7 +72,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.main.MainActivity"
+        <activity android:name="com.grupo7.brflixapp.ui.activity.main.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true" />
     </application>

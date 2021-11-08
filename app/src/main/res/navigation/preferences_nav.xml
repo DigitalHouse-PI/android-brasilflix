@@ -6,7 +6,7 @@
     app:startDestination="@id/preferencesFragment">
     <fragment
         android:id="@+id/preferencesFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.preferences.PreferencesFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.preferences.PreferencesFragment"
         android:label="fragment_preferences"
         tools:layout="@layout/fragment_preferences" >
         <action

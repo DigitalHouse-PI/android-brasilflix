@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.home.view.HomeFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.home.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/seriesFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.series.view.seriesFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.series.view.seriesFragment"
         android:label="fragment_series"
         tools:layout="@layout/fragment_series" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.detail.moviedetail.view.DetailFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.detail.moviedetail.view.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail">
         <action
@@ -40,17 +40,17 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.favorites.view.FavoritesFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.favorites.view.FavoritesFragment"
         android:label="FavoritesFragment"
         tools:layout="@layout/fragment_favorites"/>
     <fragment
         android:id="@+id/VideosFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.videos.view.VideosFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.videos.view.VideosFragment"
         android:label="fragment_videos"
         tools:layout="@layout/fragment_videos" />
     <fragment
         android:id="@+id/detailSeriesFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.detail.seriedetail.view.DetailSeriesFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.detail.seriedetail.view.DetailSeriesFragment"
         android:label="fragment_detail_series"
         tools:layout="@layout/fragment_detail_series" >
         <action

@@ -6,7 +6,7 @@
     app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.grupo7.brasilflixapp.ui.fragments.splash.view.SplashFragment"
+        android:name="com.grupo7.brflixapp.ui.fragments.splash.view.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
