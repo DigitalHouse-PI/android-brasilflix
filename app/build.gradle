@@ -11,7 +11,7 @@ android {
 
 
     defaultConfig {
-        applicationId "com.lucasesteves.brasilflixapp"
+        applicationId "com.grupo7.brflixapp"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
