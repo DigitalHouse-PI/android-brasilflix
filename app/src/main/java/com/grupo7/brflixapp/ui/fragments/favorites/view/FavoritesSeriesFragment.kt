@@ -24,6 +24,12 @@ class FavoritesSeriesFragment : Fragment() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        viewModel.getFavoritesSeriesFromDb()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -24,6 +24,12 @@ class FavoritesMoviesFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        viewModel.getFavoritesMovieFromDb()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

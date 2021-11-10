@@ -42,29 +42,29 @@
         android:theme="@style/Theme.BrasilFlixapp">
         <activity
             android:name="com.grupo7.brflixapp.ui.activity.profile.ProfileActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true" />
         <activity
             android:name="com.grupo7.brflixapp.ui.activity.changeEmail.ChangeEmailActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true" />
         <activity
             android:name="com.grupo7.brflixapp.ui.activity.search.SearchActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true" />
         <activity
             android:name="com.grupo7.brflixapp.ui.activity.myPreference.MyPreferenceActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true" />
         <activity
             android:name="com.grupo7.brflixapp.ui.activity.preferences.PreferencesActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true" />
         <activity android:name="com.grupo7.brflixapp.ui.activity.home.HomeActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true" />
         <activity android:name="com.grupo7.brflixapp.ui.activity.splash.SplashActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

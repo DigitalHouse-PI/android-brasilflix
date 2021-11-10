@@ -204,4 +204,6 @@ class DetailSearchFragment(
         super.onDestroyView()
         binding = null
     }
+
+
 }

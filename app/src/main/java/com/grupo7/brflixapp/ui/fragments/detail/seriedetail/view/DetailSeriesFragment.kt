@@ -196,4 +196,11 @@ class DetailSeriesFragment : Fragment() {
         binding?.youtubePlayerDetail?.release()
 
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        binding?.youtubePlayerDetail?.release()
+
+    }
 }

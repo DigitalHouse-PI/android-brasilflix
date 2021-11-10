@@ -36,6 +36,12 @@ class DetailFragment(
     }
     private var imageMovie: String? = null
 
+    override fun onStart() {
+        super.onStart()
+
+        detailViewModel.getFavoritesDetailsDb(movieId)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -150,9 +156,9 @@ class DetailFragment(
                         AbstractYouTubePlayerListener() {
                         override fun onReady(youTubePlayer: YouTubePlayer) {
                             youtube.key?.let { it1 -> youTubePlayer.loadVideo(it1, 0f) }
+                            youtubePlayerDetail.isFullScreen()
                         }
                         })
-                    youtubePlayerDetail.isFullScreen()
                 }
             } else {
                 binding?.apply {
@@ -215,6 +221,13 @@ class DetailFragment(
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        binding?.youtubePlayerDetail?.release()
+
     }
 
     override fun onAttach(context: Context) {

@@ -40,6 +40,7 @@
     <color name="colorBgGrey">#f0f0f0</color>
     <color name="colorConcierge">#6E6AC6</color>
     <color name="colorPopup">#DBDB22</color>
+    <color name="chipsColorIconPreferences">#E6020A</color>
 
 
 </resources>
